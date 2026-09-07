@@ -1,0 +1,1607 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>NTNNTD | Bài 1: Nhập môn Khoa học về Não bộ</title>
+
+  <link rel="stylesheet" href="revealjs/dist/reset.css">
+  <link rel="stylesheet" href="revealjs/dist/reveal.css" />
+  <link rel="stylesheet" href="revealjs/dist/theme/white.css" />
+  <link rel="stylesheet" href="plugin/highlight/zenburn.css">
+  <link rel="stylesheet" href="lecture-style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+            <section>
+        <section>
+          <h1>Nhận thức, <br /> Ngôn ngữ và Tư duy</h1>
+          <p class="text-light">AIT3018 &middot; Học kỳ I, năm học 2026–2027</p>
+          <p class="text-light">Viện Trí tuệ nhân tạo &middot; Trường Đại học Công nghệ, ĐHQGHN</p>
+
+        </section>
+        <section>
+          <h1><span class="text-light">Bài 1</span><br>Nhập môn <br> Khoa học não bộ</h1>
+          <p class="text-light">Não bộ, tâm trí và nhận thức có phải là một? <br/> Vì sao tranh luận về chúng lại góp phần
+            khai sinh ngành TTNT?</p>
+
+        </section>
+        <section>
+          <h2>Giảng viên</h2>
+          <ul>
+            <li>TS. Nguyễn Tuấn Phong</li>
+            <li>Đơn vị công tác: Viện Trí tuệ nhân tạo, Trường ĐHCN</li>
+            <li>Email: <strong>tuanphong</strong> at vnu dot edu dot vn</li>
+            <li>Nền tảng học vấn: Tiến sĩ Kỹ thuật (Dr.-Ing), Max-Planck-Institut für Informatik, Deutschland</li>
+            <li>Hướng nghiên cứu: Hệ tri thức, Mô hình ngôn ngữ lớn</li>
+          </ul>
+
+        </section>
+
+        <section>
+          <h2>Trước khi bắt đầu</h2>
+          <ul>
+            <li>Bạn thích chủ đề hay lĩnh vực nào?</li>
+            <li>Trình độ tiếng Anh của bạn tới đâu?</li>
+            <li>Bạn kỳ vọng học được gì ở môn này?</li>
+          </ul>
+          <div class="key-box"><span class="box-title">Làm ngay tại lớp</span>Mục "Pre-course anonymous survey" trên Canvas Portal.</div>
+
+        </section>
+
+        <section>
+          <h2>Tổng quan buổi học</h2>
+          <ol>
+            <li>Phân biệt: Não bộ, tâm trí, nhận thức</li>
+            <li>Các lĩnh vực nghiên cứu não bộ</li>
+            <li>Lịch sử nghiên cứu não: từ Aristotle đến thế kỷ 17</li>
+            <li>Cách mạng nhận thức: từ 1956 đến nay</li>
+            <li>Những người tiên phong</li>
+            <li>Các câu hỏi liên ngành về não bộ</li>
+            <li>Giới thiệu môn học</li>
+          </ol>
+
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1><span class="text-light">1.</span><br>Não bộ, tâm trí, <br> nhận thức</h1>
+
+        </section>
+
+        <section>
+          <h2>Khởi động</h2>
+          <div class="question-box">
+            <div class="question-title">Câu hỏi mở</div>
+            <div class="question-content">
+              <p>Não bộ (<em>brain</em>) và tâm trí (<em>mind</em>) khác nhau ở chỗ nào?</p>
+              <p>Bạn định nghĩa nhận thức (<em>cognition</em>) thế nào?</p>
+            </div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Ba câu hỏi khó</h2>
+          <ul>
+            <li>Con chó có <strong>não bộ</strong> không?</li>
+            <li>Con chó có <strong>tâm trí</strong> không?</li>
+            <li>Con chó có <strong>nhận thức</strong> không?</li>
+          </ul>
+          <p class="text-light">Chó nhận ra chủ. Chó nhớ chỗ giấu xương. Chó mở nắp hộp.</p>
+          <div class="question-box fragment">
+            <div class="question-title">Câu hỏi khó hơn</div>
+            <div class="question-content">
+              <p>ChatGPT có nhận thức không?</p>
+            </div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Giới nghiên cứu nghĩ gì?</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div>
+          <figure class="fig">
+            <img src="img/lec01-image7.png"
+              alt="Post của PessoaBrain: nhận thức được thể hiện bởi các hệ tự tổ chức và tự trị" style="width:78%">
+            <img src="img/lec01-image8.png" alt="Post của Andrea Lathrop: những gì xảy ra giữa tri giác và hành động"
+              style="width:78%">
+            <img src="img/lec01-image13.png"
+              alt="Post của Jamie Hardt: tạo và duy trì một mô hình nội tại về thế giới bên ngoài" style="width:78%">
+            <figcaption class="caption">Ba nhà nghiên cứu, ba cách tiếp cận khác nhau: hệ tự tổ chức; khoảng giữa tri giác và hành
+              động; mô hình nội tại về thế giới. <em>Chưa có</em> một định nghĩa thống nhất.
+            </figcaption>
+          </figure>
+
+        </section>
+
+        <section>
+          <h2>Não bộ (brain)</h2>
+          <div>
+            <p><strong>Cơ quan</strong> nằm trong hộp sọ, điều phối nhiều chức năng của cơ thể.</p>
+            <p>Gồm hàng tỷ tế bào thần kinh và được hộp sọ bảo vệ.</p>
+            <p class="text-light">Định nghĩa của Viện Ung thư Quốc gia Hoa Kỳ (NCI)</p>
+          </div>
+          <div class="key-box"><span class="box-title">Tóm tắt</span> Não bộ là một <strong>cơ quan vật chất</strong>: có
+            thể quan sát, đo đạc và chụp ảnh.</div>
+
+        </section>
+
+        <section>
+          <h2>3 bộ phận lớn của não bộ</h2>
+          <div class="two-col">
+            <table class="compact-table">
+              <thead>
+                <tr>
+                  <th>Bộ phận</th>
+                  <th>Chức năng chính</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Đại não</strong><br><em>cerebrum</em></td>
+                  <td>Tư duy, học tập, giải quyết vấn đề, cảm xúc, trí nhớ, nói, đọc, viết, vận động chủ ý</td>
+                </tr>
+                <tr>
+                  <td><strong>Tiểu não</strong><br><em>cerebellum</em></td>
+                  <td>Vận động tinh (các cử động nhỏ, chính xác), thăng bằng, tư thế</td>
+                </tr>
+                <tr>
+                  <td><strong>Thân não</strong><br><em>brain stem</em></td>
+                  <td>Hô hấp, nhịp tim; nối não với tuỷ sống</td>
+                </tr>
+              </tbody>
+            </table>
+            <figure class="fig">
+              <img src="img/lec01-image15.png"
+                alt="Lát cắt dọc đầu người, chú thích đại não, tiểu não, thân não, não thất và tuỷ sống"
+                style="width:100%">
+            </figure>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Tâm trí (mind)</h2>
+          <div class="two-col two-col--wide-left">
+            <div>
+              <h3>Nghĩa rộng</h3>
+              <p>Toàn bộ đời sống trí tuệ và tâm lý của một cơ thể sống: động cơ, <strong>cảm xúc</strong>, hành vi, tri
+                giác, nhận thức.</p>
+            </div>
+            <div>
+              <h3>Nghĩa hẹp</h3>
+              <p>Các hoạt động nhận thức: tri giác, chú ý, tư duy, giải quyết vấn đề, ngôn ngữ, học tập, trí nhớ.</p>
+            </div>
+          </div>
+          <p class="text-light">Định nghĩa của Hội Tâm lý học Hoa Kỳ (American Psychological Association — APA)</p>
+
+        </section>
+
+        <section>
+          <h2>Não bộ vs. Tâm trí</h2>
+          <ul>
+            <li><strong>Não bộ</strong> chỉ một <strong>cơ quan vật chất</strong>. Có thể chỉ ra trên cơ thể.</li>
+            <li><strong>Tâm trí</strong> chỉ một <strong>tập hợp các quá trình</strong>. Ta chỉ có thể suy ra từ biểu hiện.
+            </li>
+          </ul>
+          <div class="warn-box"><span class="box-title">Lưu ý</span> Ví von “não = phần cứng, tâm trí = phần mềm” rất
+            tiện, nhưng không phải ai cũng đồng ý. John Searle phản đối cách hiểu này; tuần sau ta sẽ xem vì sao.</div>
+
+        </section>
+
+        <section>
+          <h2>Nhận thức (Cognition)</h2>
+          <p>Các quá trình giúp ta <strong>nhận biết</strong> và <strong>ý thức</strong> về thế giới: tri giác, hình
+            thành khái niệm, ghi nhớ, suy luận, phán đoán, tưởng tượng, giải quyết vấn đề.</p>
+          <div class="key-box"><span class="box-title">Ý quan trọng nhất</span> Theo cách phân chia truyền thống, tâm
+            trí gồm ba thành phần: nhận thức (<em>cognition</em>), cảm xúc (<em>affect</em>) và ý chí, động lực
+            (<em>conation</em>).</div>
+          <p class="text-light">Theo định nghĩa của Hiệp hội Tâm lý học Hoa Kỳ (APA)</p>
+
+        </section>
+
+        <section>
+          <h2>Nhận thức nằm trong tâm trí</h2>
+          <table class="compact-table">
+            <thead>
+              <tr>
+                <th>Thành phần</th>
+                <th>Đang đi trong rừng, bạn thấy một vật dài, uốn khúc trên lối đi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cognition</strong><br>nhận thức</td>
+                <td>Nhận ra: “Đó là một con rắn.”</td>
+              </tr>
+              <tr>
+                <td><strong>Affect</strong><br>cảm xúc</td>
+                <td>Cảm thấy sợ hãi</td>
+              </tr>
+              <tr>
+                <td><strong>Conation</strong><br>ý chí, động lực</td>
+                <td>Quyết định bỏ chạy</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="good-box"><span class="box-title">Ghi nhớ</span> Theo cách chia này: tâm trí = nhận thức + cảm xúc
+            + ý chí. Cả ba có thể diễn ra cùng lúc, nhưng khoa học nhận thức tách chúng ra để nghiên cứu.</div>
+
+        </section>
+
+        <section>
+          <h2>Hai hướng nghiên cứu về nhận thức</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div>
+          <p class="text-center"><em>"the action or faculty of knowing"</em> — Từ điển Oxford</p>
+          <div class="two-col">
+            <div>
+              <h3>Hành động (action)</h3>
+              <p>Nhận thức là một <strong>quá trình</strong>: cách ta tiếp nhận và hiểu sự vật.</p>
+              <p class="text-light">Hướng của tâm lý học nhận thức.</p>
+            </div>
+            <div>
+              <h3>Năng lực (faculty)</h3>
+              <p>Tâm trí chia thành các <strong>năng lực</strong>; nhận thức là một trong số đó.</p>
+              <p class="text-light">Hướng của Chomsky và của kiến trúc nhận thức.</p>
+            </div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Các khái niệm liên quan</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div>
+          <table class="compact-table">
+            <thead>
+              <tr>
+                <th>Khái niệm</th>
+                <th>Gắn với</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nhận biết (awareness)</td>
+                <td>Ý thức (consciousness)</td>
+              </tr>
+              <tr>
+                <td>Trí thông minh (intelligence)</td>
+                <td>Hiểu nhanh, xử lý thông tin và suy luận sắc bén</td>
+              </tr>
+              <tr>
+                <td>Trực giác (intuition)</td>
+                <td>Thấu hiểu tức thời</td>
+              </tr>
+              <tr>
+                <td>Sự quen biết cá nhân (personal acquaintance)</td>
+                <td>Tri thức xã hội</td>
+              </tr>
+              <tr>
+                <td>Nhận ra (recognition)</td>
+                <td>Phân loại; xem lại và điều chỉnh</td>
+              </tr>
+              <tr>
+                <td>Kỹ năng (skill)</td>
+                <td>Suy luận; tri thức thực hành; chuyên môn</td>
+              </tr>
+              <tr>
+                <td>Hiểu (understanding)</td>
+                <td>Phán đoán, ra quyết định; lĩnh hội</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="text-light">Nguồn: bảng 1.1, sách <em>Cognition</em>, John G. Benjafield và cộng sự, chương
+            "Introduction".</p>
+
+        </section>
+
+        <section>
+          <h2>Tóm tắt</h2>
+          <ul>
+            <li><strong>Não bộ</strong> — một cơ quan trong cơ thể.</li>
+            <li><strong>Tâm trí</strong> — tập hợp các quá trình tâm lý và trí tuệ.</li>
+            <li><strong>Nhận thức</strong> — một trong ba thành phần của tâm trí, liên quan đến cách chúng ta tiếp nhận, hiểu và sử dụng thông tin.</li>
+          </ul>
+          <div class="key-box"><span class="box-title">Quan trọng</span> Nhận thức ⊂ Tâm trí. Không phải Nhận thức = Tâm
+            trí.</div>
+
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1><span class="text-light">2.</span><br>Các lĩnh vực <br> nghiên cứu não bộ</h1>
+          <p class="text-light">Ai nghiên cứu não bộ — và mỗi lĩnh vực đặt câu hỏi gì?</p>
+
+        </section>
+
+        <section>
+          <h2>Khoa học não bộ</h2>
+          <ul>
+            <li>Nghiên cứu não bộ là một phần trọng tâm của <strong>khoa học thần kinh</strong>
+              (<em>neuroscience</em>).</li>
+            <li>Phạm vi: từ hoạt động của nơ-ron đến hoạt động của toàn bộ não.</li>
+            <li>Câu hỏi: não hoạt động và thay đổi ra sao khi ta học, lão hóa hoặc mắc bệnh?</li>
+          </ul>
+          <p class="text-light">Não là một <strong>cơ quan vật chất</strong>: có thể quan sát, đo đạc và chụp ảnh.</p>
+
+        </section>
+
+        <section>
+          <h2>Nghiên cứu não ở nhiều cấp độ</h2>
+          <p>Mỗi cấp độ trả lời một nhóm câu hỏi khác nhau.</p>
+          <div class="pipeline">
+            <div class="stage">
+              <div class="stage-title">Phân tử, tế bào</div>
+              <div class="stage-desc">gen, protein</div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="stage">
+              <div class="stage-title">Mạch thần kinh</div>
+              <div class="stage-desc">nơ-ron phối hợp</div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="stage stage-highlight">
+              <div class="stage-title">Nhận thức</div>
+              <div class="stage-desc">tư duy, ngôn ngữ, trí nhớ</div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="stage">
+              <div class="stage-title">Lâm sàng</div>
+              <div class="stage-desc">bệnh và phục hồi</div>
+            </div>
+          </div>
+          <div class="key-box"><span class="box-title">Liên hệ với CNTT</span> Giống như khi gỡ lỗi một hệ thống: mỗi
+            cấp độ cho ta một loại thông tin.</div>
+
+        </section>
+
+        <section>
+          <h2>Tám nhánh của khoa học thần kinh</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div>
+          <table class="compact-table">
+            <tr>
+              <th>Nhánh</th>
+              <th>Nghiên cứu gì?</th>
+            </tr>
+            <tr>
+              <td>Phân tử &amp; tế bào <span class="text-light">(molecular &amp; cellular)</span></td>
+              <td>Gen và protein ảnh hưởng đến nơ-ron ra sao</td>
+            </tr>
+            <tr>
+              <td>Di truyền thần kinh <span class="text-light">(neurogenetics)</span></td>
+              <td>Gen ảnh hưởng đến hệ thần kinh ra sao</td>
+            </tr>
+            <tr>
+              <td>Sinh lý thần kinh <span class="text-light">(neurophysiology)</span></td>
+              <td>Hệ thần kinh hoạt động như thế nào</td>
+            </tr>
+            <tr>
+              <td>Giác quan <span class="text-light">(sensory)</span></td>
+              <td>Não tiếp nhận và xử lý tín hiệu giác quan</td>
+            </tr>
+            <tr>
+              <td>Hành vi <span class="text-light">(behavioral)</span></td>
+              <td>Hoạt động não liên quan đến hành vi ra sao</td>
+            </tr>
+            <tr>
+              <td><strong class="text-blue">Khoa học thần kinh nhận thức</strong> <span
+                  class="text-light">(cognitive neuroscience)</span></td>
+              <td><strong class="text-blue">Cơ chế thần kinh của tư duy, ngôn ngữ và trí nhớ</strong></td>
+            </tr>
+            <tr>
+              <td>Phát triển <span class="text-light">(developmental)</span></td>
+              <td>Não hình thành và thay đổi theo thời gian</td>
+            </tr>
+            <tr>
+              <td>Lâm sàng <span class="text-light">(clinical)</span></td>
+              <td>Chẩn đoán, điều trị và phục hồi</td>
+            </tr>
+          </table>
+
+        </section>
+
+        <section>
+          <h2>Tâm lý học nhận thức (cognitive psychology)</h2>
+          <ul>
+            <li><strong>Nghiên cứu:</strong> tri giác, chú ý, trí nhớ, suy luận, ngôn ngữ và ra quyết định.</li>
+            <li><strong>Dữ liệu:</strong> câu trả lời của người tham gia — nhanh hay chậm, đúng hay sai.</li>
+          </ul>
+          <div class="key-box"><span class="box-title">Ví dụ</span> Yêu cầu người tham gia nhớ một dãy số, rồi kiểm tra
+            họ còn nhớ được bao nhiêu số sau vài giây.</div>
+
+        </section>
+
+        <section>
+          <h2>Khoa học thần kinh nhận thức (cognitive neuroscience)</h2>
+          <ul>
+            <li><strong>Nghiên cứu:</strong> hoạt động của não tạo nên tri giác, trí nhớ, ngôn ngữ và ra quyết định như
+              thế nào.</li>
+            <li><strong>Dữ liệu:</strong> kết quả hành vi kết hợp với EEG, fMRI hoặc dữ liệu tổn thương não.</li>
+          </ul>
+          <div class="key-box"><span class="box-title">Ví dụ</span> Vẫn dùng bài nhớ dãy số, nhưng đo thêm hoạt động
+            của não trong lúc người tham gia ghi nhớ.</div>
+
+        </section>
+
+        <section>
+          <h2>Khoa học nhận thức</h2>
+          <p><strong>Cùng một câu hỏi:</strong> Con người hiểu một câu nói như thế nào?</p>
+          <ul>
+            <li><strong>Tâm lý học</strong> quan sát cách con người trả lời.</li>
+            <li><strong>Khoa học thần kinh nhận thức</strong> kết hợp hành vi với phép đo hoạt động não.</li>
+            <li><strong>Ngôn ngữ học và TTNT</strong> phân tích ngôn ngữ và xây dựng mô hình.</li>
+          </ul>
+          <p class="text-light">Khoa học nhận thức (<em>cognitive science</em>) kết hợp các góc nhìn này.</p>
+
+        </section>
+        <section>
+          <h2>Ba lĩnh vực liên hệ với nhau thế nào?</h2>
+          <figure class="fig">
+            <svg viewBox="0 0 980 430" style="width:92%; display:block; margin:0 auto;"
+              xmlns="http://www.w3.org/2000/svg" role="img"
+              aria-labelledby="cogsci-relationship-title cogsci-relationship-desc">
+              <title id="cogsci-relationship-title">Ba lĩnh vực cùng nghiên cứu nhận thức</title>
+              <desc id="cogsci-relationship-desc">Tâm lý học nhận thức đóng góp dữ liệu hành vi; khoa học thần kinh nhận
+                thức đóng góp dữ liệu hành vi và hoạt động não; khoa học nhận thức kết hợp nhiều ngành để nghiên cứu tâm
+                trí.</desc>
+              <defs>
+                <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+                  orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#2A7291" />
+                </marker>
+              </defs>
+
+              <rect x="250" y="18" width="480" height="122" rx="18" fill="#EAF6F8" stroke="#2A7291"
+                stroke-width="3" />
+              <text x="490" y="57" text-anchor="middle" font-size="25" font-weight="bold" fill="#2A7291">KHOA HỌC NHẬN
+                THỨC</text>
+              <text x="490" y="84" text-anchor="middle" font-size="15" fill="#2A7291">Cognitive science</text>
+              <text x="490" y="116" text-anchor="middle" font-size="18" fill="#222">Kết hợp nhiều ngành để nghiên cứu
+                tâm trí</text>
+
+              <path d="M 235 245 L 390 141" fill="none" stroke="#2A7291" stroke-width="3"
+                marker-end="url(#arrow-blue)" />
+              <path d="M 745 245 L 590 141" fill="none" stroke="#2A7291" stroke-width="3"
+                marker-end="url(#arrow-blue)" />
+              <text x="490" y="205" text-anchor="middle" font-size="18" font-weight="bold" fill="#2A7291">cùng đóng góp
+                vào</text>
+
+              <rect x="25" y="245" width="420" height="150" rx="18" fill="#E8890C" fill-opacity="0.10"
+                stroke="#E8890C" stroke-width="3" />
+              <text x="235" y="281" text-anchor="middle" font-size="21" font-weight="bold" fill="#C97508">TÂM LÝ HỌC
+                NHẬN THỨC</text>
+              <text x="235" y="307" text-anchor="middle" font-size="14" fill="#C97508">Cognitive psychology</text>
+              <text x="235" y="344" text-anchor="middle" font-size="18" fill="#222">Hỏi: Tâm trí hoạt động ra sao?</text>
+              <text x="235" y="375" text-anchor="middle" font-size="18" font-weight="bold" fill="#C97508">Dữ liệu: hành
+                vi</text>
+
+              <rect x="535" y="245" width="420" height="150" rx="18" fill="#2E8B57" fill-opacity="0.10"
+                stroke="#2E8B57" stroke-width="3" />
+              <text x="745" y="274" text-anchor="middle" font-size="19" font-weight="bold" fill="#2E8B57">KHOA HỌC THẦN
+                KINH</text>
+              <text x="745" y="298" text-anchor="middle" font-size="19" font-weight="bold"
+                fill="#2E8B57">NHẬN THỨC</text>
+              <text x="745" y="322" text-anchor="middle" font-size="14" fill="#2E8B57">Cognitive neuroscience</text>
+              <text x="745" y="351" text-anchor="middle" font-size="18" fill="#222">Hỏi: Cơ chế thần kinh nào?</text>
+              <text x="745" y="378" text-anchor="middle" font-size="18" font-weight="bold" fill="#2E8B57">Dữ liệu: hành
+                vi + hoạt động não</text>
+            </svg>
+            <figcaption class="caption">Sơ đồ đơn giản hóa; ranh giới giữa các lĩnh vực không hoàn toàn cố định.
+            </figcaption>
+          </figure>
+
+        </section>
+
+        <section>
+          <h2>Phân biệt ba lĩnh vực</h2>
+          <ol>
+            <li><strong>Khoa học nhận thức</strong> là khung liên ngành rộng nhất.</li>
+            <li><strong>Tâm lý học nhận thức</strong> chủ yếu dùng dữ liệu hành vi.</li>
+            <li><strong>Khoa học thần kinh nhận thức</strong> kết hợp dữ liệu hành vi và dữ liệu não.</li>
+          </ol>
+          <div class="warn-box"><span class="box-title">Lỗi hay gặp</span> Đừng nói ngược: “Khoa học nhận thức là một
+            nhánh của khoa học thần kinh.”</div>
+
+        </section>
+
+        <section>
+          <h2>Phân biệt bằng câu hỏi và dữ liệu</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div>
+          <table class="compact-table">
+            <tr>
+              <th></th>
+              <th>Hỏi gì</th>
+              <th>Dữ liệu dùng</th>
+            </tr>
+            <tr>
+              <td><strong class="text-orange">Tâm lý học nhận thức</strong></td>
+              <td>Các quá trình tâm trí hoạt động ra sao</td>
+              <td>Thời gian phản ứng, độ chính xác, câu trả lời</td>
+            </tr>
+            <tr>
+              <td><strong class="text-green">Khoa học thần kinh nhận thức</strong></td>
+              <td>Cơ chế thần kinh của nhận thức</td>
+              <td>Ảnh não, EEG, hoạt động nơ-ron và dữ liệu hành vi</td>
+            </tr>
+            <tr>
+              <td><strong class="text-blue">Khoa học nhận thức</strong></td>
+              <td>Tâm trí và trí thông minh nói chung</td>
+              <td>Dữ liệu và mô hình từ nhiều ngành</td>
+            </tr>
+          </table>
+
+        </section>
+
+        <section>
+          <h2>Sáu ngành của khoa học nhận thức</h2>
+          <figure class="fig">
+            <img src="img/sau-nganh-khoa-hoc-nhan-thuc.svg"
+              alt="Sáu ngành kết nối với nhau: triết học, tâm lý học, ngôn ngữ học, khoa học máy tính, nhân chủng học và khoa học thần kinh"
+              style="width:76%">
+            <figcaption class="caption"><strong>Quỹ Sloan (1978):</strong> mỗi đường nối biểu thị một hướng nghiên cứu
+              liên ngành đã tồn tại vào thời điểm đó.</figcaption>
+          </figure>
+
+        </section>
+
+        <section>
+          <h2>Từ khoa học máy tính đến TTNT</h2>
+          <p><strong>TTNT là một nhánh của khoa học máy tính.</strong> Nó mô hình hóa những năng lực mà khoa học nhận
+            thức muốn giải thích.</p>
+          <figure class="fig">
+            <img src="img/ttnt-ket-noi-may-tinh-va-nhan-thuc.svg"
+              alt="Khoa học máy tính hình thành nhánh trí tuệ nhân tạo; trí tuệ nhân tạo cung cấp mô hình tính toán cho khoa học nhận thức"
+              style="width:82%">
+            <figcaption class="caption">Mô hình TTNT giúp kiểm nghiệm các giả thuyết về tâm trí.</figcaption>
+          </figure>
+
+        </section>
+
+      </section>
+
+      <section>
+        <section>
+          <h1><span class="text-light">3.</span><br>Lịch sử nghiên cứu não bộ</h1>
+          <p class="text-light">Từ suy đoán về chức năng đến quan sát và đo đạc.</p>
+          <div class="slide-badge-row"><span class="history-date">Thế kỷ 4 TCN → thế kỷ 17</span></div>
+
+        </section>
+
+        <section>
+          <h2>Steno: não bộ vẫn là một ẩn số</h2>
+          <div class="slide-badge-row"><span class="history-date">1665</span></div>
+          <div class="two-col two-col--wide-right">
+            <figure style="margin:0; text-align:center">
+              <img src="img/nicolaus-steno-portrait.png" alt="Chân dung Nicolaus Steno (1638–1686)"
+                style="width:78%; max-height:300px; object-fit:contain">
+              <figcaption class="caption person-caption"><strong>Chân phước Nicolaus Steno</strong> (1638–1686)<br>
+                Linh mục · Giám mục · Bác sĩ<br>
+                Nhà địa chất học · Nhà khoa học thần kinh · Nhà giải phẫu học</figcaption>
+            </figure>
+            <div>
+              <blockquote class="historical-quote">
+                <p>Bộ não — <strong>kiệt tác của tạo hóa</strong> — với chúng ta gần như vẫn là
+                  <strong>một ẩn số</strong>.</p>
+                <footer><cite>Bài giảng về giải phẫu não</cite> · Paris</footer>
+              </blockquote>
+            </div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Từ Aristotle đến Steno</h2>
+          <div class="slide-badge-row"><span class="history-date">Thế kỷ 4 TCN → thế kỷ 17</span></div>
+          <div class="history-timeline" aria-label="Dòng thời gian các mốc chính trong lịch sử nghiên cứu não bộ">
+            <div class="timeline-event">
+              <div class="timeline-date">Thế kỷ 4 TCN</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-name">Aristotle</div>
+              <div class="timeline-note">Tâm trí ở tim</div>
+            </div>
+            <div class="timeline-event">
+              <div class="timeline-date">Thế kỷ 3 TCN</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-name">Herophilus &amp;<br>Erasistratus</div>
+              <div class="timeline-note">Giải phẫu não người</div>
+            </div>
+            <div class="timeline-event">
+              <div class="timeline-date">Thế kỷ 2</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-name">Galen</div>
+              <div class="timeline-note">Não điều khiển cảm giác và vận động</div>
+            </div>
+            <div class="timeline-event">
+              <div class="timeline-date">Thế kỷ 5–15</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-name">Thuyết não thất</div>
+              <div class="timeline-note">Gán chức năng cho ba khoang</div>
+            </div>
+            <div class="timeline-event">
+              <div class="timeline-date">1508–1543</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-name">Leonardo da Vinci<br>&amp; Vesalius</div>
+              <div class="timeline-note">Quan sát cấu trúc trực tiếp</div>
+            </div>
+            <div class="timeline-event">
+              <div class="timeline-date">1664–1669</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-name">Willis &amp; Steno</div>
+              <div class="timeline-note">Quan sát và đo đạc</div>
+            </div>
+          </div>
+          <p class="history-timeline-summary">Suy đoán → giải phẫu → đo đạc</p>
+
+        </section>
+
+        <section>
+          <h2>Aristotle: tâm trí nằm ở tim</h2>
+          <div class="slide-badge-row"><span class="history-date">Thế kỷ 4 TCN</span></div>
+          <ul>
+            <li>Ông cho rằng tim tạo ra cảm xúc và tư duy; não chỉ có nhiệm vụ làm mát máu.</li>
+            <li>Lý do: tim đập nhanh khi ta xúc động, còn não thì lạnh và không co bóp.</li>
+          </ul>
+          <div class="key-box"><span class="box-title">Bài học</span> Aristotle sai về vai trò của não, nhưng suy luận
+            từ những dấu hiệu ông quan sát được.</div>
+
+        </section>
+
+        <section>
+          <h2>Aristotle và khái niệm “giác quan chung”</h2>
+          <div class="slide-badge-row"><span class="history-date">Thế kỷ 4 TCN</span><span
+              class="self-study-badge">📖 Tự học</span></div>
+          <ul>
+            <li>Aristotle gọi khả năng kết hợp thông tin từ nhiều giác quan là <strong>giác quan chung</strong>
+              (<em>sensus communis</em>).</li>
+            <li>Câu hỏi ấy vẫn còn hiện đại: não gộp nhiều nguồn tín hiệu bằng cách nào?</li>
+          </ul>
+          <div class="key-box"><span class="box-title">Liên hệ với CNTT</span> Đây là bài toán hợp nhất đa phương thức
+            (<em>multimodal fusion</em>).</div>
+
+        </section>
+
+        <section>
+          <h2>Herophilus và Erasistratus</h2>
+          <div class="slide-badge-row"><span class="history-date">Thế kỷ 3 TCN</span><span
+              class="self-study-badge">📖 Tự học</span></div>
+          <ul>
+            <li>Hai thầy thuốc Hy Lạp làm việc tại Alexandria vào thế kỷ 3 TCN.</li>
+            <li>Họ giải phẫu cơ thể người và mô tả não, não thất, màng não cùng các dây thần kinh.</li>
+            <li>Họ phân biệt hai lớp màng não; tên Latin tương ứng với <strong>màng mềm</strong> (<em>pia mater</em>) và
+              <strong>màng cứng</strong> (<em>dura mater</em>) xuất hiện về sau.</li>
+          </ul>
+
+        </section>
+
+        <section>
+          <h2>Galen nhận ra vai trò của não</h2>
+          <div class="slide-badge-row"><span class="history-date">Thế kỷ 2 SCN</span></div>
+          <div class="two-col two-col--wide-left">
+            <div>
+              <ul>
+                <li>Qua chấn thương của các đấu sĩ, Galen thấy tổn thương não làm mất cảm giác hoặc vận động.</li>
+                <li>Ông kết luận não, không phải tim, điều khiển hai chức năng này.</li>
+                <li>Nhưng ông vẫn cho rằng hoạt động của não do <strong>tinh khí động vật</strong>
+                  (<em>animal spirits</em>) trong các não thất tạo ra.</li>
+              </ul>
+            </div>
+            <div>
+              <figure class="fig">
+                <img src="img/lec01-image20.png" alt="Bản khắc đầu người với hộp sọ mở, lộ toàn bộ bề mặt não"
+                  style="width:88%">
+                <figcaption class="caption">Vesalius kiểm tra lại Galen bằng giải phẫu trực tiếp (1543).</figcaption>
+              </figure>
+            </div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Galen xác định đúng vai trò của não nhưng giải thích sai cơ chế</h2>
+          <div class="slide-badge-row"><span class="history-date">Thế kỷ 4 TCN → thế kỷ 2 SCN</span></div>
+          <table class="compact-table">
+            <tr>
+              <th></th>
+              <th>Tâm trí ở đâu?</th>
+              <th>Giải thích bằng gì?</th>
+            </tr>
+            <tr>
+              <td><strong>Aristotle</strong></td>
+              <td>Tim — <span class="text-red">sai</span></td>
+              <td>Khí sống (<em>pneuma</em>)</td>
+            </tr>
+            <tr>
+              <td><strong>Galen</strong></td>
+              <td>Não — <span class="text-green">đúng</span></td>
+              <td>Tinh khí động vật — <span class="text-red">sai</span></td>
+            </tr>
+          </table>
+          <div class="key-box"><span class="box-title">Bài học</span> Đúng về vị trí chưa có nghĩa là đúng về cơ chế.
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Thuyết ba não thất thời Trung cổ</h2>
+          <div class="slide-badge-row"><span class="history-date">Thế kỷ 5–15</span></div>
+          <p>Mỗi não thất được gán một chức năng:</p>
+          <ul>
+            <li>Não thất <strong>trước</strong> — tiếp nhận và tưởng tượng.</li>
+            <li>Não thất <strong>giữa</strong> — suy luận.</li>
+            <li>Não thất <strong>sau</strong> — ghi nhớ.</li>
+          </ul>
+          <div class="good-box"><span class="box-title">Ghi nhớ</span> Trước · giữa · sau = tưởng tượng · suy luận ·
+            ghi nhớ. Đây là một ví dụ sớm của tư duy định khu chức năng.</div>
+
+        </section>
+
+        <section>
+          <h2>Người xưa gán chức năng cho ba não thất</h2>
+          <div class="slide-badge-row"><span class="history-date">Thế kỷ 5–15</span><span
+              class="self-study-badge">📖 Tự học</span></div>
+          <div class="pipeline pipeline-wide">
+            <div class="stage">
+              <div class="stage-title">Não thất trước</div>
+              <div class="stage-desc">Tiếp nhận<br>và tưởng tượng</div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="stage">
+              <div class="stage-title">Não thất giữa</div>
+              <div class="stage-desc">Suy luận</div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="stage">
+              <div class="stage-title">Não thất sau</div>
+              <div class="stage-desc">Ghi nhớ</div>
+            </div>
+          </div>
+          <p class="text-light">Chuỗi xử lý nghe hợp lý, nhưng vị trí các chức năng trong não là sai.</p>
+
+        </section>
+
+        <section>
+          <h2>Các hình vẽ dựa trên lý thuyết thay vì quan sát</h2>
+          <div class="slide-badge-row"><span class="history-date">Thế kỷ 5–15</span><span
+              class="self-study-badge">📖 Tự học</span></div>
+          <div class="two-col">
+            <figure class="fig">
+              <img src="img/lec01-image21.png"
+                alt="Hai bản khắc gỗ đầu người thời Trung cổ, các khoang não được chia ô và ghi chú chức năng"
+                style="width:100%">
+              <figcaption class="caption">Tên chức năng được đặt vào từng khoang trong sọ.</figcaption>
+            </figure>
+            <figure class="fig">
+              <img src="img/lec01-image22.png"
+                alt="Bản vẽ đầu người nhìn nghiêng, ba khoang não được vẽ thành ba ngăn nối tiếp nhau"
+                style="width:78%">
+              <figcaption class="caption">Ba khoang nối tiếp phản ánh lý thuyết đã có sẵn.</figcaption>
+            </figure>
+          </div>
+
+        </section>
+        <section>
+          <h2>Thuyết não thất sai ở đâu?</h2>
+          <div class="slide-badge-row"><span class="history-date">Đối chiếu với hiện nay</span></div>
+          <div class="warn-box"><span class="box-title">Sai về vị trí</span> Não thất là các khoang chứa dịch não tủy;
+            những chức năng trên không diễn ra trong các khoang ấy.</div>
+          <p>Điều đáng chú ý: họ đã thử gắn từng chức năng với một vị trí cụ thể.</p>
+          <p class="text-light">Ngày nay, ta gọi cách đặt câu hỏi ấy là <strong>định khu chức năng</strong>
+            (<em>functional localization</em>).</p>
+
+        </section>
+
+        <section>
+          <h2>Các học giả bất đồng vì thiếu dữ liệu</h2>
+          <div class="slide-badge-row"><span class="history-date">Thế kỷ 11–14</span><span
+              class="self-study-badge">📖 Tự học</span></div>
+          <ul>
+            <li>Các học giả đặt “giác quan chung” ở những vị trí khác nhau trong não.</li>
+            <li>Họ có thể so sánh lập luận, nhưng chưa có quan sát giải phẫu để kiểm tra.</li>
+          </ul>
+          <div class="key-box"><span class="box-title">Vấn đề</span> Không có dữ liệu mới, tranh luận không thể ngã
+            ngũ.</div>
+
+        </section>
+
+        <section>
+          <h2>Leonardo da Vinci tạo mẫu đúc não thất</h2>
+          <div class="slide-badge-row"><span class="history-date">Khoảng 1508–1509</span><span
+              class="self-study-badge">📖 Tự học</span></div>
+          <div class="two-col two-col--wide-left">
+            <div>
+              <ul>
+                <li>Não thất nằm sâu trong mô mềm nên khó quan sát nguyên dạng.</li>
+                <li>Leonardo da Vinci bơm sáp lỏng vào các não thất của một bộ não đã được lấy ra khỏi cơ thể.</li>
+                <li>Sáp đông thành mẫu ba chiều của các não thất.</li>
+              </ul>
+            </div>
+            <figure class="fig">
+              <img src="img/lec01-image23.png"
+                alt="Bản vẽ của Leonardo da Vinci: đầu người bổ dọc, các lớp sọ và não thất, kèm ghi chú viết ngược"
+                style="width:80%">
+              <figcaption class="caption">Bản vẽ thí nghiệm của Leonardo da Vinci, khoảng 1508–1509.</figcaption>
+            </figure>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Berengario da Carpi kiểm tra lại mô tả của Galen</h2>
+          <div class="slide-badge-row"><span class="history-date">1521</span><span
+              class="self-study-badge">📖 Tự học</span></div>
+          <div class="two-col--wide-left two-col">
+            <div>
+              <ul>
+                <li><strong>Không tìm thấy mạng mạch máu</strong> mà Galen mô tả ở đáy não người.</li>
+                <li><strong>Dây thần kinh là cấu trúc đặc</strong>, không phải ống dẫn “tinh khí”.</li>
+              </ul>
+              <div class="key-box">Hai quan sát đặt nghi vấn về học thuyết “tinh khí” của Galen.</div>
+            </div>
+            <figure class="fig">
+              <img src="img/berengario-brain-1523.webp"
+                alt="Hai hình giải phẫu não nhìn từ trên, cho thấy các não thất, trong sách của Berengario da Carpi năm 1523">
+              <figcaption class="caption">Hình não trong sách của Berengario, 1523. Nguồn: NLM.</figcaption>
+            </figure>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Vesalius kiểm tra cấu tạo não người</h2>
+          <div class="slide-badge-row"><span class="history-date">1543</span></div>
+          <ul>
+            <li>Cừu và bò có <strong>mạng động mạch nhỏ đan ở đáy não</strong> (<em>rete mirabile</em>).</li>
+            <li>Galen cho rằng mạng này có ở người và tạo “tinh khí”.</li>
+            <li><strong>Andreas Vesalius</strong> giải phẫu và xác nhận: mạng mạch ấy <strong>không có ở người</strong>.</li>
+          </ul>
+          <div class="key-box"><span class="box-title">Bài học</span> Cấu tạo quan sát được ở động vật chưa chắc
+            cũng có ở người.</div>
+
+        </section>
+
+        <section>
+          <h2>“Tinh khí” không còn là lời giải</h2>
+          <div class="slide-badge-row"><span class="history-date">1664–1669</span></div>
+          <ul>
+            <li><strong>Thomas Willis</strong> (1664) và <strong>Nicolaus Steno</strong> (1669) bác bỏ ý tưởng rằng não
+              thất chứa “tinh khí động vật”.</li>
+            <li>Theo họ, một lời giải thích phải dẫn đến điều có thể quan sát hoặc kiểm tra.</li>
+          </ul>
+          <div class="key-box"><span class="box-title">Bài học</span> Đặt tên cho điều chưa biết không phải là giải
+            thích.</div>
+
+        </section>
+
+        <section>
+          <h2>Thomas Willis khảo sát mạch máu não</h2>
+          <div class="slide-badge-row"><span class="history-date">1664</span><span
+              class="self-study-badge">📖 Tự học</span></div>
+          <ul>
+            <li>Nhóm của <strong>Thomas Willis</strong> bơm chất màu vào động mạch cảnh trên mẫu giải phẫu sau tử vong.</li>
+            <li>Chất màu đi theo lòng mạch, làm rõ <strong>đường đi và chỗ nối</strong> giữa các mạch máu não.</li>
+          </ul>
+          <div class="key-box"><span class="box-title">Cách hình dung</span> Giống bơm nước màu vào mạng ống
+            để thấy các nhánh nối nhau.</div>
+
+        </section>
+
+        <section>
+          <h2>Tra cứu hình giải phẫu</h2>
+          <div class="slide-badge-row"><span class="history-date">Thế kỷ 16</span><span
+              class="self-study-badge">📖 Tự học</span></div>
+          <div class="two-col two-col--wide-left">
+            <div>
+              <ul>
+                <li><strong>Bartolomeo Eustachio</strong> đánh số ở mép hình giải phẫu.</li>
+                <li>Người đọc dò các mốc ngang, dọc để tìm đúng cấu trúc được mô tả trong sách.</li>
+              </ul>
+              <div class="key-box">Giống tra vị trí trên bản đồ.</div>
+            </div>
+            <figure class="fig">
+              <img src="img/lec01-image25.png"
+                alt="Bản khắc của Bartolomeo Eustachio về hệ thần kinh, có thang số chia độ ở mép hình để tra vị trí"
+                style="width:100%; max-height:320px; margin:0">
+              <figcaption class="caption">Thang số ở mép hình giúp người đọc tra vị trí.</figcaption>
+            </figure>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Từ suy đoán sang quan sát và đo đạc</h2>
+          <div class="slide-badge-row"><span class="history-date">Thế kỷ 16–17</span></div>
+          <div class="two-col">
+            <div>
+              <div class="good-box"><span class="box-title">Ghi nhớ</span> Từ thời Phục hưng, mô tả về não ngày càng
+                phải dựa trên mẫu vật, quan sát và phép đo.</div>
+              <p class="text-light">Suy luận vẫn cần thiết, nhưng phải đi cùng bằng chứng có thể kiểm tra.</p>
+            </div>
+            <figure class="fig">
+              <img src="img/lec01-image26.png"
+                alt="Bản khắc Vesalius: nền não nhìn từ dưới, kèm chú giải chữ Latin dày đặc" style="width:85%">
+              <figcaption class="caption">Vesalius, 1543: hình giải phẫu trực tiếp khác hẳn sơ đồ ba khoang thời Trung
+                cổ.</figcaption>
+            </figure>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Liên hệ với TTNT:<br>Giải thích thế nào là đủ?</h2>
+          <div class="slide-badge-row"><span class="history-date">Hiện nay</span></div>
+          <div class="question-box">
+            <div class="question-title">Câu hỏi</div>
+            <div class="question-content">Nếu nói một mô hình “hiểu” hoặc “biết suy luận”, ta sẽ đo và kiểm tra nhận
+              định đó bằng cách nào?</div>
+          </div>
+          <p class="text-light">Luôn hỏi: <em>“Ta quan sát bằng gì? Kết quả nào sẽ cho thấy giả thuyết sai?”</em></p>
+
+        </section>
+
+        <section>
+          <h2>Thông tin nào cần để giải bài toán?</h2>
+          <div class="slide-badge-row"><span class="history-date">Hiện nay</span></div>
+          <div class="two-col">
+            <div>
+              <h4 class="text-blue">Đề A</h4>
+              <p>Lan có 12 quả táo, mua thêm 8 quả.</p>
+              <p>Lan có tất cả bao nhiêu quả táo?</p>
+            </div>
+            <div>
+              <h4 class="text-blue">Đề B</h4>
+              <p>Lan có 12 quả táo, mua thêm 8 quả.</p>
+              <p><strong>Trong 8 quả vừa mua, có 3 quả nhỏ hơn những quả còn lại.</strong></p>
+              <p>Lan có tất cả bao nhiêu quả táo?</p>
+            </div>
+          </div>
+          <p class="caption">Ví dụ để thử mô hình, chưa phải kết quả thực nghiệm.</p>
+
+        </section>
+
+        <section>
+          <h2>Kết quả cho phép kết luận điều gì?</h2>
+          <div class="slide-badge-row"><span class="history-date">Hiện nay</span></div>
+          <ul>
+            <li>Cả hai đề đều có đáp án <strong>20 quả</strong>.</li>
+            <li>Nếu đề A đúng nhưng đề B trả lời <strong>17 quả</strong>, mô hình đã trừ 3 quả mà đề không yêu cầu bỏ đi.</li>
+            <li>Cần thử nhiều đề tương tự để biết lỗi có lặp lại hay không.</li>
+          </ul>
+          <div class="warn-box"><span class="box-title">Giới hạn của kết luận</span>
+            Một câu trả lời sai chưa đủ để kết luận mô hình hoàn toàn không biết suy luận.
+          </div>
+          <p class="caption">Tham khảo cách kiểm tra: <a href="https://arxiv.org/abs/2410.05229">GSM-Symbolic</a>,
+            Iman Mirzadeh và cộng sự (2024).</p>
+
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1><span class="text-light">4.</span><br>Cách mạng nhận thức</h1>
+          <p class="text-light">Từ giữa thế kỷ 20, các nhà nghiên cứu dùng thí nghiệm và mô hình tính toán để giải thích tâm trí.</p>
+
+        </section>
+
+        <section>
+          <h2>Chủ nghĩa hành vi</h2>
+          <div class="slide-badge-row"><span class="history-date">Đầu đến giữa thế kỷ 20</span></div>
+          <p><strong>Chủ nghĩa hành vi</strong> (<em>behaviorism</em>) tập trung giải thích hành vi bằng môi trường và kinh nghiệm học tập.</p>
+          <ul>
+            <li>Ưu tiên những gì có thể quan sát và đo được.</li>
+            <li>Nghiên cứu kích thích, phản ứng và hậu quả của hành vi.</li>
+          </ul>
+          <p class="caption">Hai đại diện: John Watson và B. F. Skinner.</p>
+
+        </section>
+
+        <section>
+          <h2>Học qua liên kết và qua hậu quả</h2>
+          <div class="slide-badge-row"><span class="history-date">Đầu đến giữa thế kỷ 20</span><span class="self-study-badge">📖 Tự học</span></div>
+          <ul>
+            <li><strong>Ivan Pavlov:</strong> sau nhiều lần âm thanh đi kèm thức ăn, chó tiết nước bọt khi chỉ nghe âm thanh.</li>
+            <li><strong>B. F. Skinner:</strong> trong hộp thí nghiệm, chuột ấn cần gạt thì nhận được thức ăn. Sau nhiều lần, chuột ấn cần thường xuyên hơn.</li>
+          </ul>
+          <div class="key-box"><span class="box-title">Điều có thể đo</span>
+            Lượng nước bọt và số lần chuột ấn cần gạt cho thấy phản ứng thay đổi qua quá trình học.
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Liên hệ với học tăng cường</h2>
+          <div class="slide-badge-row"><span class="history-date">Đối chiếu với hiện nay</span></div>
+          <p><strong>Học tăng cường</strong> (<em>reinforcement learning</em>): tác nhân học cách hành động qua tương tác và tín hiệu phần thưởng.</p>
+          <p>Điểm liên hệ với Skinner: <strong>hậu quả của hành động ảnh hưởng đến cách hành động về sau.</strong></p>
+          <div class="question-box">
+            <div class="question-title">Câu hỏi</div>
+            <div class="question-content">Một chương trình học tốt nhờ phần thưởng có chứng minh rằng con người chỉ học theo cách đó không?</div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Thưởng và phạt có giải thích đủ không?</h2>
+          <div class="slide-badge-row"><span class="history-date">Giữa thế kỷ 20</span></div>
+          <ul>
+            <li>Trẻ có thể nói một câu chưa từng nghe nguyên vẹn.</li>
+            <li>Ta có thể nhớ đường dù không được thưởng khi học đường.</li>
+            <li>Ta dùng kinh nghiệm cũ để tìm cách giải một bài toán mới.</li>
+          </ul>
+          <div class="key-box"><span class="box-title">Câu hỏi nghiên cứu</span>
+            Con người lưu giữ và sử dụng kinh nghiệm như thế nào?
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Nghiên cứu sự chú ý khi trực radar</h2>
+          <div class="slide-badge-row"><span class="history-date">Thập niên 1940</span><span class="self-study-badge">📖 Tự học</span></div>
+          <p>Người trực radar có thể bỏ sót tín hiệu khi phải theo dõi màn hình trong thời gian dài.</p>
+          <ul>
+            <li>Đo tỷ lệ phát hiện đúng và tỷ lệ bỏ sót theo thời gian.</li>
+            <li>Thử thay đổi thời gian nghỉ hoặc cách trình bày tín hiệu.</li>
+          </ul>
+          <div class="key-box">Sự chú ý không nhìn thấy trực tiếp, nhưng có thể nghiên cứu qua kết quả thực hiện nhiệm vụ.</div>
+
+        </section>
+
+        <section>
+          <h2>Mô hình xử lý thông tin</h2>
+          <div class="slide-badge-row"><span class="history-date">Thập niên 1930 đến 1950</span></div>
+          <ul>
+            <li><strong>Alan Turing</strong> mô tả cách thực hiện phép tính bằng các bước xác định.</li>
+            <li><strong>Claude Shannon</strong> xây dựng cách đo lượng thông tin và giới hạn truyền tin.</li>
+            <li>Các nhà tâm lý học mô hình hóa cách con người tiếp nhận, lưu giữ và xử lý thông tin.</li>
+          </ul>
+          <div class="key-box">Mô hình phải dự đoán được kết quả thí nghiệm, chẳng hạn số mục nhớ đúng hoặc thời gian trả lời.</div>
+
+        </section>
+
+        <section>
+          <h2>Các công trình tiêu biểu năm 1956</h2>
+          <div class="slide-badge-row"><span class="history-date">1956</span></div>
+          <table class="compact-table">
+            <colgroup><col style="width: 46%"><col style="width: 30%"><col style="width: 24%"></colgroup>
+            <thead><tr><th>Công trình hoặc sự kiện</th><th>Tác giả / loại hình</th><th>Đóng góp</th></tr></thead>
+            <tbody>
+              <tr><td><a href="https://www-formal.stanford.edu/jmc/history/dartmouth/dartmouth.html" target="_blank" rel="noopener">Dartmouth Summer Research Project on Artificial Intelligence</a></td><td>Chương trình nghiên cứu hè</td><td>Đặt mục tiêu nghiên cứu TTNT</td></tr>
+              <tr><td><a href="https://www.rand.org/pubs/papers/P868.html" target="_blank" rel="noopener">The Logic Theory Machine: A Complex Information Processing System</a></td><td>Allen Newell và Herbert Simon<br>(báo cáo)</td><td>Chương trình chứng minh định lý</td></tr>
+              <tr><td><a href="https://cse.buffalo.edu/~rapaport/575/F01/miller56.html" target="_blank" rel="noopener">The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information</a></td><td>George Miller<br>(bài báo)</td><td>Giới hạn xử lý thông tin</td></tr>
+              <tr><td><a href="https://libcat.weber.edu/bib/892550" target="_blank" rel="noopener">A Study of Thinking</a></td><td>Jerome Bruner<br>và cộng sự (sách)</td><td>Cách hình thành khái niệm</td></tr>
+              <tr><td><a href="https://chomsky.info/wp-content/uploads/195609-.pdf" target="_blank" rel="noopener">Three Models for the Description of Language</a></td><td>Noam Chomsky<br>(bài báo)</td><td>So sánh các mô hình ngôn ngữ</td></tr>
+            </tbody>
+          </table>
+
+        </section>
+
+        <section>
+          <h2>Gom nhóm để dễ ghi nhớ</h2>
+          <div class="slide-badge-row"><span class="history-date">1956</span></div>
+          <p>Cùng một dãy chữ: <strong>H A N O I</strong></p>
+          <table class="compact-table">
+            <thead><tr><th>Cách ghi nhớ</th><th>Bạn cần nhớ gì?</th></tr></thead>
+            <tbody>
+              <tr><td>Nhớ từng chữ riêng lẻ</td><td>5 chữ cái: H, A, N, O, I.</td></tr>
+              <tr><td>Nhận ra tên Hà Nội</td><td>Một tên quen thuộc: HANOI.<br>Từ tên ấy, bạn có thể viết lại cả 5 chữ.</td></tr>
+            </tbody>
+          </table>
+          <div class="key-box"><strong>Gom nhóm</strong> (<em>chunking</em>): dùng kiến thức đã có để nhớ nhiều chi tiết như một khối. Khối ấy là một <strong>đơn vị ghi nhớ</strong> (<em>chunk</em>).</div>
+          <p>Theo <strong>George Miller</strong>, trong một số thí nghiệm, người tham gia nhớ lại ngay được khoảng <strong>5 đến 9 đơn vị (7 ± 2)</strong>. Kết quả còn tùy người và cách kiểm tra.</p>
+
+        </section>
+
+        <section>
+          <h2>Noam Chomsky nghiên cứu ngôn ngữ</h2>
+          <div class="slide-badge-row"><span class="history-date">1956 đến 1959</span></div>
+          <ul>
+            <li><strong>1956:</strong> so sánh các mô hình mô tả cấu trúc câu. <a href="https://chomsky.info/wp-content/uploads/195609-.pdf" target="_blank" rel="noopener" title="Three Models for the Description of Language (1956)">[Bài báo]</a></li>
+            <li><strong>1957:</strong> <a href="https://doi.org/10.1515/9783112316009" target="_blank" rel="noopener"><em>Syntactic Structures</em></a> trình bày ngữ pháp bằng các quy tắc tạo câu.</li>
+            <li><strong>1959:</strong> phê bình cách B. F. Skinner giải thích ngôn ngữ trong <em>Verbal Behavior</em>. <a href="https://chomsky.info/1967____/" target="_blank" rel="noopener" title="A Review of B. F. Skinner's Verbal Behavior (1959), bản in lại năm 1967">[Bài phê bình]</a></li>
+          </ul>
+          <div class="key-box">Tranh luận tập trung vào cách con người tạo và hiểu những câu chưa từng gặp.</div>
+
+        </section>
+
+        <section>
+          <h2>Hình thành cộng đồng nghiên cứu</h2>
+          <div class="slide-badge-row"><span class="history-date">1960 đến cuối thập niên 1970</span><span class="self-study-badge">📖 Tự học</span></div>
+          <ul>
+            <li><strong>1960:</strong> George Miller và Jerome Bruner lập Trung tâm Nghiên cứu Nhận thức tại Harvard.</li>
+            <li><strong>Thập niên 1970:</strong> Quỹ Alfred P. Sloan hỗ trợ hợp tác giữa các ngành nghiên cứu nhận thức.</li>
+          </ul>
+          <div class="key-box">Các trung tâm, chương trình đào tạo và tài trợ giúp những nhóm nghiên cứu làm việc cùng nhau.</div>
+
+        </section>
+
+        <section>
+          <h2>Cách mạng nhận thức thay đổi điều gì?</h2>
+          <div class="slide-badge-row"><span class="history-date">Từ giữa thế kỷ 20</span></div>
+          <ul>
+            <li>Không chỉ mô tả hành vi, mà còn giải thích quá trình tạo ra hành vi.</li>
+            <li>Dùng mô hình về trí nhớ, chú ý, ngôn ngữ và suy luận để đưa ra dự đoán.</li>
+            <li>Kiểm tra dự đoán bằng thí nghiệm và dữ liệu.</li>
+          </ul>
+          <div class="good-box"><span class="box-title">Tóm tắt</span>
+            Nghiên cứu tâm trí vẫn phải dựa vào bằng chứng có thể kiểm tra.
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Góc nhìn của người viết lịch sử</h2>
+          <div class="slide-badge-row"><span class="history-date">2003: nhìn lại thập niên 1950</span></div>
+          <p><strong>George Miller</strong> kể lại cách mạng nhận thức trong một <a href="https://www.cs.princeton.edu/~rit/geo/Miller.pdf" target="_blank" rel="noopener" title="The Cognitive Revolution: A Historical Perspective (2003), PDF">bài tổng quan năm 2003</a>.</p>
+          <p>Ông vừa là người viết, vừa là người tham gia những sự kiện ấy.</p>
+          <div class="question-box">
+            <div class="question-title">Câu hỏi</div>
+            <div class="question-content">Nếu hai người cùng kể lại một sự kiện họ từng tham gia, câu chuyện có giống nhau hoàn toàn không? Vì sao?</div>
+          </div>
+
+        </section>
+
+        <section>
+          <h2>Các mốc từ 1943 đến 1959</h2>
+          <div class="slide-badge-row"><span class="history-date">1943 đến 1959</span><span class="self-study-badge">📖 Tự học</span></div>
+          <table class="compact-table">
+            <thead><tr><th>Năm</th><th>Công trình</th></tr></thead>
+            <tbody>
+              <tr><th>1943</th><td>Warren McCulloch và Walter Pitts: mô hình nơ-ron bằng logic</td></tr>
+              <tr><th>1948</th><td>Claude Shannon: lý thuyết thông tin</td></tr>
+              <tr><th>1950</th><td>Alan Turing: phép thử đối thoại với máy</td></tr>
+              <tr><th>1956</th><td>George Miller: giới hạn trí nhớ; chương trình Dartmouth</td></tr>
+              <tr><th>1957, 1959</th><td>Noam Chomsky: ngữ pháp tạo câu và phê bình <em>Verbal Behavior</em></td></tr>
+            </tbody>
+          </table>
+
+        </section>
+
+        <section>
+          <h2>Các mốc từ 1960 đến 1980</h2>
+          <div class="slide-badge-row"><span class="history-date">1960 đến 1980</span><span class="self-study-badge">📖 Tự học</span></div>
+          <table class="compact-table">
+            <thead><tr><th>Năm</th><th>Công trình hoặc tổ chức</th></tr></thead>
+            <tbody>
+              <tr><th>1960</th><td>George Miller, Eugene Galanter và Karl Pribram:<br><a href="https://books.google.com/books/about/Plans_and_the_structure_of_behavior.html?id=3UgAAAAAMAAJ" target="_blank" rel="noopener" title="Thông tin sách và bản xem trước trên Google Books"><em>Plans and the Structure of Behavior</em></a></td></tr>
+              <tr><th>1965</th><td>George Mandler lập <a href="https://psychology.ucsd.edu/people/profiles/gmandler-in-memoriam.html" target="_blank" rel="noopener" title="Nguồn lịch sử từ Khoa Tâm lý học, UC San Diego">Trung tâm Xử lý Thông tin ở Người</a> tại UC San Diego</td></tr>
+              <tr><th>1967</th><td>Ulric Neisser xuất bản <a href="https://www.routledge.com/Cognitive-Psychology-Classic-Edition-1st-Edition/Neisser/p/book/9781848726932" target="_blank" rel="noopener" title="Trang nhà xuất bản, bản tái bản năm 2014; sách xuất bản lần đầu năm 1967"><em>Cognitive Psychology</em></a></td></tr>
+              <tr><th>Thập niên 1970</th><td><a href="https://www.cs.princeton.edu/~rit/geo/Miller.pdf" target="_blank" rel="noopener" title="George Miller (2003), The Cognitive Revolution: A Historical Perspective">Các chương trình hợp tác và đào tạo về nhận thức mở rộng</a></td></tr>
+            </tbody>
+          </table>
+
+        </section>
+
+        <section>
+          <h2>Liên hệ với kiến thức CNTT</h2>
+          <div class="slide-badge-row"><span class="history-date">Đối chiếu với hiện nay</span></div>
+          <ul>
+            <li>Mô hình của <strong>Warren McCulloch và Walter Pitts</strong> là một tiền đề của mạng nơ-ron nhân tạo.</li>
+            <li>Lý thuyết của <strong>Claude Shannon</strong> cung cấp khái niệm entropy để đo độ bất định.</li>
+            <li>Công trình của <strong>Noam Chomsky</strong> góp phần xây dựng lý thuyết ngôn ngữ hình thức.</li>
+          </ul>
+
+        </section>
+
+        <section>
+          <h2>Các hướng phát triển về sau</h2>
+          <div class="slide-badge-row"><span class="history-date">Từ thập niên 1980 đến nay</span></div>
+          <ul>
+            <li><strong>Mô hình tính toán:</strong> mô phỏng cách học và xử lý thông tin.</li>
+            <li><strong>Đo hoạt động não:</strong> tìm mối liên hệ với nhiệm vụ nhận thức.</li>
+            <li><strong>Kết hợp hai hướng:</strong> đối chiếu dự đoán của mô hình với dữ liệu về người.</li>
+          </ul>
+
+        </section>
+
+        <section>
+          <h2>Mô hình nhận thức bằng mạng nơ-ron</h2>
+          <div class="slide-badge-row"><span class="history-date">Thập niên 1980</span></div>
+          <p><strong>Chủ nghĩa liên kết</strong> (<em>connectionism</em>) dùng mạng các đơn vị đơn giản để mô hình hóa nhận thức.</p>
+          <ul>
+            <li>Nhiều đơn vị cùng tham gia biểu diễn và xử lý thông tin.</li>
+            <li>Học có thể làm thay đổi độ mạnh của các liên kết.</li>
+          </ul>
+          <div class="key-box">Mạng nơ-ron nhân tạo lấy cảm hứng từ não, không phải bản sao của não.</div>
+
+        </section>
+
+        <section>
+          <h2>Đo não và xây dựng mô hình nhận thức</h2>
+          <div class="slide-badge-row"><span class="history-date">Thập niên 1990</span></div>
+          <ul>
+            <li><strong>Chụp cộng hưởng từ chức năng (fMRI)</strong> giúp theo dõi tín hiệu liên quan đến hoạt động não khi làm nhiệm vụ.</li>
+            <li><strong>Nơ-ron gương</strong> được ghi nhận ở khỉ: đáp ứng khi thực hiện và khi quan sát một số hành động.</li>
+            <li><strong>ACT-R và Soar</strong> mô hình hóa cách trí nhớ, quy tắc và mục tiêu phối hợp để giải quyết nhiệm vụ.</li>
+          </ul>
+
+        </section>
+
+        <section>
+          <h2>Mở rộng mô hình và công cụ nghiên cứu</h2>
+          <div class="slide-badge-row"><span class="history-date">2000 đến 2014</span><span class="self-study-badge">📖 Tự học</span></div>
+          <table class="compact-table">
+            <thead><tr><th>Mốc</th><th>Ví dụ</th></tr></thead>
+            <tbody>
+              <tr><th>2000</th><td>Alan Baddeley bổ sung <a href="https://doi.org/10.1016/S1364-6613(00)01538-2" target="_blank" rel="noopener" title="Baddeley (2000): The episodic buffer: a new component of working memory?">bộ đệm tình tiết (<em>episodic buffer</em>)</a> để liên kết thông tin trong trí nhớ làm việc</td></tr>
+              <tr><th>Đầu những năm 2000</th><td><a href="https://scan.psych.columbia.edu/papers/Ochsner_et_al_2001.pdf" target="_blank" rel="noopener" title="Ochsner và Lieberman (2001): The Emergence of Social Cognitive Neuroscience">Nghiên cứu nhận thức xã hội</a> kết hợp thí nghiệm tâm lý với dữ liệu não</td></tr>
+              <tr><th>2013</th><td><a href="https://www.braininitiative.nih.gov/about/overview" target="_blank" rel="noopener" title="Giới thiệu BRAIN Initiative, NIH">BRAIN Initiative</a> hỗ trợ phát triển công cụ nghiên cứu tế bào và mạch thần kinh</td></tr>
+              <tr><th>2014</th><td><a href="https://www.nobelprize.org/nobel_prizes/medicine/laureates/2014/press.html" target="_blank" rel="noopener" title="Thông cáo Giải Nobel Y sinh 2014">Nobel Y sinh</a> vinh danh phát hiện các tế bào giúp định vị trong không gian</td></tr>
+            </tbody>
+          </table>
+
+        </section>
+
+        <section>
+          <h2>Dùng mô hình TTNT để nghiên cứu nhận thức</h2>
+          <div class="slide-badge-row"><span class="history-date">Ví dụ nghiên cứu năm 2021</span><span class="self-study-badge">📖 Tự học</span></div>
+          <ul>
+            <li>Cho người và mô hình ngôn ngữ xử lý cùng những câu văn.</li>
+            <li>So sánh biểu diễn trong mô hình với dữ liệu hoạt động não.</li>
+            <li>Kiểm tra mô hình nào dự đoán dữ liệu về người tốt hơn.</li>
+          </ul>
+          <div class="warn-box">Dự đoán tốt dữ liệu não chưa chứng minh mô hình hoạt động giống não.</div>
+          <p class="caption"><a href="https://doi.org/10.1073/pnas.2105646118" target="_blank" rel="noopener" title="The Neural Architecture of Language: Integrative Modeling Converges on Predictive Processing">Martin Schrimpf và cộng sự, 2021.</a></p>
+
+        </section>
+
+        <section>
+          <h2>Kiểm tra cơ chế bên trong mô hình</h2>
+          <div class="slide-badge-row"><span class="history-date">Đối chiếu với hiện nay</span></div>
+          <p><strong>Nghiên cứu khả diễn giải</strong> (<em>interpretability</em>) tìm cách giải thích vì sao mô hình cho ra một kết quả.</p>
+          <table class="compact-table">
+            <thead><tr><th>Thao&nbsp;tác</th><th>Nghiên cứu não</th><th>Nghiên cứu mô hình mở</th></tr></thead>
+            <tbody>
+              <tr><th>Quan&nbsp;sát</th><td>Ghi tín hiệu khi làm nhiệm vụ</td><td>Đọc giá trị kích hoạt bên trong</td></tr>
+              <tr><th>Can&nbsp;thiệp</th><td>Kích thích vùng não trong điều kiện cho phép</td><td>Thay đổi hoặc vô hiệu hóa một thành phần</td></tr>
+              <tr><th>Đối&nbsp;chiếu</th><td>Hành vi thay đổi thế nào?</td><td>Đầu ra thay đổi thế nào?</td></tr>
+            </tbody>
+          </table>
+          <div class="key-box">Quan sát cho thấy mối liên hệ; can thiệp giúp kiểm tra vai trò của một thành phần.</div>
+
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1><span class="text-light">5.</span><br><span style="white-space: nowrap;">Những người</span><br><span style="white-space: nowrap;">tiên phong</span></h1>
+          <p class="text-light">Đóng góp của Miller, Chomsky, Simon, Minsky, Newell và Turing.</p>
+
+        </section>
+
+        <section>
+          <h2>George Miller</h2>
+          <div class="slide-badge-row"><span class="history-date">1956 và 1960</span></div>
+          <div class="two-col two-col--wide-right"><figure class="fig pioneer-portrait"><div class="portrait-window" style="--portrait-width: 272.63%; --portrait-left: -63.16%;"><img src="img/lec01-image27.png" alt="Chân dung George Miller"></div><figcaption>George Miller</figcaption></figure><div><ul><li>Nhà tâm lý học nghiên cứu <strong>trí nhớ và ngôn ngữ.</strong></li><li><strong>1956:</strong> phân tích giới hạn ghi nhớ và cách gom nhóm thông tin.</li><li><strong>1960:</strong> cùng Jerome Bruner lập trung tâm nghiên cứu nhận thức ở Harvard.</li></ul></div></div><p class="caption"><a href="https://www.cs.princeton.edu/~rit/geo/Miller.pdf" target="_blank" rel="noopener">George Miller (2003): nhìn lại cách mạng nhận thức</a></p>
+
+        </section>
+
+        <section>
+          <h2>Nghiên cứu trí nhớ và từ vựng</h2>
+          <div class="slide-badge-row"><span class="history-date">1956 và từ 1985</span></div>
+          <ul><li><strong><a href="https://cse.buffalo.edu/~rapaport/575/F01/miller56.html" target="_blank" rel="noopener">The Magical Number Seven, Plus or Minus Two</a> (1956):</strong> bàn về giới hạn xử lý thông tin và cách gom nhóm khi ghi nhớ.</li><li><strong><a href="https://wordnet.princeton.edu/" target="_blank" rel="noopener">WordNet</a> (từ 1985):</strong> cơ sở dữ liệu nối các từ tiếng Anh theo nghĩa, do Miller khởi xướng.</li></ul><div class="key-box">Ví dụ trong WordNet: <em>dog</em> (chó) thuộc nhóm <em>canine</em> (động vật họ chó), rồi đến <em>carnivore</em> (động vật ăn thịt).</div>
+
+        </section>
+
+        <section>
+          <h2>Miller nhìn lại cách mạng nhận thức</h2>
+          <div class="slide-badge-row"><span class="history-date">2003: nhìn lại thập niên 1950</span><span class="self-study-badge">📖 Tự học</span></div>
+          <ul><li>Miller từng theo cách giải thích của chủ nghĩa hành vi.</li><li>Sau đó, ông cho rằng cần nghiên cứu cả trí nhớ, kỳ vọng và tri thức để giải thích hành vi.</li></ul><div class="key-box">Ví dụ: hai người nghe cùng một câu nhưng hiểu khác nhau vì họ có kiến thức khác nhau.</div><p class="caption"><a href="https://www.cs.princeton.edu/~rit/geo/Miller.pdf" target="_blank" rel="noopener">The Cognitive Revolution: A Historical Perspective</a></p>
+
+        </section>
+
+        <section>
+          <h2>Noam Chomsky</h2>
+          <div class="slide-badge-row"><span class="history-date">Từ thập niên 1950</span></div>
+          <div class="two-col two-col--wide-right"><figure class="fig pioneer-portrait"><div class="portrait-window" style="--portrait-width: 135.71%; --portrait-left: -14.29%;"><img src="img/lec01-image28.png" alt="Chân dung Noam Chomsky"></div><figcaption>Noam Chomsky</figcaption></figure><div><ul><li>Nhà ngôn ngữ học nghiên cứu <strong>cấu trúc câu và cách trẻ học ngôn ngữ.</strong></li><li><strong>1957:</strong> <a href="https://doi.org/10.1515/9783112316009" target="_blank" rel="noopener"><em>Syntactic Structures</em></a> trình bày ngữ pháp bằng các quy tắc tạo câu.</li><li>Đề xuất <a href="https://chomsky.info/1998____/" target="_blank" rel="noopener"><strong>ngữ pháp phổ quát</strong></a>: giả thuyết về nền tảng bẩm sinh giúp trẻ học ngôn ngữ.</li></ul></div></div>
+
+        </section>
+
+        <section>
+          <h2>Vì sao ta hiểu được một câu mới?</h2>
+          <div class="slide-badge-row"><span class="history-date">1959</span></div>
+          <p>Bạn có thể hiểu câu: <strong>“Con mèo tím đang đọc bản đồ trên Mặt Trăng.”</strong></p><ul><li>Bạn có thể chưa từng nghe nguyên câu này.</li><li>Nhưng bạn biết các từ và cách chúng kết hợp thành câu.</li></ul><div class="key-box">Ta không chỉ lặp lại những câu đã nghe, mà còn có thể <strong>tạo và hiểu những câu mới.</strong> Chomsky cho rằng lý thuyết về ngôn ngữ phải giải thích được khả năng này.</div><p class="caption"><a href="https://chomsky.info/1967____/" target="_blank" rel="noopener">Chomsky (1959): phê bình Verbal Behavior</a></p>
+
+        </section>
+
+        <section>
+          <h2>Herbert Simon</h2>
+          <div class="slide-badge-row"><span class="history-date">Thập niên 1950 và 1978</span></div>
+          <div class="two-col two-col--wide-right" style="grid-template-columns: 1fr 2fr;"><figure class="fig pioneer-portrait"><div class="portrait-window" style="--portrait-width: 100%; --portrait-left: 0%;"><img src="img/lec01-image29.png" alt="Chân dung Herbert Simon"></div><figcaption>Herbert Simon</figcaption></figure><div><ul><li>Nghiên cứu việc <strong>ra quyết định.</strong></li><li><strong>Duy lý có giới hạn:</strong> con người không thể biết và cân nhắc mọi phương án.</li><li><a href="https://www.nobelprize.org/prizes/economic-sciences/1978/simon/lecture/" target="_blank" rel="noopener"><strong>Nobel Kinh tế 1978</strong></a>: nghiên cứu ra quyết định trong tổ chức.</li></ul></div></div><div class="key-box">Bạn cần laptop để học, giá dưới 15 triệu. Không đủ thời gian xem mọi mẫu, bạn so sánh vài chiếc và chọn chiếc đáp ứng yêu cầu.<br>Đó là chọn phương án <strong>đủ tốt</strong>, dù chưa biết có chiếc nào tốt hơn trong tầm giá.</div>
+
+        </section>
+
+        <section>
+          <h2>Sự chú ý có giới hạn</h2>
+          <div class="slide-badge-row"><span class="history-date">1971</span><span class="self-study-badge">📖 Tự học</span></div>
+          <blockquote class="historical-quote">
+            <p>Thông tin thì nhiều,<br>nhưng ta không thể dành sự chú ý cho tất cả.</p>
+            <p style="font-size: 0.72em; margin-top: 0.5em;">Nguyên văn: <em lang="en">“a wealth of information creates a poverty of attention”</em></p>
+            <footer>Diễn ý theo Herbert Simon (1971), <cite>Designing Organizations for an Information-Rich World</cite></footer>
+          </blockquote>
+          <p>Đọc và xử lý thông tin đều cần thời gian.</p>
+          <div class="key-box">Có thêm thông tin chưa chắc giúp quyết định tốt hơn nếu ta không chọn được thông tin cần thiết.</div>
+          <p class="caption"><a href="https://gwern.net/doc/design/1971-simon.pdf#page=4" target="_blank" rel="noopener">Đọc bài viết của Simon (1971), tr. 40-41</a></p>
+
+        </section>
+
+        <section>
+          <h2><span style="white-space: nowrap;">Máy tính giúp nghiên cứu</span><br><span style="white-space: nowrap;">tâm trí thế nào?</span></h2>
+          <div class="slide-badge-row"><span class="history-date">1936 đến thập niên 1980</span></div>
+          <p>Ba nhân vật tiếp theo đóng góp các cách mô tả và kiểm tra hoạt động thông minh.</p><table class="compact-table"><thead><tr><th>Nhân vật</th><th>Trọng tâm</th></tr></thead><tbody><tr><td>Marvin Minsky</td><td>Tổ chức tri thức và phối hợp các quá trình</td></tr><tr><td>Allen Newell</td><td>Mô hình hóa cách giải quyết vấn đề</td></tr><tr><td>Alan Turing</td><td>Tính toán, phép thử và khả năng học của máy</td></tr></tbody></table>
+
+        </section>
+
+        <section>
+          <h2>Marvin Minsky</h2>
+          <div class="slide-badge-row"><span class="history-date">1974 và 1986</span></div>
+          <div class="two-col two-col--wide-right"><figure class="fig pioneer-portrait"><div class="portrait-window" style="--portrait-width: 263.33%; --portrait-left: -83.33%;"><img src="img/lec01-image30.png" alt="Chân dung Marvin Minsky"></div><figcaption>Marvin Minsky</figcaption></figure><div><ul><li>Nhà nghiên cứu TTNT, đồng sáng lập phòng thí nghiệm TTNT tại MIT.</li><li><strong>1974:</strong> <a href="https://web.mit.edu/dxh/www/marvin/web.media.mit.edu/~minsky/papers/Frames/frames.html" target="_blank" rel="noopener">biểu diễn tri thức bằng khung</a> (<em>frame</em>).</li><li><strong>1986:</strong> <a href="https://books.google.com/books/about/Society_Of_Mind.html?id=bLDLllfRpdkC" target="_blank" rel="noopener"><em>The Society of Mind</em></a> giải thích tâm trí qua sự phối hợp của nhiều quá trình nhỏ.</li></ul></div></div>
+
+        </section>
+
+        <section>
+          <h2>Tâm trí gồm những quá trình nào?</h2>
+          <div class="slide-badge-row"><span class="history-date">1986</span></div>
+          <p>Trong <em>The Society of Mind</em>, Minsky đề xuất rằng năng lực phức tạp hình thành từ nhiều quá trình đơn giản phối hợp.</p><table class="compact-table"><thead><tr><th>Khi xếp các khối đồ chơi</th><th>Việc cần thực hiện</th></tr></thead><tbody><tr><td>Nhận biết</td><td>Phân biệt khối lớn, nhỏ và vị trí của chúng</td></tr><tr><td>Lựa chọn</td><td>Chọn khối phù hợp để đặt tiếp</td></tr><tr><td>Điều khiển</td><td>Đưa tay tới, cầm và đặt khối</td></tr></tbody></table><p class="caption"><a href="https://books.google.com/books/about/Society_Of_Mind.html?id=bLDLllfRpdkC" target="_blank" rel="noopener">Marvin Minsky: The Society of Mind</a></p>
+
+        </section>
+
+        <section>
+          <h2>Biểu diễn tri thức bằng khung</h2>
+          <div class="slide-badge-row"><span class="history-date">1974</span></div>
+          <p><strong>Khung</strong> (<em>frame</em>) lưu những đặc điểm thường gặp của một đối tượng hoặc tình huống.</p><table class="compact-table"><thead><tr><th>Khung “phòng học”</th><th>Thông tin thường có</th></tr></thead><tbody><tr><td>Người tham gia</td><td>Giảng viên, sinh viên</td></tr><tr><td>Đồ vật</td><td>Bàn ghế, bảng hoặc màn hình</td></tr><tr><td>Hoạt động</td><td>Giảng bài, đặt câu hỏi, thảo luận</td></tr></tbody></table><div class="key-box">Thông tin mặc định giúp ta hình dung nhanh, nhưng phải sửa khi gặp ngoại lệ, chẳng hạn lớp học trực tuyến.</div><p class="caption"><a href="https://web.mit.edu/dxh/www/marvin/web.media.mit.edu/~minsky/papers/Frames/frames.html" target="_blank" rel="noopener">Minsky (1974): A Framework for Representing Knowledge</a></p>
+
+        </section>
+
+        <section>
+          <h2>Đổi cách biểu diễn để giải quyết vấn đề</h2>
+          <div class="slide-badge-row"><span class="history-date">2006</span><span class="self-study-badge">📖 Tự học</span></div>
+          <p>Minsky nhấn mạnh lợi ích của việc có nhiều cách biểu diễn cùng một vấn đề.</p><table class="compact-table"><thead><tr><th>Bạn cần làm gì?</th><th>Biểu diễn phù hợp</th></tr></thead><tbody><tr><td>Tìm đường đến một địa điểm</td><td>Bản đồ đường đi</td></tr><tr><td>Gửi thư đến địa điểm đó</td><td>Địa chỉ gồm số nhà và tên đường</td></tr></tbody></table><div class="key-box">Một cách biểu diễn có thể phù hợp với việc này nhưng không phù hợp với việc khác.</div><p class="caption"><a href="https://www.mit.edu/~dxh/marvin/web.media.mit.edu/~minsky/eb8.html" target="_blank" rel="noopener">Minsky: The Emotion Machine, chương 8</a></p>
+
+        </section>
+
+        <section>
+          <h2>Allen Newell</h2>
+          <div class="slide-badge-row"><span class="history-date">1956 đến thập niên 1980</span></div>
+          <div class="two-col two-col--wide-right"><figure class="fig pioneer-portrait"><div class="portrait-window" style="--portrait-width: 100%; --portrait-left: 0%;"><img src="img/lec01-image31.png" alt="Chân dung Allen Newell"></div><figcaption>Allen Newell</figcaption></figure><div><ul><li>Nghiên cứu <strong>giải quyết vấn đề</strong> bằng mô hình máy tính.</li><li>Cùng Herbert Simon và Cliff Shaw phát triển Logic Theorist và General Problem Solver.</li><li>Phát triển <strong>Soar</strong> cùng John Laird và Paul Rosenbloom.</li></ul></div></div><p class="caption"><a href="https://www.cs.cmu.edu/afs/cs/project/soar/public/www/brief-history.html" target="_blank" rel="noopener">Lịch sử dự án Soar</a></p>
+
+        </section>
+
+        <section>
+          <h2>Mô hình hóa cách tìm lời giải</h2>
+          <div class="slide-badge-row"><span class="history-date">1956 và 1959</span></div>
+          <ul><li><strong><a href="https://www.rand.org/pubs/papers/P868.html" target="_blank" rel="noopener">Logic Theorist</a> (1956):</strong> tìm cách chứng minh các định lý logic bằng những bước biến đổi có chọn lọc.</li><li><strong><a href="https://findingaids.library.cmu.edu/repositories/2/archival_objects/22561" target="_blank" rel="noopener">General Problem Solver</a> (1959):</strong> so sánh trạng thái hiện tại với mục tiêu, rồi chọn bước làm giảm khác biệt.</li></ul><div class="key-box">Ví dụ: muốn đặt khối A lên khối B nhưng B đang bị che, trước hết cần dọn vật nằm trên B.</div>
+
+        </section>
+
+        <section>
+          <h2>Giả thuyết hệ thống ký hiệu vật lý</h2>
+          <div class="slide-badge-row"><span class="history-date">1976</span></div>
+          <p><strong>Hệ thống ký hiệu vật lý</strong> lưu và biến đổi ký hiệu bằng một cơ chế thực, chẳng hạn chương trình chạy trên máy tính.</p><table class="compact-table"><thead><tr><th>Newell và Simon cho rằng</th><th>Ý nghĩa</th></tr></thead><tbody><tr><td>Điều kiện cần</td><td>Trí tuệ tổng quát đòi hỏi khả năng xử lý ký hiệu</td></tr><tr><td>Điều kiện đủ</td><td>Một hệ ký hiệu được tổ chức phù hợp có thể thực hiện hành động thông minh tổng quát</td></tr></tbody></table><div class="warn-box">Đây là giả thuyết về trí tuệ, không phải định lý đã được chứng minh.</div><p class="caption"><a href="https://www.contrib.andrew.cmu.edu/~kk3n/80-300/newell-simon1976.pdf" target="_blank" rel="noopener">Newell và Simon: Computer Science as Empirical Inquiry</a></p>
+
+        </section>
+
+        <section>
+          <h2>Kiến trúc nhận thức Soar</h2>
+          <div class="slide-badge-row"><span class="history-date">Từ 1983</span><span class="self-study-badge">📖 Tự học</span></div>
+          <p><strong>Kiến trúc nhận thức</strong> mô tả cách trí nhớ, lựa chọn hành động và học tập làm việc cùng nhau.</p><ul><li><strong>Soar:</strong> dùng tri thức hiện có để chọn và thực hiện hành động.</li><li>Khi gặp bế tắc, hệ thống tạo bài toán phụ; kết quả giải có thể trở thành tri thức cho lần sau.</li></ul><div class="key-box">Mục tiêu là dùng chung một kiến trúc cho nhiều nhiệm vụ, không viết một mô hình riêng cho từng thí nghiệm.</div><p class="caption"><a href="https://soar.eecs.umich.edu/home/About/" target="_blank" rel="noopener">Giới thiệu và tài liệu dự án Soar</a></p>
+
+        </section>
+
+        <section>
+          <h2>Alan Turing</h2>
+          <div class="slide-badge-row"><span class="history-date">1936 và 1950</span></div>
+          <div class="two-col two-col--wide-right"><figure class="fig pioneer-portrait"><div class="portrait-window" style="--portrait-width: 217.39%; --portrait-left: 0%;"><img src="img/lec01-image32.png" alt="Chân dung Alan Turing"></div><figcaption>Alan Turing</figcaption></figure><div><ul><li>Nhà toán học đặt nền móng cho <strong>lý thuyết tính toán.</strong></li><li><strong>1936:</strong> mô tả mô hình tính toán nay gọi là máy Turing.</li><li><strong>1950:</strong> <a href="https://courses.cs.umbc.edu/undergraduate/471/papers/turing.shtml" target="_blank" rel="noopener">đề xuất cách kiểm tra và thảo luận về trí thông minh của máy</a>.</li></ul></div></div>
+
+        </section>
+
+        <section>
+          <h2>Các đóng góp của Alan Turing</h2>
+          <div class="slide-badge-row"><span class="history-date">1936 đến 1950</span></div>
+          <table class="compact-table"><thead><tr><th>Mốc</th><th>Đóng góp</th></tr></thead><tbody><tr><td>1936</td><td>Máy Turing giúp xác định một thủ tục tính toán có thể làm được gì</td></tr><tr><td>Thế chiến II</td><td>Góp phần giải mã Enigma cùng các cộng sự tại Bletchley Park</td></tr><tr><td>1950</td><td>Đề xuất trò chơi đối thoại để kiểm tra khả năng máy trả lời như người</td></tr></tbody></table><div class="warn-box">Đối thoại thuyết phục chưa tự chứng minh máy có ý thức hay hiểu theo cách con người hiểu.</div><p class="caption"><a href="https://courses.cs.umbc.edu/undergraduate/471/papers/turing.shtml" target="_blank" rel="noopener">Turing (1950): Computing Machinery and Intelligence</a></p>
+
+        </section>
+
+        <section>
+          <h2>Vinh danh Alan Turing</h2>
+          <div class="slide-badge-row"><span class="history-date">1966 đến 2021</span><span class="self-study-badge">📖 Tự học</span></div>
+          <table class="compact-table"><thead><tr><th>Năm</th><th>Sự kiện</th></tr></thead><tbody><tr><td>1966</td><td>Giải <a href="https://www.acm.org/binaries/content/assets/awards/about-the-acm-a.m.-turing-award-fact-sheet.pdf" target="_blank" rel="noopener">ACM Turing Award</a> bắt đầu được trao, mang tên ông</td></tr><tr><td>2013</td><td><a href="https://www.gov.uk/government/news/royal-pardon-for-ww2-code-breaker-dr-alan-turing" target="_blank" rel="noopener">Được ân xá sau khi qua đời</a> cho bản án năm 1952</td></tr><tr><td>2017</td><td><a href="https://www.gov.uk/government/news/thousands-officially-pardoned-under-turings-law" target="_blank" rel="noopener">“Turing’s Law”</a> mở rộng việc ân xá một số bản án về quan hệ đồng giới</td></tr><tr><td>2021</td><td>Chân dung xuất hiện trên <a href="https://www.bankofengland.co.uk/speech/2021/march/andrew-bailey-unveil-of-the-alan-turing-50-polymer-banknote" target="_blank" rel="noopener">tờ 50 bảng của Ngân hàng Anh</a></td></tr></tbody></table>
+
+        </section>
+
+        <section>
+          <h2>Turing đề xuất cho máy học</h2>
+          <div class="slide-badge-row"><span class="history-date">1950</span></div>
+          <ul><li>Turing đề xuất xây dựng một chương trình có khả năng học, rồi huấn luyện nó.</li><li>Ông ví việc đó với giáo dục trẻ em, thay vì viết sẵn toàn bộ tri thức của người lớn.</li></ul><div class="question-box"><div class="question-title">Câu hỏi</div><div class="question-content">Nếu máy học được từ ví dụ, ta đã có thể kết luận máy hiểu như người chưa?</div></div><p class="caption"><a href="https://courses.cs.umbc.edu/undergraduate/471/papers/turing.shtml" target="_blank" rel="noopener">Turing (1950), mục Learning Machines</a></p>
+
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1><span class="text-light">6.</span><br><span style="white-space:nowrap">Các câu hỏi</span><br><span style="white-space:nowrap">liên ngành về não bộ</span></h1>
+          <p class="text-light">Để giải thích tâm trí, cần kết hợp quan sát hành vi, dữ liệu não và mô hình.</p>
+
+        </section>
+
+        <section>
+          <h2>Các hướng nghiên cứu liên ngành</h2>
+          <table class="compact-table" style="font-size:0.72em"><thead><tr><th>Các lĩnh vực phối hợp</th><th>Ví dụ câu hỏi</th></tr></thead><tbody><tr><td>Khoa học thần kinh và tâm lý học</td><td>Hoạt động não liên quan đến trí nhớ, cảm xúc thế nào?</td></tr><tr><td>Khoa học nhận thức và TTNT</td><td>Mô hình máy tính giải thích được gì về nhận thức?</td></tr><tr><td>Triết học và khoa học thần kinh</td><td>Hoạt động não liên quan thế nào đến trải nghiệm có ý thức?</td></tr><tr><td>Ngôn ngữ học và khoa học thần kinh</td><td>Não giúp ta học và sử dụng ngôn ngữ thế nào?</td></tr><tr><td>Y học và khoa học thần kinh</td><td>Hiểu não giúp chẩn đoán và điều trị bệnh thế nào?</td></tr><tr><td>Giáo dục và khoa học thần kinh</td><td>Học tập và giấc ngủ ảnh hưởng đến trí nhớ thế nào?</td></tr></tbody></table>
+
+        </section>
+
+        <section>
+          <h2>Khoa học nhận thức và TTNT</h2>
+          <ul><li>Mô hình học từ ví dụ có giống cách con người học không?</li><li>Mô hình có giải thích được cả câu trả lời đúng lẫn lỗi của con người không?</li><li>Trả lời đúng đã đủ để kết luận một hệ thống <strong>hiểu</strong> chưa?</li></ul><div class="key-box">Trong bài đọc tuần này, Searle hỏi: <strong>Chỉ làm theo một chương trình đã đủ để máy thực sự hiểu chưa?</strong></div><p class="caption"><a href="https://doi.org/10.1017/S0140525X00005756" target="_blank" rel="noopener">John Searle (1980), <em>Minds, Brains and Programs</em></a></p>
+
+        </section>
+
+        <section>
+          <h2>Các chủ đề của môn học</h2>
+          <table class="compact-table" style="font-size:0.72em"><thead><tr><th>Chủ đề</th><th>Câu hỏi dẫn đường</th></tr></thead><tbody><tr><td>Ngôn ngữ</td><td>Ta học các từ và hiểu cách chúng kết hợp thành câu thế nào?</td></tr><tr><td>Tâm trí và ý thức</td><td>Vì sao ta có trải nghiệm như cảm thấy đau hay nhìn thấy màu đỏ?</td></tr><tr><td>Nhận thức và tư duy</td><td>Ta ghi nhớ, suy luận và lựa chọn thế nào?</td></tr><tr><td>Mối liên hệ giữa các chủ đề</td><td>Ngôn ngữ tham gia vào việc ghi nhớ và suy nghĩ ra sao?</td></tr></tbody></table>
+
+        </section>
+
+        <section>
+          <h2>Ngôn ngữ có ảnh hưởng đến tư duy?</h2>
+          <p>Cùng muốn hỏi một điều, bạn có thể nói:</p><ul><li>Với giảng viên: <strong>“Em muốn hỏi thầy một câu.”</strong></li><li>Với bạn cùng lớp: <strong>“Tớ muốn hỏi cậu một câu.”</strong></li></ul><div class="key-box">Việc chọn từ xưng hô có khiến ta chú ý hơn đến tuổi tác và quan hệ giữa người nói, người nghe không?</div>
+
+        </section>
+
+        <section>
+          <h2>Não bộ, trí nhớ và cảm xúc</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div><ul><li>Khi ta ghi nhớ rồi nhớ lại một sự việc, những hoạt động nào trong não thay đổi?</li><li>Cảm xúc ảnh hưởng thế nào đến điều ta chú ý và ghi nhớ?</li><li>Những thay đổi về hành vi và trải nghiệm trong rối loạn tâm lý liên quan đến hoạt động não ra sao?</li></ul>
+
+        </section>
+
+        <section>
+          <h2>Não bộ và các câu hỏi triết học</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div><ul><li>Hoạt động vật chất của não liên quan thế nào đến <strong>trải nghiệm có ý thức</strong>, như cảm thấy đau?</li><li>Nếu quyết định có cơ sở thần kinh, ta hiểu <strong>tự do lựa chọn và trách nhiệm</strong> thế nào?</li><li>Nếu ký ức và tính cách thay đổi, điều gì khiến ta vẫn là cùng một người?</li></ul>
+
+        </section>
+
+        <section>
+          <h2>Ngôn ngữ và não bộ</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div><ul><li>Não thay đổi thế nào khi trẻ học ngôn ngữ hoặc người lớn học thêm một ngôn ngữ?</li><li>Người dùng hai ngôn ngữ lựa chọn và chuyển đổi giữa chúng ra sao?</li><li>Những mạng não nào phối hợp để xử lý âm thanh, nghĩa của từ và cấu trúc câu?</li><li>Vì sao tổn thương não có thể làm một người khó nói hoặc khó hiểu lời nói?</li></ul>
+
+        </section>
+
+        <section>
+          <h2>Nghiên cứu não trong y học</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div><ul><li>Làm sao dùng tín hiệu não để điều khiển thiết bị hỗ trợ người bị liệt?</li><li>Điều gì xảy ra khi tế bào thần kinh suy giảm trong bệnh Alzheimer?</li><li>Dữ liệu hình ảnh não giúp ích đến đâu cho chẩn đoán và điều trị?</li><li>Khi can thiệp vào hoạt động não, cần bảo vệ sự an toàn và quyền tự quyết thế nào?</li></ul>
+
+        </section>
+
+        <section>
+          <h2>Nghiên cứu não trong giáo dục</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div><ul><li>Khả năng thay đổi của não khi học còn tiếp diễn thế nào qua các độ tuổi?</li><li>Vì sao quá nhiều thông tin cùng lúc có thể làm ta khó theo dõi bài học?</li><li>Cách ôn tập, nghỉ ngơi và ngủ ảnh hưởng thế nào đến việc nhớ lâu?</li></ul>
+
+        </section>
+
+        <section>
+          <h2>Tâm trí và ý thức</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div><p>Nhìn thấy màu đỏ hay cảm thấy đau đều là <strong>trải nghiệm của người đang cảm nhận</strong>.</p><ul><li>Những quá trình nào diễn ra mà ta không ý thức được?</li><li>Làm sao đối chiếu lời kể về trải nghiệm với hành vi và hoạt động não?</li><li>Nhiều tín hiệu giác quan được kết hợp thành trải nghiệm của ta thế nào?</li></ul>
+
+        </section>
+
+        <section>
+          <h2>Nhận thức và tư duy</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div><ul><li>Ta tìm cách giải quyết một vấn đề mới, rồi chọn giữa các phương án thế nào?</li><li>Vì sao ta chỉ giữ và xử lý được một lượng thông tin có hạn, như nhớ số điện thoại trong lúc nhập số?</li><li>Ta chọn thông tin cần chú ý và bỏ qua thông tin gây nhiễu ra sao?</li></ul>
+
+        </section>
+
+        <section>
+          <h2>Ngôn ngữ tham gia vào tư duy thế nào?</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div><ul><li>Khi “nói thầm trong đầu”, ta dùng lời nói để lập kế hoạch hoặc tự hướng dẫn ra sao?</li><li>Các từ giúp ta học và sử dụng khái niệm trừu tượng, như công bằng, thế nào?</li><li>Một mô hình kết hợp ngôn ngữ, trí nhớ và suy luận phải giải thích được những hành vi nào?</li></ul>
+
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1><span class="text-light">7.</span><br>Giới thiệu môn học</h1>
+          <p class="text-light">Nội dung học kỳ, cách học và cơ cấu đánh giá.</p>
+
+        </section>
+
+        <section>
+          <h2>Các lĩnh vực trong môn học</h2>
+          <ul><li><strong>Khoa học thần kinh:</strong> cấu trúc và hoạt động của não.</li><li><strong>Tâm lý học và ngôn ngữ học:</strong> cách con người ghi nhớ, suy nghĩ và sử dụng ngôn ngữ.</li><li><strong>Triết học và mô hình tính toán:</strong> làm rõ khái niệm, xây dựng và kiểm tra cách giải thích.</li></ul><div class="key-box">Các lĩnh vực này cùng góp phần nghiên cứu <strong>tâm trí và nhận thức</strong>.</div>
+
+        </section>
+
+        <section>
+          <h2>Nội dung học kỳ</h2>
+          <ul><li><strong>Não bộ:</strong> cấu trúc và chức năng.</li><li><strong>Tâm trí:</strong> trí thông minh và cách nghiên cứu tâm lý.</li><li><strong>Nhận thức:</strong> chú ý, trí nhớ, suy luận và các quá trình liên quan.</li><li><strong>Ngôn ngữ:</strong> nguồn gốc, cách học và cách sử dụng.</li><li><strong>Tư duy:</strong> quan hệ với ngôn ngữ và nhận thức.</li></ul><div class="key-box">Các ví dụ về <strong>tiếng Việt</strong> giúp liên hệ kiến thức với ngôn ngữ ta sử dụng hằng ngày.</div>
+
+        </section>
+
+        <section>
+          <h2>Các chủ đề sẽ học</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div><table class="compact-table" style="font-size:0.72em"><thead><tr><th>Khối nội dung</th><th>Chủ đề</th></tr></thead><tbody><tr><td>Não bộ</td><td>Khoa học về não · giải phẫu chức năng</td></tr><tr><td>Tâm trí</td><td>Trí thông minh · tâm lý học</td></tr><tr><td>Nhận thức</td><td>Chú ý · tri giác · trí nhớ · giác quan · giải quyết vấn đề · suy luận · ra quyết định · cảm xúc · sáng tạo</td></tr><tr><td>Ngôn ngữ</td><td>Nguồn gốc · các thành tố · thụ đắc · rối loạn ngôn ngữ</td></tr><tr><td>Tư duy</td><td>Tư duy và quan hệ với nhận thức, ngôn ngữ</td></tr><tr><td>Ngôn ngữ ở Việt Nam</td><td>Tiếng Việt và bối cảnh ngôn ngữ ở Việt Nam</td></tr></tbody></table><p class="caption"><a href="index.html" target="_blank" rel="noopener">Xem kế hoạch học kỳ</a></p>
+
+        </section>
+
+        <section>
+          <h2>Khối lượng và lịch học</h2>
+          <p><strong>45 tiết lý thuyết:</strong> 15 tuần, mỗi tuần 3 tiết.</p><table class="compact-table" style="font-size:0.72em"><thead><tr><th>Thông tin</th><th>Lịch học</th></tr></thead><tbody><tr><td>Thời gian</td><td>Thứ Tư, từ 09:50 đến 12:30</td></tr><tr><td>Phòng học</td><td>305-B</td></tr><tr><td>Học kỳ</td><td>Từ 09/09 đến 16/12/2026</td></tr></tbody></table><p>Không có buổi thực hành riêng.</p>
+
+        </section>
+
+        <section>
+          <h2>Tin vui cho sinh viên CNTT</h2>
+          <p class="text-blue" style="font-size:1.35em; font-weight:bold; text-align:center;">Không có bài tập lập trình.<br>Không có bài tập tính toán.</p><p class="fragment text-green" style="font-size:1.2em; font-weight:bold; text-align:center;">Vậy là nhẹ nhàng rồi?</p><p class="fragment text-red" style="font-size:1.2em; font-weight:bold; text-align:center;">Chưa chắc đâu!</p>
+
+        </section>
+
+        <section>
+          <h2>Đọc, viết và trình bày lập luận</h2>
+          <ul><li><strong>Hằng tuần:</strong> đọc 1 hoặc 2 bài báo gốc bằng tiếng Anh.</li><li><strong>Giữa kỳ:</strong> viết tiểu luận.</li><li><strong>Cuối kỳ:</strong> trả lời và trao đổi trong bài thi vấn đáp.</li></ul><div class="key-box">Cần nói rõ: <strong>tác giả khẳng định điều gì, dựa vào lý do nào, và ta có thể phản biện ra sao</strong>.</div>
+
+        </section>
+
+        <section>
+          <h2>Cơ cấu đánh giá</h2>
+          <table class="compact-table" style="font-size:0.72em"><thead><tr><th>Thành phần</th><th>Tỷ lệ</th><th>Hình thức</th></tr></thead><tbody><tr><td>Quiz hằng tuần</td><td><strong>20%</strong></td><td>Quiz cuối buổi tại lớp và quiz bài đọc ở nhà</td></tr><tr><td>Giữa kỳ</td><td><strong>20%</strong></td><td>Tiểu luận viết ở nhà</td></tr><tr><td>Cuối kỳ</td><td><strong>60%</strong></td><td>Vấn đáp</td></tr></tbody></table><div class="warn-box"><strong>Thi vấn đáp chiếm 60% điểm môn học.</strong><br>Tập giải thích bằng lời và trả lời câu hỏi từ các buổi thảo luận.</div>
+
+        </section>
+
+        <section>
+          <h2>Nhịp học mỗi tuần</h2>
+          <div class="pipeline pipeline-wide"><div class="stage"><div class="stage-title">Cuối buổi học</div><div class="stage-desc">Làm quiz tại lớp<br>Nhận bài đọc mới</div></div><div class="arrow">→</div><div class="stage"><div class="stage-title">Ở nhà</div><div class="stage-desc">Đọc 1 hoặc 2 bài<br>Làm quiz trên Canvas</div></div><div class="arrow">→</div><div class="stage stage-highlight"><div class="stage-title">Buổi tiếp theo</div><div class="stage-desc">Thảo luận bài đọc<br>trong 15 phút đầu</div></div></div><div class="good-box">Các slide thảo luận bài đọc là <strong>ngân hàng câu hỏi thi vấn đáp</strong>.</div>
+
+        </section>
+
+        <section>
+          <h2>Học môn này để làm gì?</h2>
+          <div class="slide-badge-row"><span class="self-study-badge">📖 Tự học</span></div><ul><li><strong>Đọc nghiên cứu có cơ sở:</strong> phân biệt giả thuyết, bằng chứng và kết luận.</li><li><strong>Đánh giá mô hình:</strong> biết cần kiểm tra gì trước khi nói máy “hiểu” hay “suy luận”.</li><li><strong>Kết nối các lĩnh vực:</strong> so sánh cách con người và hệ thống TTNT xử lý thông tin.</li></ul><div class="key-box">Giống nhau về kết quả chưa có nghĩa là giống nhau về <strong>cách hoạt động</strong>.</div>
+
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>Tổng kết buổi 1</h2>
+          <ul><li><strong>Não bộ, tâm trí và nhận thức</strong> không phải ba tên gọi cho cùng một khái niệm.</li><li>Nghiên cứu tâm trí kết hợp <strong>quan sát, thí nghiệm và mô hình</strong>.</li><li>Từ giữa thế kỷ 20, tâm lý học, ngôn ngữ học và nghiên cứu máy tính góp phần phát triển <strong>khoa học nhận thức</strong>.</li></ul><div class="good-box">Thảo luận tuần sau: thực hiện đúng một chương trình có đủ để tạo ra <strong>sự hiểu</strong> không?</div>
+
+        </section>
+
+        <section>
+          <h2>Bài về nhà</h2>
+          <ul><li><strong>Đọc:</strong> <a href="https://doi.org/10.1017/S0140525X00005756" target="_blank" rel="noopener">John Searle (1980), <em>Minds, Brains and Programs</em></a>. Dùng bản <strong>19 trang trên Canvas</strong>.</li><li><strong>Làm quiz bài đọc 1:</strong> 10 câu, hoàn thành trước giờ học buổi 2.</li><li><strong>Đầu buổi 2:</strong> thảo luận bài đọc trong 15 phút.</li></ul>
+
+        </section>
+
+        <section>
+          <h2>Mô tả đúng một bức ảnh</h2>
+          <div class="two-col"><figure class="fig"><img src="img/lec01-image34.png" alt="Ảnh chụp chú thích của picdescbot: nói người đứng trên tàu, trong khi họ đứng trên bờ cỏ" style="width:100%; max-height:280px;"><figcaption class="caption">Ảnh chụp @picdescbot</figcaption></figure><div><p><strong>Bot viết:</strong><br>“Một nhóm người đang đứng trên tàu.”</p><p><strong>Trong ảnh:</strong><br>Mọi người đứng trên bờ cỏ, cạnh con tàu.</p></div></div><div class="question-box">Câu đúng ngữ pháp đã đủ để mô tả đúng bức ảnh chưa?</div>
+
+        </section>
+      </section>
+      <div class="footer">
+        NTNNTD (2627-1) · Bài 1: Nhập môn Khoa học não bộ
+      </div>
+    </div>
+  </div>
+
+  <script src="revealjs/dist/reveal.js"></script>
+
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      controlsLayout: "edges",
+      slideNumber: true,
+      hashOneBasedIndex: true,
+      hash: true,
+      plugins: [RevealHighlight],
+    });
+  </script>
+</body>
+
+</html>

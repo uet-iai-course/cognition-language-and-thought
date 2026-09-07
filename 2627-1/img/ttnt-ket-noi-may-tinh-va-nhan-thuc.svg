@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 330" role="img"
+  aria-labelledby="title desc">
+  <title id="title">Trí tuệ nhân tạo kết nối khoa học máy tính với khoa học nhận thức</title>
+  <desc id="desc">Khoa học máy tính hình thành một nhánh là trí tuệ nhân tạo. Trí tuệ nhân tạo cung cấp mô hình tính toán cho khoa học nhận thức.</desc>
+
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+      orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#2a7291" />
+    </marker>
+  </defs>
+
+  <style>
+    .node {
+      fill: #eef8fa;
+      stroke: #2a7291;
+      stroke-width: 3;
+    }
+
+    .node-ai {
+      fill: #fff3e2;
+      stroke: #e8890c;
+      stroke-width: 4;
+    }
+
+    .link {
+      fill: none;
+      stroke: #2a7291;
+      stroke-width: 3;
+      stroke-linecap: round;
+      marker-end: url(#arrow-blue);
+    }
+
+    .icon-bg {
+      fill: #dceff3;
+    }
+
+    .icon-bg-ai {
+      fill: #ffe1b5;
+    }
+
+    .icon-line {
+      fill: none;
+      stroke: #2a7291;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .icon-line-ai {
+      fill: none;
+      stroke: #b86400;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .icon-fill-ai {
+      fill: #b86400;
+    }
+
+    .label {
+      fill: #173f52;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      text-anchor: middle;
+    }
+
+    .label-ai {
+      fill: #b86400;
+    }
+
+    .detail {
+      fill: #344f5c;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      text-anchor: middle;
+    }
+
+    .edge-label {
+      fill: #506873;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-anchor: middle;
+    }
+  </style>
+
+  <path class="link" d="M240 160 H390" />
+  <text class="edge-label" x="315" y="137">một nhánh</text>
+
+  <path class="link" d="M610 160 H760" />
+  <text class="edge-label" x="685" y="137">mô hình tính toán</text>
+
+  <g>
+    <rect class="node" x="20" y="45" width="220" height="220" rx="18" />
+    <g aria-hidden="true">
+      <circle class="icon-bg" cx="130" cy="105" r="35" />
+      <rect class="icon-line" x="109" y="85" width="42" height="31" rx="4" />
+      <path class="icon-line" d="M109 94 H151 M123 126 H137 M130 116 V126" />
+      <path class="icon-line" d="M121 105 L116 101 L121 97 M139 97 L144 101 L139 105" />
+    </g>
+    <text class="label" x="130" y="169">Khoa học máy tính</text>
+    <text class="detail" x="130" y="207">thuật toán · biểu diễn</text>
+  </g>
+
+  <g>
+    <rect class="node-ai" x="390" y="45" width="220" height="220" rx="18" />
+    <g aria-hidden="true">
+      <circle class="icon-bg-ai" cx="500" cy="105" r="35" />
+      <path class="icon-line-ai" d="M500 80 V74 M494 74 H506 M481 93 H476 V113 H481 M519 93 H524 V113 H519" />
+      <rect class="icon-line-ai" x="481" y="84" width="38" height="39" rx="7" />
+      <circle class="icon-fill-ai" cx="492" cy="99" r="4" />
+      <circle class="icon-fill-ai" cx="508" cy="99" r="4" />
+      <path class="icon-line-ai" d="M491 113 H509" />
+    </g>
+    <text class="label label-ai" x="500" y="169">Trí tuệ nhân tạo</text>
+    <text class="detail" x="500" y="205">học · tri giác</text>
+    <text class="detail" x="500" y="231">ngôn ngữ · suy luận</text>
+  </g>
+
+  <g>
+    <rect class="node" x="760" y="45" width="220" height="220" rx="18" />
+    <g aria-hidden="true">
+      <circle class="icon-bg" cx="870" cy="105" r="35" />
+      <path class="icon-line" d="M870 82 C861 75 848 81 849 93 C839 99 844 113 854 114 C851 127 866 133 874 122 C883 132 898 126 896 114 C908 110 906 96 896 92 C897 79 881 75 870 82 Z" />
+      <path class="icon-line" d="M870 82 V123 M857 91 C866 91 870 98 870 105 M884 89 C875 91 870 98 870 105 M854 114 C863 111 870 116 870 122 M896 114 C887 111 880 116 880 124" />
+    </g>
+    <text class="label" x="870" y="169">Khoa học nhận thức</text>
+    <text class="detail" x="870" y="207">giải thích tâm trí</text>
+  </g>
+</svg>
