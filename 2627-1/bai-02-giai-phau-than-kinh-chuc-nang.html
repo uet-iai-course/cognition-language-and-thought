@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="noindex,nofollow" name="robots" />
+  <title>NTNNTD | Bài 2: Giải phẫu thần kinh chức năng</title>
+  <link href="revealjs/dist/reset.css" rel="stylesheet" />
+  <link href="revealjs/dist/reveal.css" rel="stylesheet" />
+  <link href="revealjs/dist/theme/white.css" rel="stylesheet" />
+  <link href="lecture-style.css" rel="stylesheet" />
+  <link href="lecture-02.css" rel="stylesheet" />
+  <link href="favicon.svg" rel="icon" type="image/svg+xml" />
+</head>
+
+<body>
+  <div class="reveal lecture-02">
+    <div class="slides">
+
+      <section data-part="Mở bài">
+        <section data-origin-slide="1.1" data-slide-id="1.1">
+          <h1>Nhận thức,<br />Ngôn ngữ và Tư duy</h1>
+          <p class="text-light">AIT3018 · Học kỳ I, năm học 2026-2027</p>
+          <p class="text-light">Viện Trí tuệ nhân tạo · Trường Đại học Công nghệ, ĐHQGHN</p>
+
+        </section>
+
+        <section data-origin-slide="1.2" data-slide-id="1.2">
+          <h1><span class="text-light">Bài 2</span><br />Giải phẫu<br />thần kinh chức năng</h1>
+          <p class="text-light">Não bộ gồm những cấu trúc nào?<br />Nghiên cứu chức năng của chúng bằng cách nào?</p>
+
+        </section>
+
+        <section data-slide-id="1.3" data-origin-slide="searle-motivation">
+          <h2>Vì sao đọc Searle sau Buổi 1?</h2>
+          <p><strong>Buổi 1 đặt câu hỏi:</strong> máy trả lời đúng có đồng nghĩa với máy hiểu không?</p>
+          <div class="key-box">Một chương trình trả lời đúng câu hỏi về một câu chuyện. Điều đó đã đủ để nói chương
+            trình
+            <strong>hiểu câu chuyện</strong> chưa?
+          </div>
+          <p><strong>Bài Searle (1980)</strong> đặt vấn đề liệu việc thực hiện đúng chương trình (cho một đầu vào, thực
+            thi để tạo ra một đầu ra) đã đủ để có sự hiểu.</p>
+          <p>Ta sẽ <strong>xem xét một lập luận và các phản biện</strong>.</p>
+
+        </section>
+
+        <section data-slide-id="1.4" data-origin-slide="searle-recap">
+          <h2>Searle đang phản đối điều gì?</h2>
+          <p><em>Minds, Brains and Programs</em> (1980)</p>
+          <ul>
+            <li><strong>Đối tượng phản bác:</strong> chỉ cần chạy đúng chương trình (tạo ra đúng đầu ra với đầu vào
+              tương ứng) là đã có sự hiểu (understanding).
+            </li>
+            <li><strong>Căn phòng tiếng Trung:</strong> người không biết tiếng Trung làm theo một bộ quy tắc vẫn trả lời
+              đúng các câu hỏi như
+              người biết tiếng Trung.</li>
+            <li><strong>Kết luận của Searle:</strong> riêng việc thao tác ký hiệu (symbol manipulation) chưa đủ để tạo
+              ra sự hiểu.</li>
+          </ul>
+          <p class="caption"><a href="https://doi.org/10.1017/S0140525X00005756" target="_blank" rel="noopener">John
+              Searle (1980) · Minds, Brains and Programs</a></p>
+
+        </section>
+
+        <section data-slide-id="1.5" data-origin-slide="searle-reading">
+          <h2>Phân biệt quan điểm của tác giả và phản biện</h2>
+          <p>Trong mục <em>The Systems Reply</em> có đoạn:</p>
+          <div class="key-box">Người trong phòng không hiểu tiếng Trung, nhưng <strong>cả hệ thống (người, bộ quy tắc và
+              dữ liệu) hiểu tiếng Trung</strong>.</div>
+          <p>Ở đây, Searle chỉ đang thuật lại ý kiến phản đối mình. Đoạn tiếp theo mới là lời đáp của ông.</p>
+
+        </section>
+        <section data-slide-id="1.6" data-origin-slide="searle-reading-response">
+          <h2>Searle đáp lại thế nào?</h2>
+          <ol>
+            <li>Giả sử người ấy <strong>học thuộc mọi quy tắc và dữ liệu</strong>, rồi làm mọi thao tác trong đầu.</li>
+            <li>Searle cho rằng người ấy vẫn không hiểu tiếng Trung, dù đã tự đảm nhiệm toàn bộ hệ thống.</li>
+          </ol>
+          <div class="key-box"><strong>Chỗ cần xem xét:</strong> “Một người không hiểu” có đủ để kết luận “cả hệ thống
+            không hiểu” không?</div>
+          <p>Khi đọc bài, có thể ghi lại: <strong>phản biện nói gì → tác giả đáp gì → bạn thấy bước nào chưa thuyết
+              phục.</strong></p>
+
+        </section>
+        <section data-slide-id="1.7">
+          <h2>Căn phòng tiếng Trung</h2>
+          <div class="question-box">
+            <div class="question-title">Thảo luận</div>
+            <div class="question-content">
+              <ol>
+                <li data-question-id="D01">Bạn có thấy lập luận “căn phòng tiếng Trung” của Searle thuyết phục không? Vì
+                  sao?</li>
+                <li data-question-id="D02">Liệu máy tính có thể “hiểu” ngôn ngữ theo cách con người hiểu không?</li>
+              </ol>
+            </div>
+          </div>
+
+        </section>
+
+        <section data-slide-id="1.8">
+          <h2>Cú pháp và ngữ nghĩa</h2>
+          <div class="question-box">
+            <div class="question-title">Thảo luận</div>
+            <div class="question-content">
+              <ol>
+                <li data-question-id="D03">Searle cho rằng máy tính chỉ thao tác trên ký hiệu theo quy tắc (cú pháp),
+                  chứ không hiểu ý nghĩa của chúng (ngữ nghĩa). Bạn có đồng ý không? Máy tính có thể vượt qua khoảng
+                  cách này không?</li>
+              </ol>
+            </div>
+          </div>
+
+        </section>
+
+        <section data-slide-id="1.9">
+          <h2>TTNT mạnh và TTNT yếu</h2>
+          <div class="question-box">
+            <div class="question-title">Thảo luận</div>
+            <div class="question-content">
+              <ol>
+                <li data-question-id="D04">Theo Searle, TTNT mạnh (strong AI) và TTNT yếu (weak AI) khác nhau thế nào?
+                  Quan điểm nào có vẻ hợp
+                  lý hơn trong bối cảnh hiện nay?</li>
+                <li data-question-id="D05">Các hệ thống TTNT như ChatGPT thách thức hay củng cố lập luận của Searle?
+                </li>
+              </ol>
+            </div>
+          </div>
+
+        </section>
+
+        <section data-slide-id="1.10">
+          <h2>Tính ý hướng của tâm trí</h2>
+          <div class="question-box">
+            <div class="question-title">Thảo luận</div>
+            <div class="question-content">
+              <ol>
+                <li data-question-id="D06">Searle dùng từ “tính ý hướng” (intentionality) với nghĩa gì?</li>
+                <li data-question-id="D07">Hệ thống nhân tạo có thể có tính ý hướng không, hay đặc tính này chỉ có ở hệ
+                  thống sinh học?</li>
+              </ol>
+            </div>
+          </div>
+
+        </section>
+
+        <section data-slide-id="1.11">
+          <h2>Não như một cỗ máy</h2>
+          <div class="question-box">
+            <div class="question-title">Thảo luận</div>
+            <div class="question-content">
+              <ol>
+                <li data-question-id="D08">Nếu tâm trí được tạo ra bởi năng lực nhân quả (causal&nbsp;powers) của não,
+                  về lý thuyết ta có thể tái tạo năng lực ấy bằng silicon hoặc một chất liệu khác không?</li>
+                <li data-question-id="D09">Có nhất thiết phải có ‘phần cứng’ (các nơ-ron sinh học), hay chỉ cần ‘phần
+                  mềm’ (chương trình máy tính) là đủ?</li>
+              </ol>
+            </div>
+          </div>
+
+        </section>
+
+        <section data-slide-id="1.12">
+          <h2>Các phản biện với Searle</h2>
+          <div class="question-box">
+            <div class="question-title">Thảo luận</div>
+            <div class="question-content">
+              <ol>
+                <li data-question-id="D10">Với ba phản biện được nêu ở đây: hệ thống, robot và mô phỏng não, bạn
+                  thấy phản biện nào mạnh nhất? Vì sao?</li>
+                <li data-question-id="D11">Thuyết kết nối (mạng nơ-ron) hoặc TTNT có cơ thể có thể đáp lại lập luận căn
+                  phòng tiếng Trung như thế nào?</li>
+              </ol>
+            </div>
+          </div>
+
+        </section>
+
+        <section data-slide-id="1.13">
+          <h2>Ý nghĩa đối với TTNT hiện nay</h2>
+          <div class="question-box">
+            <div class="question-title">Thảo luận</div>
+            <div class="question-content">
+              <ol>
+                <li data-question-id="D12">Các ý tưởng của Searle liên quan thế nào đến những tranh luận hiện nay về đạo
+                  đức TTNT và ý thức?</li>
+                <li data-question-id="D13">Ta nên coi các hệ thống TTNT tiên tiến là những thực thể có tâm trí, hay luôn
+                  chỉ coi chúng là công cụ?</li>
+              </ol>
+            </div>
+          </div>
+
+        </section>
+
+        <section data-slide-id="1.14">
+          <h2>Quan điểm của bạn về sự hiểu</h2>
+          <div class="question-box">
+            <div class="question-title">Thảo luận</div>
+            <div class="question-content">
+              <ol>
+                <li data-question-id="D14">Bạn có tin rằng con người có thể tạo ra ý thức bằng phương tiện nhân tạo
+                  không?</li>
+                <li data-question-id="D15">Theo bạn, “hiểu” nên được định nghĩa như thế nào?</li>
+              </ol>
+            </div>
+          </div>
+
+        </section>
+
+        <section data-origin-slide="1.9" data-slide-id="1.15">
+          <h2>Tổng quan buổi học</h2>
+          <ol>
+            <li>Hệ thần kinh</li>
+            <li>Cấu trúc não người</li>
+            <li>Giải phẫu chức năng</li>
+            <li>Sự phát triển của não</li>
+            <li>Bệnh và tổn thương não</li>
+            <li>Phương pháp nghiên cứu</li>
+            <li>Não người và não động vật</li>
+            <li>Não người và máy tính</li>
+          </ol>
+
+        </section>
+      </section>
+
+      <section data-part="Hệ thần kinh">
+        <section data-origin-slide="2.1" data-slide-id="2.1">
+          <h1><span class="text-light">1.</span><br />Hệ thần kinh</h1>
+          <p class="text-light">Tín hiệu đi từ cơ thể đến não và ngược lại thế nào?</p>
+
+        </section>
+
+        <section data-origin-slide="2.2" data-slide-id="2.2">
+          <h2>Trung ương và ngoại biên</h2>
+          <figure class="system-overview"><img src="img/lec02/system-vi.svg"
+              alt="Sơ đồ tiếng Việt: trung ương gồm não và tủy sống; ngoại biên gồm các nhánh cảm giác, vận động; vận động tạng chia thành giao cảm và phó giao cảm." />
+            <figcaption>Bản thể (somatic) · Tạng (visceral)</figcaption>
+          </figure>
+
+        </section>
+
+        <section data-origin-slide="2.3" data-slide-id="2.3">
+          <h2>Hướng tâm và ly tâm</h2>
+          <div class="original-anatomy">
+            <figure class="fig source-anatomy"><img src="img/lec02/afferent-original.png"
+                alt="Đường hướng tâm về tủy sống và đường ly tâm tới cơ, tuyến và nội tạng." /></figure>
+            <div>
+              <p><strong>Hướng tâm (afferent):</strong> từ thụ thể (receptor) về trung ương.</p>
+              <p><strong>Ly tâm (efferent):</strong> từ trung ương tới cơ (muscle) hoặc tuyến (gland).</p>
+              <p>“Tâm” ở đây là trung ương, không phải trái tim.</p>
+            </div>
+          </div>
+
+        </section>
+
+        <section data-origin-slide="2.4" data-slide-id="2.4">
+          <h2>Cảm giác đi vào, vận động đi ra</h2>
+          <div class="original-anatomy">
+            <figure class="fig source-anatomy"><img src="img/lec02/somatic-original.png"
+                alt="Đường cảm giác và đường điều khiển cơ giữa cánh tay, tủy sống và não." /></figure>
+            <div>
+              <ol>
+                <li>Thụ thể (receptor) ở tay nhận thông tin khi chạm bóng.</li>
+                <li>Tín hiệu cảm giác (sensory input) đi về trung ương.</li>
+                <li>Tín hiệu vận động (motor output) tới cơ, điều chỉnh lực cầm.</li>
+              </ol>
+            </div>
+          </div>
+
+        </section>
+
+        <section data-origin-slide="selected-ans" data-slide-id="2.5">
+          <h2>Giao cảm và phó giao cảm</h2>
+          <p>Hai nhánh của hệ thần kinh tự chủ<br /><span style="white-space:nowrap">(autonomic nervous system).</span>
+          </p>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Hoạt động</th>
+                <th>Giao cảm<br />(sympathetic)</th>
+                <th>Phó giao cảm<br />(parasympathetic)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nhịp tim</td>
+                <td>Thường tăng.</td>
+                <td>Thường giảm.</td>
+              </tr>
+              <tr>
+                <td>Tiêu hóa</td>
+                <td>Thường giảm hoạt động.</td>
+                <td>Thường tăng hoạt động.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="key-box">Cơ thể điều chỉnh hoạt động của nội tạng mà không cần ta ra lệnh có ý thức.</div>
+
+        </section>
+
+        <section data-origin-slide="2.8" data-slide-id="2.6">
+          <h2>Cấu trúc một nơ-ron</h2>
+          <div class="original-anatomy">
+            <figure class="fig source-anatomy"><img
+                alt="Hình giải phẫu nơ-ron và synapse gốc, giữ nguyên nhãn tiếng Anh."
+                src="img/lec02/neuron-original.png" /></figure>
+            <div>
+              <p><strong>Sợi nhánh (dendrite):</strong> tiếp nhận tín hiệu.</p>
+              <p><strong>Thân tế bào (soma / cell body):</strong> duy trì tế bào và tích hợp tín hiệu đến.</p>
+              <p><strong>Sợi trục (axon):</strong> dẫn xung thần kinh (điện thế hoạt động, action potential) tới đầu tận
+                cùng.</p>
+            </div>
+          </div>
+
+        </section>
+
+        <section data-origin-slide="2.9" data-slide-id="2.7">
+          <h2>Truyền tín hiệu qua synapse</h2>
+          <p><strong>Dọc sợi trục: xung điện. Qua synapse hóa học: chất dẫn truyền.</strong></p>
+          <div class="original-anatomy">
+            <figure class="fig source-anatomy"><img alt="Hình nơ-ron với vùng phóng đại synapse hóa học."
+                src="img/lec02/neuron-original.png" /></figure>
+            <div>
+              <ol>
+                <li>Xung đến đầu tận cùng (axon terminal).</li>
+                <li>Chất dẫn truyền (neurotransmitter) đi vào khe synapse.</li>
+                <li>Chất dẫn truyền gắn với thụ thể (receptor) ở tế bào nhận.</li>
+              </ol>
+            </div>
+          </div>
+
+        </section>
+
+        <section data-origin-slide="selected-glia" data-slide-id="2.8">
+          <h2>Không chỉ có nơ-ron</h2>
+          <p><strong>Tế bào đệm (glia)</strong> giúp duy trì hoạt động của hệ thần kinh.</p>
+          <ul>
+            <li>Một số tạo <strong>bao myelin</strong>, giúp dẫn truyền xung nhanh hơn.</li>
+            <li>Điều hòa môi trường quanh nơ-ron và chất dẫn truyền.</li>
+            <li>Bảo vệ mô, loại bỏ mảnh vụn tế bào.</li>
+          </ul>
+          <div class="key-box">Nơ-ron không hoạt động một mình: chúng phụ thuộc vào các tế bào xung quanh.</div>
+
+        </section>
+      </section>
+
+      <section data-part="Cấu trúc não người">
+        <section data-origin-slide="3.1" data-slide-id="3.1">
+          <h1><span class="text-light">2.</span><br />Cấu trúc<br />não người</h1>
+          <p class="text-light">Não gồm những phần nào?</p>
+
+        </section>
+
+        <section data-origin-slide="3.2" data-slide-id="3.2">
+          <h2>Đại não, tiểu não và thân não</h2>
+          <div class="two-col two-col--wide-right">
+            <div>
+              <figure class="fig neuro-small"><img alt="Não nhìn từ bên: đại não, tiểu não, thân não và tủy sống."
+                  src="img/lec02/overview.png" /></figure>
+            </div>
+            <div>
+              <ul>
+                <li><strong>Đại não (cerebrum):</strong> tri giác, ngôn ngữ, trí nhớ và hành động.</li>
+                <li><strong>Tiểu não (cerebellum):</strong> phối hợp vận động, tư thế và thăng bằng.</li>
+                <li><strong>Thân não (brain stem):</strong> dẫn truyền; điều hòa hô hấp và nhịp tim.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="caption"><a
+              href="https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-know-your-brain"
+              rel="noopener" target="_blank">NINDS · Know Your Brain</a></p>
+
+        </section>
+
+        <section data-origin-slide="3.5" data-slide-id="3.3">
+          <h2>Hai bán cầu và thể chai</h2>
+          <div class="two-col">
+            <figure class="fig"><img alt="Thể chai nối hai bán cầu, nhìn trên mặt cắt giữa."
+                src="img/lec02/callosum.png" />
+              <figcaption class="caption">Cleveland Clinic</figcaption>
+            </figure>
+            <div>
+              <ul>
+                <li>Đại não có hai bán cầu (cerebral hemispheres).</li>
+                <li><strong>Thể chai (corpus callosum)</strong> nối hai bên bằng các bó sợi trục.</li>
+                <li>Nhiều đường vận động bắt chéo sang phía đối diện của cơ thể.</li>
+              </ul>
+            </div>
+          </div>
+          <p>Không chia con người thành kiểu “não trái” và “não phải”.</p>
+
+        </section>
+        <section data-origin-slide="lateralization" data-slide-id="3.4">
+          <h2>Hai bán cầu: khác biệt và phối hợp</h2>
+          <ul>
+            <li><strong>Bán cầu trái:</strong> thường ưu thế trong nhiều quá trình ngôn ngữ.</li>
+            <li><strong>Bán cầu phải:</strong> nổi bật trong một số quá trình chú ý không gian và ngữ điệu.</li>
+            <li><strong>Một nhiệm vụ vẫn cần cả hai bên</strong>, cùng nhiều vùng phối hợp.</li>
+          </ul>
+          <div class="key-box">Ưu thế theo chức năng (lateralization), không phải hai kiểu người.</div>
+          <p class="caption"><a href="https://doi.org/10.1371/journal.pbio.1001767">Corballis (2014) · Left Brain, Right
+              Brain: Facts and Fantasies</a></p>
+
+        </section>
+
+        <section data-origin-slide="3.8" data-slide-id="3.5">
+          <h2>Chất xám và chất trắng</h2>
+          <div class="two-col two-col--wide-right">
+            <div>
+              <figure class="fig neuro-small"><img alt="Vỏ não, hồi, rãnh và chất trắng nằm dưới vỏ."
+                  src="img/lec02/cortex.png" />
+                <figcaption class="caption">Cleveland Clinic</figcaption>
+              </figure>
+            </div>
+            <div>
+              <ul>
+                <li><strong>Chất xám (gray matter):</strong> giàu thân nơ-ron, sợi nhánh và synapse.</li>
+                <li><strong>Chất trắng (white matter):</strong> giàu các sợi trục có myelin.</li>
+                <li>Vỏ đại não (cerebral cortex) là chất xám. Các nhân chất xám còn nằm sâu bên trong.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="caption">Hồi (gyrus): nếp nổi; rãnh (sulcus): phần lõm giữa các hồi.</p>
+
+        </section>
+
+        <section data-origin-slide="3.9" data-slide-id="3.6">
+          <h2>Bốn thùy của đại não</h2>
+          <div class="two-col">
+            <figure class="fig"><img alt="Bốn thùy ở mặt ngoài bán cầu: trán, đỉnh, thái dương và chẩm."
+                src="img/lec02/lobes.png" />
+              <figcaption class="caption">Phía trán ở bên trái hình.</figcaption>
+            </figure>
+            <div>
+              <table class="compact-table" style="width:100%">
+                <thead>
+                  <tr>
+                    <th>Thùy</th>
+                    <th>Vai trò tiêu biểu</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Trán<br />(frontal lobe)</td>
+                    <td>Vận động chủ ý, lập kế hoạch, suy luận và nhân cách và kiểm soát hành vi.</td>
+                  </tr>
+                  <tr>
+                    <td>Đỉnh<br />(parietal lobe)</td>
+                    <td>Tích hợp cảm giác bản thể (somatosensory: chạm, sức ép) và thông tin không gian.</td>
+                  </tr>
+                  <tr>
+                    <td>Thái dương<br />(temporal lobe)</td>
+                    <td>Thính giác, ngôn ngữ và trí nhớ.</td>
+                  </tr>
+                  <tr>
+                    <td>Chẩm<br />(occipital lobe)</td>
+                    <td>Xử lý thị giác.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p>Một chức năng thường cần nhiều vùng phối hợp.</p>
+          <p class="caption">Vỏ đảo (insula) nằm khuất trong rãnh bên (lateral sulcus), không thấy ở mặt ngoài này.</p>
+
+        </section>
+        <section data-slide-id="3.7" data-origin-slide="einstein-measurements">
+          <h2>Não Einstein qua các số đo</h2>
+          <p>Witelson và cộng sự (1999): so với <strong>35 nam giới</strong>.</p>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Chỉ số</th>
+                <th>Einstein</th>
+                <th>Nhóm đối chứng<br />(trung bình ± độ lệch chuẩn)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tuổi khi qua đời</td>
+                <td><strong>76 tuổi</strong></td>
+                <td>57 ± 11 tuổi</td>
+              </tr>
+              <tr>
+                <td>Khối lượng não tươi</td>
+                <td><strong>1.230 g</strong></td>
+                <td>1.400 ± 118 g</td>
+              </tr>
+              <tr>
+                <td>Chiều rộng tối đa<br />mỗi bán cầu</td>
+                <td><strong>7,5 cm</strong></td>
+                <td>6,5 ± 0,5 cm</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><strong>Rộng hơn khoảng 15%</strong> ở phép đo này,<br />không phải toàn bộ não lớn hơn 15%.</p>
+          <p class="caption"><a href="https://columbia.edu/cu/psychology/courses/1010/mangels/Einstein.pdf"
+              target="_blank" rel="noopener">Witelson và cộng sự (1999) · Bảng số đo, tr. 2152</a></p>
+
+        </section>
+        <section data-slide-id="3.8" data-origin-slide="einstein-case">
+          <h2>Não Einstein có gì khác?</h2>
+          <figure class="fig diagram" style="margin:10px 0"><img src="img/lec02/einstein-falk-fig2.png"
+              alt="Ảnh và sơ đồ hai bán cầu não Einstein; sơ đồ R đánh số bốn hồi ở vùng trán phải."
+              style="height:340px;margin:0;width:auto;max-width:100%;object-fit:contain" /></figure>
+          <p style="font-size:0.72em;line-height:1.3;margin:10px 0"><strong>4 hồi ở vùng trán phải</strong>, thay vì 3
+            hồi thường gặp.<br />Nghiên cứu dùng 14 ảnh, đối chiếu mô tả của 85 bộ não.</p>
+          <p style="font-size:0.72em;line-height:1.3;margin:10px 0"><strong>Khác biệt này đã đủ để giải thích tài năng
+              của Einstein chưa?</strong></p>
+          <p class="caption"><a href="https://doi.org/10.1093/brain/aws295" target="_blank" rel="noopener">Falk và cộng
+              sự (2013), Hình 2 · Ảnh: NMHM</a></p>
+
+        </section>
+      </section>
+
+      <section data-part="Giải phẫu chức năng">
+        <section data-origin-slide="4.1" data-slide-id="4.1">
+          <h1><span class="text-light">3.</span><br />Giải phẫu<br />chức năng</h1>
+          <p class="text-light">Các vùng não phối hợp với nhau thế nào?</p>
+
+        </section>
+
+        <section data-origin-slide="4.2" data-slide-id="4.2">
+          <h2>Các cấu trúc sâu trong não</h2>
+          <div class="two-col">
+            <figure class="fig"><img alt="Sơ đồ các cấu trúc sâu, có hồi hải mã, hạch hạnh nhân và vùng dưới đồi."
+                src="img/lec02/deep-brain.png" />
+              <figcaption class="caption">Hệ viền (limbic system) · OpenStax, CC BY 3.0</figcaption>
+            </figure>
+            <div>
+              <ul>
+                <li><strong>Hồi hải mã (hippocampus):</strong> củng cố trí nhớ (memory consolidation), định hướng không
+                  gian.</li>
+                <li><strong>Hạch hạnh nhân (amygdala):</strong> học cảm xúc, gồm phản ứng sợ hãi.</li>
+                <li><strong>Vùng dưới đồi (hypothalamus):</strong> điều hòa đói, khát, thân nhiệt, hormone.</li>
+              </ul>
+            </div>
+          </div>
+
+        </section>
+
+        <section data-origin-slide="quiz-thalamus-basal-ganglia" data-slide-id="4.3">
+          <h2>Đồi thị và hạch nền</h2>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Cấu trúc</th>
+                <th>Vai trò tiêu biểu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Đồi thị</strong><br />(thalamus)</td>
+                <td>Trung chuyển và điều chỉnh nhiều tín hiệu cảm giác tới vỏ não.</td>
+              </tr>
+              <tr>
+                <td><strong>Hồi đai</strong><br />(cingulate gyrus)</td>
+                <td>Chất xám vỏ não; phối hợp cảm xúc, chú ý và hành vi.</td>
+              </tr>
+              <tr>
+                <td><strong>Hạch nền</strong><br />(basal ganglia)</td>
+                <td>Điều hòa vận động, học vận động và học từ phần thưởng.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="key-box">Đồi thị khác vùng dưới đồi: một bên nổi bật về trung chuyển cảm giác, một bên về điều hòa
+            nội môi (homeostasis).</div>
+
+        </section>
+
+        <section data-origin-slide="4.5" data-slide-id="4.4">
+          <h2>Broca và Wernicke</h2>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Mô hình kinh điển</th>
+                <th>Liên hệ thường được giới thiệu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Broca: vùng trán dưới, thường bên trái.</td>
+                <td>Tạo lời nói (speech production).</td>
+              </tr>
+              <tr>
+                <td>Wernicke: vùng thái dương sau, thường bên trái.</td>
+                <td>Hiểu ngôn ngữ (language comprehension).</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Cách nhìn này bắt nguồn từ quan sát người bị tổn thương não.</p>
+          <div class="key-box">Ngôn ngữ cần nhiều vùng não phối hợp, không chỉ hai vùng Broca và Wernicke.</div>
+          <p class="caption"><a href="https://doi.org/10.1016/j.bandl.2016.08.004" rel="noopener"
+              target="_blank">Tremblay và Dick (2016) · Giới hạn của mô hình kinh điển</a></p>
+
+        </section>
+        <section data-origin-slide="wg-history" data-slide-id="4.5">
+          <h2>Mô hình Wernicke-Geschwind</h2>
+          <figure class="fig diagram"><img src="img/lec02/language-history.png"
+              alt="Sơ đồ của Wernicke và Geschwind về các vùng não và đường nối tham gia xử lý ngôn ngữ." /></figure>
+          <p class="caption">Mô hình mô tả cách tín hiệu truyền giữa các vùng não khi nghe, đọc và nói.</p>
+
+        </section>
+
+        <section data-origin-slide="wg-paths" data-slide-id="4.6">
+          <h2>Đọc các nhãn và đường đi</h2>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Nhãn tiếng Anh</th>
+                <th>Tiếng Việt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Primary auditory / visual / motor cortex</td>
+                <td>Vỏ thính giác / thị giác / vận động sơ cấp</td>
+              </tr>
+              <tr>
+                <td>Broca’s / Wernicke’s area</td>
+                <td>Vùng Broca / vùng Wernicke</td>
+              </tr>
+              <tr>
+                <td>Angular gyrus</td>
+                <td>Hồi góc</td>
+              </tr>
+              <tr>
+                <td>Arcuate fasciculus</td>
+                <td>Bó cung</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="caption"><strong>Nghe rồi nhắc lại:</strong> thính giác → Wernicke → bó cung → Broca → vận
+            động.<br /><strong>Đọc thành tiếng:</strong> thị giác → hồi góc → Wernicke → bó cung → Broca → vận động.</p>
+
+        </section>
+
+        <section data-origin-slide="4.8" data-slide-id="4.7">
+          <h2>Hai luồng xử lý lời nói</h2>
+          <figure class="fig diagram"><img
+              alt="Phân tích lời nói kết nối với luồng bụng hướng tới nghĩa và luồng lưng liên hệ âm thanh với cử động phát âm."
+              src="img/lec02/language-streams.svg" /></figure>
+          <p class="caption"><a href="https://doi.org/10.1038/nrn2113" rel="noopener" target="_blank">Hickok và Poeppel
+              (2007) · The cortical organization of speech processing</a></p>
+
+        </section>
+
+        <section data-origin-slide="4.10" data-slide-id="4.8">
+          <h2>Nghe, đọc, nói và viết</h2>
+          <figure class="fig diagram"><img
+              alt="Từ nghe và từ viết được phân tích qua các đường khác nhau, liên hệ với nghĩa rồi với phát âm hoặc chữ viết."
+              src="img/lec02/word-processing.svg" /></figure>
+          <div class="key-box">Đây là sơ đồ các bước xử lý, không phải bản đồ vị trí của các vùng não.</div>
+
+        </section>
+      </section>
+
+      <section data-part="Sự phát triển của não">
+        <section data-origin-slide="5.1" data-slide-id="5.1">
+          <h1><span class="text-light">4.</span><br />Sự phát triển<br />của não</h1>
+          <p class="text-light">Não thay đổi thế nào trong suốt cuộc đời?</p>
+
+        </section>
+
+        <section data-origin-slide="early-development" data-slide-id="5.2">
+          <h2>Não thay đổi nhanh sau khi sinh</h2>
+          <figure style="margin:18px 0"><img alt="Ảnh MRI cấu trúc ở ba mốc: 2 tuần, 1 tuổi và 2 tuổi."
+              src="img/lec02/early-mri.png" style="width:100%;height:auto;max-height:340px;object-fit:contain" />
+          </figure>
+
+          <p>Không chỉ lớn lên: độ tương phản giữa chất xám và chất trắng cũng thay đổi.</p>
+          <p class="caption"><a href="https://www.nature.com/articles/nrn.2018.1" rel="noopener" target="_blank">Gilmore
+              và cộng sự (2018) · Phát triển não đầu đời</a></p>
+
+        </section>
+
+        <section data-origin-slide="5.5" data-slide-id="5.3">
+          <h2>Tạo và cắt tỉa kết nối</h2>
+          <figure class="fig diagram"><img
+              alt="Sơ đồ định tính minh họa quá trình tăng và giảm kết nối ở những nhịp khác nhau, không phải số liệu đo."
+              src="img/lec02/synapse-development.svg" /></figure>
+          <div class="key-box">Không phải cứ có nhiều synapse hơn là não hoạt động tốt hơn.</div>
+
+        </section>
+
+        <section data-slide-id="5.4" data-origin-slide="myelin-development">
+          <h2>Kết nối thay đổi, đường truyền cũng vậy</h2>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Quá trình</th>
+                <th>Điều thay đổi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tạo và cắt tỉa synapse</td>
+                <td>Các điểm liên lạc giữa tế bào.</td>
+              </tr>
+              <tr>
+                <td>Myelin hóa (myelination)</td>
+                <td>Bao myelin quanh sợi trục, hỗ trợ dẫn truyền nhanh.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="key-box">Các vùng và đường nối phát triển theo những nhịp khác nhau.</div>
+          <p class="caption"><a href="https://www.nature.com/articles/nrn.2018.1" target="_blank" rel="noopener">Gilmore
+              và cộng sự (2018) · Phát triển não đầu đời</a></p>
+
+        </section>
+
+        <section data-origin-slide="5.8" data-slide-id="5.5">
+          <h2>Lão hóa không đồng nghĩa Alzheimer</h2>
+          <ul>
+            <li>Não tiếp tục thay đổi trong suốt cuộc đời.</li>
+            <li>Các quá trình không cùng đạt một mốc “trưởng thành hoàn toàn”.</li>
+            <li>Alzheimer là bệnh, không phải kết cục bắt buộc của tuổi già.</li>
+          </ul>
+          <p class="caption"><a href="https://www.nia.nih.gov/health/alzheimers-and-dementia/what-alzheimers-disease"
+              rel="noopener" target="_blank">NIA · Alzheimer và lão hóa</a></p>
+
+        </section>
+      </section>
+
+      <section data-part="Bệnh và tổn thương não">
+        <section data-origin-slide="6.1" data-slide-id="6.1">
+          <h1><span class="text-light">5.</span><br />Bệnh và<br />tổn thương não</h1>
+          <p class="text-light">Tổn thương não ảnh hưởng đến những khả năng nào?</p>
+
+        </section>
+
+        <section data-origin-slide="disease-overview" data-slide-id="6.2">
+          <h2>Bệnh và tổn thương: nhiều dạng khác nhau</h2>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Ví dụ</th>
+                <th>Điểm khác nhau</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Viêm màng não (meningitis)</td>
+                <td>Viêm các màng bao quanh não và tủy sống.</td>
+              </tr>
+              <tr>
+                <td>Động kinh (epilepsy)</td>
+                <td>Khuynh hướng xuất hiện các cơn động kinh.</td>
+              </tr>
+              <tr>
+                <td>Đột quỵ (stroke)</td>
+                <td>Tắc mạch hoặc chảy máu gây tổn thương.</td>
+              </tr>
+              <tr>
+                <td>Chấn thương não (traumatic brain injury, TBI)</td>
+                <td>Tổn thương do lực tác động từ bên ngoài.</td>
+              </tr>
+              <tr>
+                <td>U não (brain tumour)</td>
+                <td>Tế bào tăng sinh bất thường tạo khối u.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Ta chọn đột quỵ và mất ngôn ngữ để xem sâu mối liên hệ giữa tổn thương và chức năng.</p>
+
+        </section>
+        <section data-origin-slide="disease-regions" data-slide-id="6.3">
+          <h2>Bệnh, vùng não và biểu hiện</h2>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Ví dụ</th>
+                <th>Vùng hoặc hệ liên quan</th>
+                <th>Biểu hiện có thể gặp</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Đột quỵ MCA trái</td>
+                <td>Mạng ngôn ngữ bán cầu trái</td>
+                <td>Mất ngôn ngữ</td>
+              </tr>
+              <tr>
+                <td>Alzheimer</td>
+                <td>Thái dương trong, hồi hải mã</td>
+                <td>Khó nhớ sự kiện mới; về sau có thể khó ngôn ngữ</td>
+              </tr>
+              <tr>
+                <td>Parkinson</td>
+                <td>Chất đen (substantia nigra), hệ hạch nền</td>
+                <td>Rối loạn vận động; có thể khó nói và suy giảm điều hành</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </section>
+
+        <section data-origin-slide="6.4" data-slide-id="6.4">
+          <h2>Đột quỵ: tắc mạch hoặc chảy máu</h2>
+          <div class="two-col">
+            <div>
+              <div class="key-box"><strong>Thiếu máu não (ischemic)</strong><br />Mạch bị tắc, vùng mô phía sau chỗ tắc
+                thiếu máu.
+              </div>
+            </div>
+            <div>
+              <div class="key-box"><strong>Xuất huyết não (hemorrhagic)</strong><br />Mạch vỡ hoặc rò, máu thoát ra gây
+                tổn thương.
+              </div>
+            </div>
+          </div>
+          <p>Hậu quả phụ thuộc vị trí, mức độ tổn thương và thời điểm được xử trí.</p>
+          <p class="caption"><a href="https://www.ninds.nih.gov/health-information/stroke/stroke-overview"
+              rel="noopener" target="_blank">NINDS · Stroke Overview</a></p>
+
+        </section>
+
+        <section data-origin-slide="tan-case" data-slide-id="6.5">
+          <h2>Từ ca bệnh đến câu hỏi về ngôn ngữ</h2>
+          <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:25px;align-items:center">
+            <figure style="margin:0"><img alt="Não của bệnh nhân được gọi là Tan, hình trong PDF."
+                src="img/lec02/tan.png" style="width:100%;height:320px;object-fit:contain" />
+              <figcaption class="caption">Não của bệnh nhân “Tan”</figcaption>
+            </figure>
+            <div>
+              <p><strong>Broca, 1861:</strong> bệnh nhân được gọi là “Tan” vì lời nói bị hạn chế nghiêm trọng, gần như
+                chỉ phát ra được âm tiết “tan”.</p>
+              <p>Khám não sau khi mất cho thấy tổn thương ở vùng trán trái.</p>
+            </div>
+          </div>
+          <div class="key-box">Khó nói ra chưa đồng nghĩa mất mọi khả năng hiểu và suy nghĩ.</div>
+
+        </section>
+
+        <section data-origin-slide="6.10" data-slide-id="6.6">
+          <h2>Mất ngôn ngữ là gì?</h2>
+          <p><strong>Mất ngôn ngữ</strong> (<em>aphasia</em>): suy giảm khả năng dùng hoặc hiểu ngôn ngữ do tổn thương
+            não.</p>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Có thể gặp khó khăn khi</th>
+                <th>Ví dụ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nói và tìm từ</td>
+                <td>Biết điều muốn nói nhưng khó gọi đúng tên.</td>
+              </tr>
+              <tr>
+                <td>Hiểu lời hoặc chữ</td>
+                <td>Nghe được âm nhưng khó hiểu câu.</td>
+              </tr>
+              <tr>
+                <td>Đọc và viết</td>
+                <td>Khó hiểu văn bản hoặc diễn đạt bằng chữ.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="caption"><a href="https://www.nidcd.nih.gov/health/aphasia" rel="noopener" target="_blank">NIDCD ·
+              Aphasia</a></p>
+
+        </section>
+        <section data-origin-slide="aphasia-types" data-slide-id="6.7">
+          <h2>Ba dạng mất ngôn ngữ</h2>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Dạng</th>
+                <th>Biểu hiện điển hình</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Broca</td>
+                <td>Nói gắng sức, ít trôi chảy; hiểu thường tốt hơn khả năng nói.</td>
+              </tr>
+              <tr>
+                <td>Wernicke</td>
+                <td>Nói trôi chảy nhưng nội dung khó hiểu; hiểu lời nói bị ảnh hưởng.</td>
+              </tr>
+              <tr>
+                <td>Dẫn truyền (conduction)</td>
+                <td>Nhắc lại khó hơn rõ rệt so với nói tự phát và hiểu.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="caption">Các kiểu biểu hiện giúp phân tích chức năng; không đủ để tự xác định một vị trí tổn thương.
+          </p>
+
+        </section>
+
+        <section data-origin-slide="6.18" data-slide-id="6.8">
+          <h2>Khó gọi tên hay mất kiến thức về vật?</h2>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Tình huống minh họa</th>
+                <th>Cần phân biệt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nhìn chiếc kéo, biết dùng để cắt nhưng không tìm được từ “kéo”.</td>
+                <td>Khó truy xuất tên gọi.</td>
+              </tr>
+              <tr>
+                <td>Không chỉ khó gọi tên mà còn khó nhận biết công dụng của chiếc kéo.</td>
+                <td>Có thể suy giảm kiến thức ngữ nghĩa về đồ vật.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="key-box">Cần kiểm tra bằng nhiều nhiệm vụ, không kết luận chỉ từ một câu trả lời.</div>
+
+        </section>
+
+        <section data-origin-slide="6.19" data-slide-id="6.9">
+          <h2>Tính mềm dẻo thần kinh</h2>
+          <p class="caption">Neuroplasticity</p>
+          <div class="two-col">
+            <div>
+              <div class="key-box"><strong>Mềm dẻo cấu trúc</strong><br /><em>Structural neuroplasticity</em><br />Thay
+                đổi cấu trúc vật lý theo học tập và trải nghiệm.</div>
+            </div>
+            <div>
+              <div class="key-box"><strong>Mềm dẻo chức năng</strong><br /><em>Functional neuroplasticity</em><br />Tái
+                tổ chức kết nối và hoạt động mạng, hỗ trợ phục hồi sau tổn thương.</div>
+            </div>
+          </div>
+          <p>Phục hồi không đồng nghĩa sinh thêm nơ-ron hoặc trở lại hoàn toàn như trước.</p>
+
+        </section>
+      </section>
+
+      <section data-part="Phương pháp nghiên cứu">
+        <section data-origin-slide="7.1" data-slide-id="7.1">
+          <h1><span class="text-light">6.</span><br />Phương pháp<br />nghiên cứu</h1>
+          <p class="text-light">Làm sao biết não hoạt động thế nào?</p>
+
+        </section>
+
+        <section data-origin-slide="histology" data-slide-id="7.2">
+          <h2>Nhìn mô não dưới kính hiển vi</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center">
+            <figure style="margin:0"><img alt="So sánh nhuộm Nissl và nhuộm Golgi từ hình gốc."
+                src="img/lec02/stains.png" style="width:100%;height:360px;object-fit:contain" /></figure>
+            <div>
+              <p><strong>Mô học (histology):</strong> nghiên cứu cấu trúc mô ở mức vi thể.</p>
+              <p><strong>Nhuộm Nissl (Nissl stain):</strong> làm rõ thân tế bào.</p>
+              <p><strong>Nhuộm Golgi (Golgi stain):</strong> làm hiện hình dạng và các nhánh của một số nơ-ron.</p>
+            </div>
+          </div>
+          <p>Quan sát mô giúp trả lời những câu hỏi mà ảnh toàn bộ não không cho thấy.</p>
+
+        </section>
+
+        <section data-origin-slide="7.4" data-slide-id="7.3">
+          <h2>MRI và CT: quan sát cấu trúc</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:25px">
+            <div>
+              <h3>MRI cấu trúc</h3><img alt="Ảnh MRI cấu trúc đầu đời đã xem ở mục phát triển."
+                src="img/lec02/early-mri.png" style="width:100%;height:230px;object-fit:contain" />
+              <p>Từ trường và sóng vô tuyến; phân biệt mô mềm.</p>
+            </div>
+            <div>
+              <h3>CT</h3><img alt="Các ví dụ CT trong PDF: xuất huyết, thiếu máu não và ảnh bình thường."
+                src="img/lec02/ct.png" style="width:100%;height:230px;object-fit:contain" />
+              <p>Tia X từ nhiều góc; dựng các lát cắt.</p>
+            </div>
+          </div>
+          <div class="caption">Độ sáng trên ảnh cấu trúc không biểu thị mức độ hoạt động của não.</div>
+
+        </section>
+
+        <section data-origin-slide="7.6" data-slide-id="7.4">
+          <h2>fMRI: đo thay đổi liên quan đến máu</h2>
+          <ol>
+            <li>Người tham gia làm nhiệm vụ trong máy MRI.</li>
+            <li>Thu tín hiệu <strong>BOLD</strong>, nhạy với thay đổi oxy hóa máu.</li>
+            <li>So sánh tín hiệu giữa các điều kiện hoặc thời điểm.</li>
+          </ol>
+          <p>Đáp ứng của máu diễn ra chậm hơn hoạt động điện của nơ-ron.</p>
+          <p class="caption"><a
+              href="https://www.nibib.nih.gov/science-education/science-topics/magnetic-resonance-imaging-mri"
+              rel="noopener" target="_blank">NIBIB · MRI và fMRI</a></p>
+          <p><strong>PET (positron emission tomography):</strong> dùng chất đánh dấu phóng xạ để khảo sát chuyển hóa
+            hoặc quá trình phân tử.</p>
+
+        </section>
+
+        <section data-origin-slide="7.8" data-slide-id="7.5">
+          <h2>Ví dụ fMRI: so sánh hai nhiệm vụ</h2>
+          <div class="two-col">
+            <div>
+              <div class="key-box"><strong>Điều kiện A</strong><br />Nhìn một từ và bấm nút nếu đó là tên con vật.</div>
+            </div>
+            <div>
+              <div class="key-box"><strong>Điều kiện B</strong><br />Nhìn một từ và bấm nút nếu chữ được viết hoa.</div>
+            </div>
+          </div>
+          <p>Cùng nhìn từ và bấm nút; khác yêu cầu xử lý nghĩa.</p>
+          <div class="key-box">Chênh lệch tín hiệu gợi ý vùng liên quan đến khác biệt giữa hai nhiệm vụ.</div>
+
+        </section>
+
+        <section data-origin-slide="7.10" data-slide-id="7.6">
+          <h2>EEG và MEG: theo dõi thời gian</h2>
+          <div class="two-col">
+            <div>
+              <figure class="fig neuro-small"><img alt="Điện cực EEG ghi tín hiệu điện trên da đầu."
+                  src="img/lec02/eeg.png" />
+                <figcaption class="caption">Điện não đồ (electroencephalography, EEG).</figcaption>
+              </figure>
+            </div>
+            <div>
+              <figure class="fig neuro-small"><img alt="Hệ thống MEG với các cảm biến bao quanh đầu."
+                  src="img/lec02/meg.png" />
+                <figcaption class="caption">Từ não đồ (magnetoencephalography, MEG).</figcaption>
+              </figure>
+            </div>
+          </div>
+          <p>EEG ghi điện thế trên da đầu; MEG ghi từ trường quanh đầu. Cả hai theo dõi biến đổi nhanh.</p>
+
+        </section>
+
+        <section data-origin-slide="selected-lesions" data-slide-id="7.7">
+          <h2>Tổn thương cho biết điều gì?</h2>
+          <p><strong>Nghiên cứu tổn thương (lesion studies):</strong> xem chức năng nào thay đổi khi một phần não bị tổn
+            thương.</p>
+          <div class="key-box">Ví dụ: một người khó nói sau tổn thương não, nhưng vẫn hiểu nhiều câu và biết dùng đồ
+            vật.</div>
+          <ul>
+            <li>Đối chiếu vị trí tổn thương với các khả năng bị ảnh hưởng và còn giữ được.</li>
+            <li>Xem xét cả vùng tổn thương lẫn những đường nối liên quan.</li>
+          </ul>
+
+        </section>
+
+        <section data-origin-slide="7.15" data-slide-id="7.8">
+          <h2>TMS: kích thích từ ngoài đầu</h2>
+          <p class="caption">Transcranial magnetic stimulation</p>
+          <div class="two-col two-col--wide-right">
+            <div>
+              <figure class="fig neuro-small"><img alt="Cuộn dây TMS đặt ngoài đầu, gần vùng vỏ não được nhắm đến."
+                  src="img/lec02/tms.png" /></figure>
+            </div>
+            <div>
+              <ol>
+                <li>Cuộn dây (coil) tạo từ trường (magnetic field) biến đổi.</li>
+                <li>Từ trường gây điện trường (electric field) trong mô bên dưới.</li>
+                <li>So sánh đáp ứng khi có và không có kích thích.</li>
+              </ol>
+            </div>
+          </div>
+          <p class="caption"><a
+              href="https://www.nimh.nih.gov/health/topics/brain-stimulation-therapies/brain-stimulation-therapies"
+              rel="noopener" target="_blank">NIMH · TMS và DBS</a></p>
+          <p class="caption"><strong>DBS (deep brain stimulation):</strong> điện cực cấy trong não.</p>
+
+        </section>
+
+        <section data-origin-slide="selected-molecular" data-slide-id="7.9">
+          <h2>Từ gene đến mạch thần kinh</h2>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Công cụ</th>
+                <th>Giúp tìm hiểu điều gì?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bất hoạt gene<br />(gene knockout)</td>
+                <td>Điều gì thay đổi khi gene không còn hoạt động?</td>
+              </tr>
+              <tr>
+                <td>Đánh dấu đường nối<br />(circuit tracing)</td>
+                <td>Những tế bào hoặc vùng nào kết nối với nhau?</td>
+              </tr>
+              <tr>
+                <td>Bản đồ não<br />(brain atlas)</td>
+                <td>Dữ liệu nằm ở đâu trong một hệ tham chiếu chung?</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Các mô hình động vật giúp nghiên cứu những cơ chế khó khảo sát trực tiếp ở người.</p>
+          <p class="caption"><strong>Chọn từ câu hỏi:</strong> cấu trúc → mô học/MRI/CT; thời gian → EEG/MEG; tác động →
+            can thiệp và đối chứng.</p>
+
+        </section>
+      </section>
+
+      <section data-part="Não người và não động vật">
+        <section data-origin-slide="8.1" data-slide-id="8.1">
+          <h1><span class="text-light">7.</span><br />Não người và<br />não động vật</h1>
+          <p class="text-light">Não người và não động vật giống và khác nhau ở đâu?</p>
+
+        </section>
+
+        <section data-slide-id="8.2" data-origin-slide="species-size">
+          <h2>Não lớn hơn là thông minh hơn?</h2>
+          <ul>
+            <li>Não người lớn hơn não tinh tinh, nhưng não voi còn lớn hơn não người.</li>
+            <li>Kích thước não còn liên quan đến kích thước cơ thể.</li>
+            <li>Muốn giải thích năng lực nhận thức, cần xét thêm tế bào và cách kết nối.</li>
+          </ul>
+          <div class="key-box">Không thể dùng riêng khối lượng não để xếp hạng trí thông minh.</div>
+          <p class="caption"><a href="https://www.nature.com/immersive/d41586-024-03425-y/index.html" target="_blank"
+              rel="noopener">Nature (2024) · What’s so special about the human brain?</a></p>
+
+        </section>
+
+        <section data-slide-id="8.3" data-origin-slide="species-cells">
+          <h2>So sánh cách tổ chức tế bào</h2>
+          <p><strong>Fang và cộng sự (2022):</strong> so sánh tổ chức tế bào ở các vùng vỏ não người và chuột.</p>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Điểm giống</th>
+                <th>Điểm khác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cách phân bố tế bào theo lớp có nét tương đồng.</td>
+                <td>Tỷ lệ các nhóm tế bào và cách chúng nằm gần nhau khác nhau.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="key-box">Có cùng những nhóm tế bào không có nghĩa là có cùng một mạng.</div>
+          <p class="caption"><a href="https://doi.org/10.1126/science.abm1741" target="_blank" rel="noopener">Fang và
+              cộng sự (2022) · Tổ chức tế bào vỏ não người và chuột</a></p>
+
+        </section>
+
+        <section data-origin-slide="species-tempo" data-slide-id="8.4">
+          <h2>So sánh nhịp phát triển</h2>
+          <ul>
+            <li>Sự trưởng thành của nơ-ron người kéo dài hơn ở nhiều loài khác.</li>
+            <li>Không thể coi cùng số tháng tuổi là cùng giai đoạn phát triển.</li>
+            <li>Mô hình động vật giúp kiểm tra cơ chế; kết luận về người cần thêm bằng chứng.</li>
+          </ul>
+          <div class="key-box">
+            <p>Một can thiệp giúp chuột học tốt hơn. Cần kiểm tra gì trước khi kỳ vọng tác dụng tương tự ở người?</p>
+          </div>
+          <p class="caption"><a href="https://www.nature.com/articles/s41586-024-07521-x" rel="noopener"
+              target="_blank">Lindhout và cộng sự (2024) · Tiến hóa và nhịp phát triển não</a></p>
+
+        </section>
+
+      </section>
+
+      <section data-part="Não người và máy tính">
+        <section data-origin-slide="9.1" data-slide-id="9.1">
+          <h1><span class="text-light">8.</span><br />Não người và<br />máy tính</h1>
+          <p class="text-light">Não và máy tính xử lý thông tin khác nhau thế nào?</p>
+
+        </section>
+        <section data-slide-id="9.2">
+          <h2>Não và máy tính: cấu trúc</h2>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Não người</th>
+                <th>Máy tính</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Thành phần</td>
+                <td>≈ 86 tỷ nơ-ron, nối qua synapse.</td>
+                <td>Mạch điện tử; chip H100 ≈ 80 tỷ transistor.</td>
+              </tr>
+              <tr>
+                <td>Xử lý</td>
+                <td>Nhiều mạng hoạt động song song.</td>
+                <td>Xử lý tuần tự và song song.</td>
+              </tr>
+              <tr>
+                <td>Thay đổi</td>
+                <td>Kết nối thay đổi qua trải nghiệm.</td>
+                <td>Chương trình và cơ chế học thay đổi hành vi.</td>
+              </tr>
+              <tr>
+                <td>Công suất</td>
+                <td>Khoảng <strong>20 W</strong>.</td>
+                <td>H100 SXM: tối đa <strong>700 W</strong> (TDP).</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="caption"><a href="https://doi.org/10.1002/cne.21974" target="_blank" rel="noopener">Azevedo và cộng
+              sự (2009)</a> · <a href="https://nvidianews.nvidia.com/news/nvidia-hopper-in-full-production"
+              target="_blank" rel="noopener">NVIDIA H100</a> · <a
+              href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8106317/" target="_blank" rel="noopener">Năng lượng của
+              não</a> · <a href="https://www.nvidia.com/en-us/data-center/h100/" target="_blank" rel="noopener">Thông số
+              H100 SXM</a></p>
+
+        </section>
+        <section data-slide-id="9.3">
+          <h2>Não và máy tính: chức năng</h2>
+          <p>Cả hai đều <strong>xử lý, lưu giữ và truyền thông tin</strong>.</p>
+          <table class="compact-table" style="width:100%">
+            <thead>
+              <tr>
+                <th>Khía cạnh</th>
+                <th>Não người</th>
+                <th>Máy tính</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tính toán</td>
+                <td>Có giới hạn về tốc độ và độ chính xác.</td>
+                <td>Nhanh và chính xác với nhiều phép tính số học.</td>
+              </tr>
+              <tr>
+                <td>Sáng tạo</td>
+                <td>Gắn với kiến thức, trải nghiệm và mục đích.</td>
+                <td>Có thể tạo văn bản, hình ảnh và giải pháp mới.</td>
+              </tr>
+              <tr>
+                <td>Cảm xúc, sự hiểu</td>
+                <td>Gắn với đời sống và trải nghiệm chủ quan.</td>
+                <td>Biểu hiện giống người chưa đủ xác nhận trải nghiệm.</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </section>
+
+        <section data-slide-id="9.4">
+          <h2>Có thể ví não với máy tính đến đâu?</h2>
+          <figure class="fig diagram"><img src="img/lec02/brain-computer-original.png"
+              alt="Hình ví các vùng não với CPU, bộ nhớ, ổ đĩa và card đồ họa."
+              style="height:365px;width:auto;max-width:100%;object-fit:contain" /></figure>
+
+        </section>
+        <section data-origin-slide="9.4" data-slide-id="9.5">
+          <h2>Giao diện não-máy</h2>
+          <p><strong>Giao diện não-máy</strong> (brain-computer interface, BCI) chuyển tín hiệu thần kinh thành đầu ra
+            cho thiết bị.</p>
+          <ol>
+            <li>Người tham gia gặp khó khăn nặng về lời nói, cố nói các câu.</li>
+            <li>Điện cực ghi tín hiệu; mô hình học từ tín hiệu và câu cần nói.</li>
+            <li>Với lượt nói mới, hệ thống dự đoán và xuất văn bản.</li>
+          </ol>
+          <p class="caption"><a href="https://doi.org/10.1038/s41586-023-06377-x" rel="noopener" target="_blank">Willett
+              và cộng sự (2023) · A high-performance speech neuroprosthesis</a></p>
+
+        </section>
+        <section data-origin-slide="9.6" data-slide-id="9.6">
+          <h2>Nhận ra vật và hiểu quan hệ</h2>
+          <div class="two-col">
+            <figure class="fig"><img
+                alt="Ví dụ hệ thống gọi đúng người và thuyền nhưng nói người ở trên thuyền, trong khi họ ở cạnh thuyền."
+                src="img/lec02/caption-bot.png" />
+              <figcaption class="caption">Máy mô tả: “Một nhóm người đứng trên thuyền.”</figcaption>
+            </figure>
+            <div>
+              <p><strong>Thảo luận:</strong></p>
+              <p>Điều gì xảy ra nếu một chức năng của não không hoạt động?</p>
+            </div>
+          </div>
+
+        </section>
+      </section>
+
+      <section data-part="Kết">
+        <section data-origin-slide="10.1" data-slide-id="10.1">
+          <h2>Tổng kết buổi 2</h2>
+          <ul>
+            <li>Hệ thần kinh truyền tín hiệu qua các tế bào và đường nối.</li>
+            <li>Một chức năng thường cần nhiều vùng phối hợp.</li>
+            <li>Phát triển và tổn thương giúp nghiên cứu sự thay đổi của mạng.</li>
+            <li>Mỗi phương pháp cho phép một loại kết luận nhất định.</li>
+          </ul>
+
+        </section>
+
+        <section data-origin-slide="10.2" data-slide-id="10.2">
+          <h2>Kiểm tra lại cách hiểu</h2>
+          <div class="question-box">
+            <div class="question-title">Câu hỏi</div>
+            <div class="question-content">
+              <ol>
+                <li>Tín hiệu từ da về tủy sống là hướng tâm hay ly tâm?</li>
+                <li>Một người biết dùng chiếc kéo nhưng không gọi được tên. Cần kiểm tra thêm điều gì?</li>
+                <li>Khi nghiên cứu việc hiểu nghĩa của từ bằng fMRI, vì sao ta so sánh nhiệm vụ “từ này có chỉ con vật
+                  không?” với nhiệm vụ “chữ này có viết hoa không?”?</li>
+              </ol>
+            </div>
+          </div>
+
+        </section>
+        <section data-origin-slide="end-quiz" data-slide-id="10.3">
+          <h2>Quiz cuối buổi 2</h2>
+          <ul>
+            <li>Mở <strong>Quiz cuối buổi 2</strong> trên Canvas.</li>
+            <li><strong>1 câu ghép đôi, 12 cặp</strong> vùng não và chức năng, tổng 12 điểm.</li>
+            <li><strong>Chỉ 1 lượt làm:</strong> kiểm tra đủ các cặp trước khi nộp.</li>
+          </ul>
+
+        </section>
+
+        <section data-origin-slide="10.3" data-slide-id="10.4">
+          <h2>Bài về nhà</h2>
+          <ul>
+            <li><strong>Đọc lại slide tiếng Anh Buổi 2</strong> để xem các hình và phần chuyên sâu.</li>
+            <li><strong>Bài đọc tuần này:</strong> Savage-Rumbaugh và cộng sự (1986), về việc tinh tinh lùn (bonobo) học
+              và dùng
+              ký hiệu.</li>
+            <li>Dùng bản trên Canvas; làm quiz bài đọc 2 trước Buổi 3.</li>
+          </ul>
+          <div class="key-box">Bonobo học ký hiệu trong hoàn cảnh nào? Bằng chứng nào loại trừ việc chúng chỉ làm theo
+            gợi ý?</div>
+          <p class="caption"><a href="https://doi.org/10.1037/0096-3445.115.3.211" rel="noopener"
+              target="_blank">Spontaneous Symbol Acquisition and Communicative Use<br />by Pygmy Chimpanzees (Pan
+              paniscus)</a></p>
+
+        </section>
+      </section>
+      <div class="footer">NTNNTD (2627-1) · Bài 2: Giải phẫu thần kinh chức năng</div>
+    </div>
+  </div>
+  <script src="revealjs/dist/reveal.js"></script>
+
+  <script>
+    Reveal.initialize({ width: 960, height: 700, controlsLayout: "edges", slideNumber: true, hashOneBasedIndex: true, hash: true, plugins: [] });
+  </script>
+</body>
+
+</html>

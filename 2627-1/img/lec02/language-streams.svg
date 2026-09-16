@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img" aria-labelledby="title desc">
+<title id="title">Hai luồng xử lý lời nói</title><desc id="desc">Từ phân tích âm thanh, luồng lưng liên hệ phát âm và luồng bụng liên hệ ý nghĩa.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2A7291"/></marker></defs>
+<style>text{font-family:"Source Sans Pro",Arial,sans-serif;font-size:30px;fill:#222}.bold{font-weight:700}.line{fill:none;stroke:#2A7291;stroke-width:3;marker-end:url(#arrow)}.thin{fill:none;stroke:#2A7291;stroke-width:2}.node{fill:#EEF7FA;stroke:#2A7291;stroke-width:2.5}.accent{fill:#FDF3E3;stroke:#E8890C;stroke-width:2.5}.small{font-size:25px}</style>
+
+<rect class="node" x="20" y="125" width="275" height="150" rx="15"/>
+<text class="bold" x="157" y="169" text-anchor="middle"><tspan x="157">Phân tích</tspan><tspan x="157" dy="35">âm thanh</tspan><tspan x="157" dy="35">lời nói</tspan></text>
+<rect class="node" x="480" y="25" width="395" height="150" rx="15"/>
+<rect class="accent" x="480" y="225" width="395" height="150" rx="15"/>
+<path class="line" d="M296 174H370V100H467"/><path class="line" d="M296 226H370V300H467"/>
+<text class="bold" x="677" y="72" text-anchor="middle">Luồng lưng</text><text x="677" y="120" text-anchor="middle"><tspan x="677">Liên hệ âm thanh</tspan><tspan x="677" dy="34">với phát âm</tspan></text>
+<text class="bold" x="677" y="272" text-anchor="middle">Luồng bụng</text><text x="677" y="321" text-anchor="middle"><tspan x="677">Liên hệ âm thanh</tspan><tspan x="677" dy="34">với ý nghĩa</tspan></text>
+</svg>

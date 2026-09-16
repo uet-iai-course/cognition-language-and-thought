@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="img" aria-labelledby="title desc">
+<title id="title">Nghe, đọc, nói và viết</title><desc id="desc">Hai loại đầu vào có thể liên hệ với nghĩa để nói hoặc viết; lặp lại cũng có thể qua đường không cần hiểu đầy đủ.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#2A7291" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<style>text{font-family:"Source Sans Pro",Arial,sans-serif;font-size:30px;fill:#222}.bold{font-weight:700}.line{fill:none;stroke:#2A7291;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}.thin{fill:none;stroke:#2A7291;stroke-width:2}.node{fill:#EEF7FA;stroke:#2A7291;stroke-width:2.5}.accent{fill:#FDF3E3;stroke:#E8890C;stroke-width:2.5}.small{font-size:25px}</style>
+
+<rect class="node" x="85" y="15" width="275" height="90" rx="12"/><rect class="node" x="540" y="15" width="275" height="90" rx="12"/>
+<text class="bold" x="222" y="53" text-anchor="middle"><tspan x="222">Nghe</tspan><tspan x="222" dy="34">phân tích âm</tspan></text>
+<text class="bold" x="677" y="53" text-anchor="middle"><tspan x="677">Đọc</tspan><tspan x="677" dy="34">phân tích chữ</tspan></text>
+<rect class="accent" x="310" y="175" width="280" height="90" rx="12"/><text class="bold" x="450" y="213" text-anchor="middle"><tspan x="450">Kiến thức</tspan><tspan x="450" dy="34">về nghĩa</tspan></text>
+<rect class="node" x="60" y="335" width="325" height="90" rx="12"/><rect class="node" x="515" y="335" width="325" height="90" rx="12"/>
+<text class="bold" x="222" y="373" text-anchor="middle"><tspan x="222">Nói</tspan><tspan x="222" dy="34">chuẩn bị phát âm</tspan></text>
+<text class="bold" x="677" y="373" text-anchor="middle"><tspan x="677">Viết</tspan><tspan x="677" dy="34">chuẩn bị chữ viết</tspan></text>
+<path class="line" d="M222 108V130Q222 140 232 140H365Q375 140 375 150V171"/><path class="line" d="M677 108V130Q677 140 667 140H535Q525 140 525 150V171"/>
+<path class="line" d="M375 268V290Q375 300 365 300H232Q222 300 222 310V331"/><path class="line" d="M525 268V290Q525 300 535 300H667Q677 300 677 310V331"/>
+<path class="line" stroke-dasharray="7 6" d="M81 60H44Q32 60 32 72V368Q32 380 44 380H56"/>
+<text class="small" x="80" y="204"><tspan x="80">Nhắc lại</tspan><tspan x="80" dy="31">không cần hiểu</tspan><tspan x="80" dy="31">đầy đủ nghĩa</tspan></text>
+
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 425" role="img" aria-labelledby="title desc">
+<title id="title">Các vùng có nhịp phát triển khác nhau</title><desc id="desc">Ba đường định tính cho thấy kết nối hình thành và được cắt tỉa theo những nhịp khác nhau. Đây không phải số liệu đo.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2A7291"/></marker></defs>
+<style>text{font-family:"Source Sans Pro",Arial,sans-serif;font-size:30px;fill:#222}.bold{font-weight:700}.line{fill:none;stroke:#2A7291;stroke-width:3;marker-end:url(#arrow)}.thin{fill:none;stroke:#2A7291;stroke-width:2}.node{fill:#EEF7FA;stroke:#2A7291;stroke-width:2.5}.accent{fill:#FDF3E3;stroke:#E8890C;stroke-width:2.5}.small{font-size:25px}</style>
+
+<path class="thin" d="M90 60V300H858"/>
+<text class="small" x="105" y="37">Mức kết nối (minh họa)</text>
+<path d="M570 29H602" stroke="#2A7291" stroke-width="5"/><text class="small" x="613" y="37">A</text>
+<path d="M665 29H697" stroke="#6D4AA8" stroke-width="5"/><text class="small" x="708" y="37">B</text>
+<path d="M760 29H792" stroke="#E8890C" stroke-width="5"/><text class="small" x="803" y="37">C</text>
+<path d="M100 285C145 280 141 90 191 90S258 239 371 245S741 247 850 247" fill="none" stroke="#2A7291" stroke-width="5"/>
+<path d="M100 285C239 286 244 115 321 115S420 220 528 226S746 230 850 230" fill="none" stroke="#6D4AA8" stroke-width="5"/>
+<path d="M100 285C333 286 373 128 476 130S601 201 687 208S791 211 850 211" fill="none" stroke="#E8890C" stroke-width="5"/>
+<text class="small" x="95" y="340">Đầu đời</text><text class="small" x="695" y="340">Trưởng thành</text>
+<text class="small" x="450" y="397" text-anchor="middle">Ba vùng giả định A, B, C; không phải số liệu đo.</text>
+</svg>

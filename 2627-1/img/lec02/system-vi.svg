@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="450" viewBox="0 0 1000 450" role="img" aria-labelledby="title desc">
+<title id="title">Các phân hệ của hệ thần kinh</title>
+<desc id="desc">Trung ương gồm não và tủy sống. Ngoại biên chia thành cảm giác và vận động. Mỗi nhánh có phần tạng và bản thể. Vận động tạng chia thành giao cảm và phó giao cảm, theo sơ đồ gốc.</desc>
+<style>text{font-family:Arial,sans-serif;fill:#242424;text-anchor:middle;font-size:21px} .head{font-weight:700;font-size:24px}.small{font-size:18px}.edge{fill:none;stroke-width:3;stroke-linejoin:round}.c{fill:#eee8f7;stroke:#8061b1}.p{fill:#e6f2f7;stroke:#287e98}.sub{fill:#fff1d8;stroke:#dfa84a}.auto{fill:#eaf1de;stroke:#94ad60}rect{stroke-width:2;rx:12}</style>
+<!-- Branches indicate classification, not direction of neural transmission. -->
+<g class="edge" stroke="#8061b1"><path d="M165 85V112H87V145M165 112H242V145"/></g>
+<g class="edge" stroke="#287e98"><path d="M667 85V112H507V145M667 112H827V145M507 210V235H432V260M507 235H582V260M827 210V235H742V260M827 235H912V260"/></g>
+<g class="edge" stroke="#dfa84a"><path d="M742 330V350H697V380M742 350H882V380"/></g>
+<rect class="c" x="10" y="15" width="310" height="70"/>
+<text class="head" x="165" y="44">Hệ thần kinh</text><text class="head" x="165" y="72">trung ương (CNS)</text>
+<rect class="p" x="355" y="15" width="625" height="70"/>
+<text class="head" x="667" y="45">Hệ thần kinh ngoại biên</text><text class="small" x="667" y="69">PNS · Các dây thần kinh và hạch ngoài trung ương</text>
+<rect class="c" x="20" y="145" width="135" height="65"/><text x="87" y="184">Não</text>
+<rect class="c" x="175" y="145" width="135" height="65"/><text x="242" y="184">Tủy sống</text>
+<rect class="p" x="365" y="145" width="285" height="65"/><text class="head" x="507" y="184">Cảm giác</text>
+<rect class="p" x="675" y="145" width="305" height="65"/><text class="head" x="827" y="184">Vận động</text>
+<rect class="sub" x="365" y="260" width="135" height="70"/><text x="432" y="290">Cảm giác</text><text x="432" y="316">tạng</text>
+<rect class="sub" x="515" y="260" width="135" height="70"/><text x="582" y="290">Cảm giác</text><text x="582" y="316">bản thể</text>
+<rect class="sub" x="675" y="260" width="135" height="70"/><text x="742" y="290">Vận động</text><text x="742" y="316">tạng</text>
+<rect class="sub" x="845" y="260" width="135" height="70"/><text x="912" y="290">Vận động</text><text x="912" y="316">bản thể</text>
+<rect class="auto" x="615" y="380" width="165" height="55"/><text x="697" y="414">Giao cảm</text>
+<rect class="auto" x="795" y="380" width="175" height="55"/><text x="882" y="414">Phó giao cảm</text>
+</svg>
