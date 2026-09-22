@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" role="img" aria-labelledby="title desc">
+  <title id="title">Trải nghiệm có tác động lên cơ thể?</title>
+  <desc id="desc">Tương tác cho phép tác động hai chiều giữa vật lý và tinh thần. Thuyết phụ hiện tượng chỉ có chiều từ vật lý đến tinh thần; các quá trình vật lý tiếp tục gây ra hành động.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#287d99" stroke-width="2" stroke-linejoin="round"/></marker></defs>
+  <g font-family="Arial, sans-serif" text-anchor="middle" fill="#222">
+    <path d="M480 10v290" stroke="#ddd" stroke-width="2"/>
+    <text x="232" y="35" font-size="29" font-weight="bold">Tương tác</text>
+    <text x="232" y="71" font-size="25" fill="#555">interactionism</text>
+    <text x="728" y="35" font-size="29" font-weight="bold">Phụ hiện tượng</text>
+    <text x="728" y="71" font-size="25" fill="#555">epiphenomenalism</text>
+    <g fill="#eee8f7" stroke="#7551b0" stroke-width="2.5"><rect x="82" y="100" width="300" height="68" rx="12"/><rect x="578" y="100" width="300" height="68" rx="12"/></g>
+    <g fill="#e7f3f7" stroke="#287d99" stroke-width="2.5"><rect x="82" y="238" width="300" height="68" rx="12"/><rect x="578" y="238" width="300" height="68" rx="12"/></g>
+    <text x="232" y="142" font-size="25">Đau, muốn tránh bỏng</text><text x="728" y="142" font-size="25">Đau, muốn tránh bỏng</text>
+    <text x="232" y="280" font-size="25">Não, cơ và hành động</text><text x="728" y="280" font-size="25">Não, cơ và hành động</text>
+    <path d="M232 232V174" fill="none" stroke="#287d99" stroke-width="3" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <path d="M728 232V174" fill="none" stroke="#287d99" stroke-width="3" marker-end="url(#arrow)"/>
+  </g>
+</svg>

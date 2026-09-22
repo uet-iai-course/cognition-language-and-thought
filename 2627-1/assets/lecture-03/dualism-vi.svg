@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
+  <title id="title">Hai cách hiểu nhị nguyên luận</title>
+  <desc id="desc">Bên trái là hai loại thực thể: tâm trí và cơ thể. Bên phải là cùng một chủ thể với thuộc tính vật lý và thuộc tính tinh thần không quy giản được thành vật lý.</desc>
+  <g font-family="Arial, sans-serif" text-anchor="middle" fill="#222">
+    <path d="M480 30v365" stroke="#ddd" stroke-width="2"/>
+    <text x="232" y="44" font-size="28" font-weight="bold">Nhị nguyên thực thể</text>
+    <text x="232" y="80" font-size="25" fill="#555">substance dualism</text>
+    <rect x="52" y="125" width="360" height="84" rx="16" fill="#eee8f7" stroke="#7551b0" stroke-width="2.5"/>
+    <text x="232" y="159" font-size="28" font-weight="bold">Tâm trí</text>
+    <text x="232" y="193" font-size="24">Cảm giác đau</text>
+    <rect x="52" y="239" width="360" height="84" rx="16" fill="#e7f3f7" stroke="#287d99" stroke-width="2.5"/>
+    <text x="232" y="273" font-size="28" font-weight="bold">Cơ thể</text>
+    <text x="232" y="307" font-size="24">Hoạt động não</text>
+    <text x="232" y="376" font-size="27">Hai loại thực thể khác nhau</text>
+    <text x="728" y="44" font-size="28" font-weight="bold">Nhị nguyên thuộc tính</text>
+    <text x="728" y="80" font-size="25" fill="#555">property dualism</text>
+    <rect x="508" y="113" width="438" height="222" rx="20" fill="#fafafa" stroke="#777" stroke-width="2.5"/>
+    <text x="727" y="157" font-size="27" font-weight="bold">Cùng một chủ thể</text>
+    <rect x="526" y="185" width="194" height="121" rx="12" fill="#e7f3f7" stroke="#287d99" stroke-width="2"/>
+    <rect x="734" y="185" width="194" height="121" rx="12" fill="#eee8f7" stroke="#7551b0" stroke-width="2"/>
+    <text x="623" y="225" font-size="27">Vật lý</text>
+    <text x="623" y="267" font-size="24">Hoạt động não</text>
+    <text x="831" y="225" font-size="27">Tinh thần</text>
+    <text x="831" y="267" font-size="24">Cảm giác đau</text>
+    <text x="728" y="376" font-size="25">Thuộc tính tinh thần không</text>
+    <text x="728" y="411" font-size="25">quy giản thành thuộc tính vật lý</text>
+  </g>
+</svg>

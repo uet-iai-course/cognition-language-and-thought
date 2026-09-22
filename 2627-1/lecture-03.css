@@ -1,0 +1,109 @@
+/* Lecture 3 uses the same typography and section structure as Lectures 1-2. */
+.reveal.lecture-03 .compact-table { width:100%; font-size:.76em; line-height:1.3; }
+.reveal.lecture-03 .compact-table th,
+.reveal.lecture-03 .compact-table td { padding: .4em .5em; vertical-align:top; }
+.reveal.lecture-03 .compact-table th:first-child { min-width: 180px; }
+.reveal.lecture-03 .flow { display:grid; grid-template-columns:repeat(3,1fr); gap:38px; align-items:stretch; margin:32px 0; font-size:.81em; }
+.reveal.lecture-03 .flow>div { position:relative; display:flex; flex-direction:column; justify-content:center; border:2px solid #2A7291; border-radius:10px; background:#eff7fa; padding:18px 10px; text-align:center; line-height:1.4; }
+.reveal.lecture-03 .flow>div:not(:last-child)::after { content:"→"; position:absolute; right:-35px; top:calc(50% - 22px); color:#2A7291; font-size:34px; }
+.reveal.lecture-03 .experience-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:30px 0; }
+.reveal.lecture-03 .experience-grid>div { padding:26px 14px; border-top:4px solid #6D4AA8; background:#f5f1fa; font-size:.86em; }
+.reveal.lecture-03 .mary-stages { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin:24px 0; font-size:.82em; }
+.reveal.lecture-03 .mary-stages>div { border:2px solid #777; background:#f5f5f5; padding:20px; border-radius:10px; }
+.reveal.lecture-03 .mary-stages>.mary-red { border-color:#be3450; background:#fff0f2; }
+.reveal.lecture-03 .wide-figure { margin:18px 0; text-align:center; }
+.reveal.lecture-03 .wide-figure img { width:570px; height:270px; max-height:270px; object-fit:contain; margin:0; border:0; box-shadow:none; }
+.reveal.lecture-03 .teacher-reference { font-size:.8em; }
+@media print { .reveal.lecture-03 aside.notes { display:none!important; } }
+
+/* Reserve breathing room for the discussion on uploading. */
+.reveal.lecture-03 [data-origin-slide="6.7"] .flow { margin:20px 0; }
+.reveal.lecture-03 [data-origin-slide="6.7"] .question-box { margin-top:18px; padding:20px 26px; }
+.reveal.lecture-03 [data-origin-slide="4.4"] td:first-child { width:45%; }
+.reveal.lecture-03 [data-origin-slide="4.6"] td:first-child { width:42%; }
+
+.reveal.lecture-03 .term { font-size:.85em; white-space:nowrap; }
+/* Lecture 3 visual layouts: scoped here so earlier decks stay unchanged. */
+.reveal.lecture-03 .visual-split { display:grid; grid-template-columns:1fr 1.15fr; gap:32px; align-items:center; margin:22px 0; font-size:.88em; }
+.reveal.lecture-03 .visual-split figure { margin:0; text-align:center; }
+.reveal.lecture-03 .visual-split img { display:block; width:100%; height:440px; max-width:100%; max-height:440px; margin:0 auto; object-fit:contain; border:0; box-shadow:none; }
+.reveal.lecture-03 .visual-split p { margin:0 0 20px; line-height:1.38; }
+.reveal.lecture-03 .visual-split p:last-child { margin-bottom:0; }
+.reveal.lecture-03 figcaption { font-size:.76em; color:#666; margin-top:10px; line-height:1.25; }
+.reveal.lecture-03 .visual-split svg { display:block; width:100%; height:330px; }
+.reveal.lecture-03 .plato-parts { display:grid; gap:10px; }
+.reveal.lecture-03 .plato-parts>div { padding:10px 16px; border-left:4px solid #7551b0; background:#f5f1fa; display:flex; justify-content:space-between; gap:12px; font-size:.87em; }
+.reveal.lecture-03 .plato-parts + p { margin-top:22px; }
+.reveal.lecture-03 .concept-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:24px 0; font-size:.85em; }
+.reveal.lecture-03 .concept-grid>div { padding:20px 22px; background:#f2f7f9; border-top:3px solid #287d99; }
+.reveal.lecture-03 .concept-grid>div>strong { color:#287d99; }
+.reveal.lecture-03 .concept-grid p { margin:12px 0 0; line-height:1.35; }
+.reveal.lecture-03 .concept-grid ul,
+.reveal.lecture-03 .concept-grid ol { margin:18px 0 0 1em; }
+.reveal.lecture-03 .concept-grid li { margin-bottom:12px; line-height:1.35; }
+.reveal.lecture-03 .step-number { display:block; color:#287d99; font-weight:700; font-size:1.3em; margin-bottom:8px; }
+.reveal.lecture-03 .task-flow { margin:24px 0; }
+.reveal.lecture-03 .result-line { font-size:.88em; }
+.reveal.lecture-03 .diagram-figure { margin:20px 0; }
+.reveal.lecture-03 .diagram-figure img { width:100%; height:430px; max-height:430px; object-fit:contain; border:0; box-shadow:none; margin:0; }
+.reveal.lecture-03 .causal-figure img { height:320px; max-height:320px; }
+.reveal.lecture-03 .paired-notes { display:grid; grid-template-columns:1fr 1fr; gap:30px; font-size:.78em; line-height:1.35; }
+.reveal.lecture-03 .paired-notes p { margin:10px 0; }
+.reveal.lecture-03 .theory-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:30px; font-size:.84em; }
+.reveal.lecture-03 .theory-cards>div { background:#f2f7f9; border-top:4px solid #287d99; padding:22px 18px; }
+.reveal.lecture-03 .theory-cards strong,
+.reveal.lecture-03 .theory-cards span { display:block; }
+.reveal.lecture-03 .theory-cards span { font-size:.82em; color:#666; margin-top:8px; }
+.reveal.lecture-03 .theory-cards p { line-height:1.4; margin-bottom:0; }
+.reveal.lecture-03 .mary-visual { grid-template-columns:.8fr 1.2fr; margin:18px 0; }
+.reveal.lecture-03 .mary-visual img { width:340px; height:230px; max-height:230px; }
+.reveal.lecture-03 [data-slide-id="4.8"] .question-box { padding:18px 24px; margin:18px 0; }
+.reveal.lecture-03 .theory-map { font-size:.83em; text-align:center; margin:24px 0; }
+.reveal.lecture-03 .map-root { display:table; margin:0 auto 30px; padding:12px 24px; background:#eee8f7; border:2px solid #7551b0; border-radius:10px; }
+.reveal.lecture-03 .map-branches { display:grid; grid-template-columns:1.6fr 1fr; gap:28px; position:relative; }
+.reveal.lecture-03 .map-branches::before { content:""; position:absolute; height:15px; top:-15px; left:29%; right:19%; border:2px solid #7551b0; border-bottom:0; }
+.reveal.lecture-03 .map-branches::after { content:""; position:absolute; height:15px; top:-30px; left:50%; border-left:2px solid #7551b0; }
+.reveal.lecture-03 .map-branches>div { border:2px solid #7551b0; border-radius:10px; padding:18px 12px; background:#faf8fc; }
+.reveal.lecture-03 .map-options { display:flex; justify-content:center; gap:12px; margin-top:18px; }
+.reveal.lecture-03 .map-options span { flex:1; background:#eee8f7; padding:12px 6px; font-size:.84em; }
+.reveal.lecture-03 .map-branches p { font-size:.9em; margin:14px 0 0; }
+.reveal.lecture-03 .map-axis { font-size:.83em; line-height:1.4; }
+.reveal.lecture-03 .photo-pair { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin:24px 0; }
+.reveal.lecture-03 .photo-pair figure { margin:0; }
+.reveal.lecture-03 .photo-pair img { display:block; width:100%; max-width:100%; height:290px; max-height:290px; object-fit:cover; object-position:center; margin:0; border:0; box-shadow:none; }
+.reveal.lecture-03 .landscape-figure,
+.reveal.lecture-03 .upload-figure { margin:18px 0; text-align:center; }
+.reveal.lecture-03 .landscape-figure img { width:690px; height:345px; max-height:345px; object-fit:contain; margin:0; border:0; box-shadow:none; }
+.reveal.lecture-03 .upload-figure img { width:600px; height:235px; max-height:235px; object-fit:contain; margin:0; border:0; box-shadow:none; }
+.reveal.lecture-03 .computation-flow { grid-template-columns:1.2fr .85fr 1fr; }
+.reveal.lecture-03 .computation-flow strong { margin-bottom:14px; color:#287d99; }
+.reveal.lecture-03 .room-visual { grid-template-columns:.85fr 1.15fr; font-size:.8em; }
+.reveal.lecture-03 .room-visual img { height:460px; max-height:460px; }
+.reveal.lecture-03 .room-visual ol { margin:20px 0 20px 1em; }
+.reveal.lecture-03 .room-visual li { margin-bottom:8px; line-height:1.35; }
+.reveal.lecture-03 .discussion-inline { border-left:4px solid #287d99; padding:8px 0 8px 20px; line-height:1.4; }
+.reveal.lecture-03 [data-slide-id="6.7"] .discussion-inline { font-size:.86em; margin-top:12px; }
+.reveal.lecture-03 [data-slide-id="6.7"] .discussion-inline ol { margin:0 0 0 1em; }
+.reveal.lecture-03 [data-slide-id="6.7"] .discussion-inline li { margin-bottom:8px; }
+.reveal.lecture-03 [data-slide-id="5.3"] .landscape-figure img { width:600px; height:280px; max-height:280px; }
+.reveal.lecture-03 .mark-flow { margin:16px 0; font-size:.75em; }
+.reveal.lecture-03 .mark-flow>div { padding:12px 8px; }
+.reveal.lecture-03 .mark-flow strong { margin-bottom:6px; }
+.reveal.lecture-03 [data-slide-id="2.3"] td:first-child { width:44%; }
+
+/* Context stays beside each thinker; these rules affect only section 2. */
+.reveal.lecture-03 [data-part="Những quan niệm qua các thời kỳ"] .history-context { display:block; color:#666; font-size:.8em; line-height:1.3; margin:4px 0 10px; }
+.reveal.lecture-03 [data-part="Những quan niệm qua các thời kỳ"] .history-phrase { white-space:nowrap; }
+.reveal.lecture-03 [data-part="Những quan niệm qua các thời kỳ"] .history-table td:first-child { width:36%; }
+.reveal.lecture-03 [data-part="Những quan niệm qua các thời kỳ"] .history-table .history-context { margin-bottom:0; }
+.reveal.lecture-03 [data-slide-id="3.2"] .visual-split { grid-template-columns:.9fr 1.2fr; font-size:.82em; }
+.reveal.lecture-03 [data-slide-id="3.2"] .visual-split p { margin-bottom:12px; }
+.reveal.lecture-03 [data-slide-id="3.2"] .plato-parts>div { padding:8px 12px; }
+.reveal.lecture-03 [data-slide-id="3.3"] .history-comparison { font-size:.82em; }
+.reveal.lecture-03 [data-slide-id="3.3"] .history-comparison .history-context { min-height:3.9em; margin-bottom:16px; }
+.reveal.lecture-03 [data-slide-id="3.4"] .history-table { font-size:.72em; }
+.reveal.lecture-03 [data-slide-id="3.6"] .visual-split { font-size:.82em; }
+
+/* Concrete cases in sections 3-5 use the existing card and figure layouts. */
+.reveal.lecture-03 .foundations-table td:first-child { width:40%; }
+.reveal.lecture-03 .upload-scenario { font-size:.86em; line-height:1.35; }
