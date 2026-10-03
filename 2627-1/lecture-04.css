@@ -3,6 +3,9 @@
 .reveal.lecture-04 .compact-table th,
 .reveal.lecture-04 .compact-table td { padding:.4em .5em; vertical-align:top; }
 .reveal.lecture-04 .compact-table td:first-child { width:35%; }
+.reveal.lecture-04 .wide-term-table td:first-child { width:45%; }
+.reveal.lecture-04 .motion-table th,
+.reveal.lecture-04 .motion-table td { padding:.32em .5em; }
 .reveal.lecture-04 .concept-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:24px 0; font-size:.86em; }
 .reveal.lecture-04 .concept-grid>div { background:#f2f7f9; border-top:4px solid #2A7291; padding:22px; }
 .reveal.lecture-04 .concept-grid strong { color:#2A7291; }
@@ -15,13 +18,18 @@
 .reveal.lecture-04 figure img { display:block; margin:0 auto; max-width:100%; border:0; box-shadow:none; object-fit:contain; }
 .reveal.lecture-04 .large-figure img { width:100%; height:420px; max-height:420px; }
 .reveal.lecture-04 .tall-figure img { height:470px; max-height:470px; }
+.reveal.lecture-04 .gestalt-figure img { height:440px; max-height:440px; }
+.reveal.lecture-04 .smell-figure img { height:270px; max-height:270px; }
+.reveal.lecture-04 .smell-figure+.concept-grid { font-size:.78em; }
+.reveal.lecture-04 .curve-key { font-size:.86em; }
+.reveal.lecture-04 .emotion-grid>div:last-child { grid-column:1/-1; }
 .reveal.lecture-04 .motion-figure { margin:18px 0; }
 .reveal.lecture-04 .motion-figure img { width:100%; height:330px; max-height:330px; }
 .reveal.lecture-04 .hero-figure,
 .reveal.lecture-04 .memory-figure { margin:22px 0; }
 .reveal.lecture-04 .hero-figure img { width:100%; height:400px; max-height:400px; }
 .reveal.lecture-04 .memory-figure img { width:100%; height:370px; max-height:370px; }
-.reveal.lecture-04 [data-slide-id="6.2"]>p { font-size:.92em; }
+.reveal.lecture-04 section:has(img[src$="memory-stores.png"])>p { font-size:.92em; }
 .reveal.lecture-04 .wide-figure { margin:22px 0; }
 .reveal.lecture-04 .wide-figure img { width:100%; height:320px; max-height:320px; }
 .reveal.lecture-04 .strip-figure { margin:18px 0; }
@@ -90,10 +98,10 @@
 .reveal.lecture-04 .keep { white-space:nowrap; }
 .reveal.lecture-04 .component-list { font-size:.94em; margin-left:.7em; }
 .reveal.lecture-04 .component-list li { margin-bottom:12px; }
-.reveal.lecture-04 [data-slide-id="6.3"]>p { font-size:.88em; }
-.reveal.lecture-04 [data-slide-id="6.3"] .sperling-panel { margin:14px 0; padding:10px 22px; }
-.reveal.lecture-04 [data-slide-id="6.3"] .letter-grid { font-size:38px; }
-.reveal.lecture-04 [data-slide-id="6.3"] .demo-buttons { margin:14px 0; }
+.reveal.lecture-04 section:has(#letter-grid)>p { font-size:.88em; }
+.reveal.lecture-04 section:has(#letter-grid) .sperling-panel { margin:14px 0; padding:10px 22px; }
+.reveal.lecture-04 section:has(#letter-grid) .letter-grid { font-size:38px; }
+.reveal.lecture-04 section:has(#letter-grid) .demo-buttons { margin:14px 0; }
 @media print { .reveal.lecture-04 aside.notes { display:none!important; } }
 .reveal.lecture-04 .discussion-box { font-size:.9em; }
 .reveal.lecture-04 .wide-figure.compact img { height:270px; max-height:270px; }
@@ -102,3 +110,27 @@
 .reveal.lecture-04 .ai-box .box-title { color:#553582; margin-bottom:.15em; }
 .reveal.lecture-04 .ai-box ul { margin:0 0 0 1.1em; }
 .reveal.lecture-04 .ai-box li { margin:0; }
+
+/* Opening: scope, teaching overview, and two modeling approaches. */
+.reveal.lecture-04 .cognition-scope { font-size:.84em; line-height:1.45; color:#2A7291; }
+.reveal.lecture-04 .cognition-caption { font-size:.83em; margin:26px 0 15px; }
+.reveal.lecture-04 .mind-facets { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; font-size:.79em; }
+.reveal.lecture-04 .mind-facets>div { border-top:4px solid #2A7291; background:#f2f7f9; padding:18px; }
+.reveal.lecture-04 .mind-facets strong,
+.reveal.lecture-04 .mind-facets span { display:block; }
+.reveal.lecture-04 .mind-facets strong { color:#2A7291; }
+.reveal.lecture-04 .mind-facets span { font-size:.88em; }
+.reveal.lecture-04 .mind-facets p { margin:15px 0 0; line-height:1.35; }
+.reveal.lecture-04 .source-text { font-size:.68em; font-style:italic; color:#666; text-align:center; margin:20px 0 0; }
+.reveal.lecture-04 .processing-intro { font-size:.9em; }
+.reveal.lecture-04 .cognitive-map { display:block; width:100%; height:auto; margin:16px 0 8px; }
+.reveal.lecture-04 .model-comparison { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin:25px 0; font-size:.79em; }
+.reveal.lecture-04 .model-comparison>div { border-top:4px solid #2A7291; background:#f2f7f9; padding:20px; }
+.reveal.lecture-04 .model-comparison>div:last-child { border-color:#6D4AA8; background:#f5f1fa; }
+.reveal.lecture-04 .model-comparison h3 { margin:0 0 12px; font-size:1.1em; }
+.reveal.lecture-04 .model-comparison p { margin:12px 0; line-height:1.4; }
+.reveal.lecture-04 .model-stages { display:grid; gap:22px; padding:10px 25px; margin:18px 0; }
+.reveal.lecture-04 .model-stages span { display:block; position:relative; border:2px solid #2A7291; border-radius:8px; padding:8px 12px; text-align:center; background:white; }
+.reveal.lecture-04 .model-stages span:not(:last-child)::after { content:'↓'; position:absolute; left:48%; bottom:-27px; color:#2A7291; }
+.reveal.lecture-04 .connectionist-network { display:block; width:100%; height:206px; margin:18px 0; }
+.reveal.lecture-04 .model-comparison .model-example { font-size:.88em; }
