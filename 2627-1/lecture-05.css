@@ -1,0 +1,220 @@
+/* Scoped layouts for Lecture 5; earlier decks retain their approved styles. */
+.reveal.lecture-05 .compact-table { width:100%; font-size:.79em; line-height:1.32; }
+.reveal.lecture-05 .compact-table th,
+.reveal.lecture-05 .compact-table td { padding:.4em .5em; vertical-align:top; }
+.reveal.lecture-05 .compact-table td:first-child { width:35%; }
+.reveal.lecture-05 .wide-term-table td:first-child { width:45%; }
+.reveal.lecture-05 .motion-table th,
+.reveal.lecture-05 .motion-table td { padding:.32em .5em; }
+.reveal.lecture-05 .concept-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:24px 0; font-size:.86em; }
+.reveal.lecture-05 .concept-grid>div { background:#f2f7f9; border-top:4px solid #2A7291; padding:22px; }
+.reveal.lecture-05 .concept-grid strong { color:#2A7291; }
+.reveal.lecture-05 .concept-grid p { margin:14px 0 0; line-height:1.4; }
+.reveal.lecture-05 .visual-split { display:grid; grid-template-columns:1.1fr 1fr; gap:30px; align-items:center; margin:22px 0; }
+.reveal.lecture-05 .visual-split>div { font-size:.82em; line-height:1.4; }
+.reveal.lecture-05 .visual-split p { margin:0 0 22px; }
+.reveal.lecture-05 .visual-split p:last-child { margin-bottom:0; }
+.reveal.lecture-05 figure { margin:0; text-align:center; }
+.reveal.lecture-05 figure img { display:block; margin:0 auto; max-width:100%; border:0; box-shadow:none; object-fit:contain; }
+.reveal.lecture-05 .large-figure img { width:100%; height:420px; max-height:420px; }
+.reveal.lecture-05 .tall-figure img { height:470px; max-height:470px; }
+.reveal.lecture-05 .gestalt-figure img { height:440px; max-height:440px; }
+.reveal.lecture-05 .smell-figure img { height:270px; max-height:270px; }
+.reveal.lecture-05 .smell-figure+.concept-grid { font-size:.78em; }
+.reveal.lecture-05 .curve-key { font-size:.86em; }
+.reveal.lecture-05 .emotion-grid>div:last-child { grid-column:1/-1; }
+.reveal.lecture-05 .motion-figure { margin:18px 0; }
+.reveal.lecture-05 .motion-figure img { width:100%; height:330px; max-height:330px; }
+.reveal.lecture-05 .hero-figure,
+.reveal.lecture-05 .memory-figure { margin:22px 0; }
+.reveal.lecture-05 .hero-figure img { width:100%; height:400px; max-height:400px; }
+.reveal.lecture-05 .memory-figure img { width:100%; height:370px; max-height:370px; }
+.reveal.lecture-05 section:has(img[src$="memory-stores.png"])>p { font-size:.92em; }
+.reveal.lecture-05 .wide-figure { margin:22px 0; }
+.reveal.lecture-05 .wide-figure img { width:100%; height:320px; max-height:320px; }
+.reveal.lecture-05 .strip-figure { margin:18px 0; }
+.reveal.lecture-05 .strip-figure img { width:800px; height:205px; max-height:205px; }
+.reveal.lecture-05 .sense-pair { display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:center; margin:24px 0; }
+.reveal.lecture-05 .sense-pair img { width:100%; height:285px; max-height:285px; }
+.reveal.lecture-05 .sense-pair+p { font-size:.86em; }
+.reveal.lecture-05 .number-pair { display:grid; grid-template-columns:1fr 1fr; gap:26px; margin:28px 0; }
+.reveal.lecture-05 .number-pair>div { padding:28px 10px; text-align:center; background:#f5f1fa; border-top:4px solid #6D4AA8; }
+.reveal.lecture-05 .big-number { font-size:1.16em; font-weight:700; color:#6D4AA8; }
+.reveal.lecture-05 .context-example { background:#f5f1fa; padding:26px; font-size:.95em; margin:24px 0; }
+.reveal.lecture-05 .flow { display:grid; grid-template-columns:repeat(3,1fr); gap:38px; margin:30px 0; font-size:.86em; }
+.reveal.lecture-05 .flow>div { border:2px solid #2A7291; border-radius:10px; background:#f2f7f9; padding:24px 16px; text-align:center; position:relative; }
+.reveal.lecture-05 .flow>div:not(:last-child)::after { content:"+"; position:absolute; right:-29px; top:40%; color:#2A7291; }
+.reveal.lecture-05 .flow>div:nth-child(2)::after { content:"→"; right:-34px; }
+.reveal.lecture-05 .flow strong,
+.reveal.lecture-05 .flow span { display:block; }
+.reveal.lecture-05 .flow strong { color:#2A7291; margin-bottom:20px; }
+.reveal.lecture-05 .flow span { font-size:1.2em; }
+.reveal.lecture-05 .flow.arrows>div:not(:last-child)::after { content:"→"; right:-34px; }
+.reveal.lecture-05 .flow.arrows { margin:22px 0; }
+.reveal.lecture-05 .flow.arrows strong { margin-bottom:10px; }
+.reveal.lecture-05 .flow.arrows span { font-size:.95em; }
+.reveal.lecture-05 .context-pair { display:grid; grid-template-columns:1.15fr 1fr; gap:28px; align-items:center; margin:20px 0; }
+.reveal.lecture-05 .context-pair .contrast-demo { margin:0; }
+.reveal.lecture-05 .context-pair .contrast-demo>div { height:200px; }
+.reveal.lecture-05 .context-pair .contrast-demo span { width:92px; height:92px; }
+.reveal.lecture-05 .muller-lyer { display:block; width:100%; height:200px; }
+.reveal.lecture-05 .contrast-demo { display:grid; grid-template-columns:1fr 1fr; margin:24px 0; }
+.reveal.lecture-05 .contrast-demo>div { height:235px; display:grid; place-items:center; }
+.reveal.lecture-05 .contrast-demo .dark { background:#303030; }
+.reveal.lecture-05 .contrast-demo .light { background:#eeeeee; }
+.reveal.lecture-05 .contrast-demo span { display:block; width:110px; height:110px; background:#929292; }
+.reveal.lecture-05 .demo-link { display:inline-block; border-bottom:2px solid #2A7291; padding:8px 0; font-size:.87em; }
+.reveal.lecture-05 .posner-demo { border:1px solid #d7d1e3; padding:18px 26px; margin:24px 0; }
+.reveal.lecture-05 .posner-demo>div { display:flex; align-items:center; justify-content:space-around; margin:18px 0; }
+.reveal.lecture-05 .trial-label { width:145px; font-size:.82em; color:#666; }
+.reveal.lecture-05 .target-box { display:inline-grid; place-items:center; border:3px solid #2A7291; width:90px; height:80px; color:#6D4AA8; }
+.reveal.lecture-05 .posner-demo strong { width:170px; text-align:center; }
+.reveal.lecture-05 .sperling-panel { border:2px solid #d7d1e3; border-radius:10px; padding:15px 22px; margin:20px 0; }
+.reveal.lecture-05 .letter-grid { display:grid; grid-template-columns:repeat(4,1fr); width:490px; margin:auto; text-align:center; gap:4px 20px; font:44px/1.3 monospace; }
+.reveal.lecture-05 .letter-grid span { border-radius:5px; }
+.reveal.lecture-05 .letter-grid .cued { background:#ece4f7; box-shadow:inset 0 0 0 2px #6D4AA8; }
+.reveal.lecture-05 #letter-cue { text-align:center; font-size:.78em; min-height:1.4em; }
+.reveal.lecture-05 .demo-buttons { display:flex; gap:14px; margin:20px 0; justify-content:center; }
+.reveal.lecture-05 .demo-buttons button { font:inherit; font-size:.62em; cursor:pointer; padding:12px 16px; background:#f2f7f9; color:#245d76; border:2px solid #2A7291; border-radius:8px; }
+.reveal.lecture-05 .demo-buttons button:disabled { opacity:.55; cursor:wait; }
+.reveal.lecture-05 .demo-buttons button:focus-visible { outline:4px solid #E8890C; outline-offset:3px; }
+.reveal.lecture-05 .chunk-demo { padding:18px 24px; background:#f5f1fa; text-align:center; margin:24px 0; }
+.reveal.lecture-05 .chunk-demo strong { display:inline-block; color:#6D4AA8; margin:0 20px; }
+.reveal.lecture-05 .semantic-tree { text-align:center; margin:24px 0; font-size:.85em; }
+.reveal.lecture-05 .tree-root { border:2px solid #6D4AA8; background:#eee8f7; padding:10px 24px; width:250px; margin:0 auto 28px; }
+.reveal.lecture-05 .tree-root strong,
+.reveal.lecture-05 .tree-root small { display:block; }
+.reveal.lecture-05 .tree-root small { font-size:.8em; margin-top:2px; }
+.reveal.lecture-05 .tree-branches p { margin:6px 0 0; font-size:.9em; }
+.reveal.lecture-05 .tree-leaves .exception { color:#6D4AA8; font-weight:700; }
+.reveal.lecture-05 .tree-branches { display:grid; grid-template-columns:1fr 1fr; gap:36px; position:relative; }
+.reveal.lecture-05 .tree-branches:before { content:""; position:absolute; left:24%; right:24%; top:-14px; height:14px; border:2px solid #6D4AA8; border-bottom:0; }
+.reveal.lecture-05 .tree-branches:after { content:""; position:absolute; left:50%; top:-28px; height:14px; border-left:2px solid #6D4AA8; }
+.reveal.lecture-05 .tree-branches>div { padding:14px; border:2px solid #6D4AA8; background:#faf8fc; }
+.reveal.lecture-05 .tree-leaves { display:flex; gap:12px; margin-top:20px; font-size:.85em; }
+.reveal.lecture-05 .tree-leaves span { flex:1; padding:12px 6px; background:#eee8f7; }
+.reveal.lecture-05 .tree-leaves small { font-size:.86em; }
+.reveal.lecture-05 .teacher-reference { font-size:.8em; }
+.reveal.lecture-05 .keep { white-space:nowrap; }
+.reveal.lecture-05 .component-list { font-size:.94em; margin-left:.7em; }
+.reveal.lecture-05 .component-list li { margin-bottom:12px; }
+.reveal.lecture-05 section:has(#letter-grid)>p { font-size:.88em; }
+.reveal.lecture-05 section:has(#letter-grid) .sperling-panel { margin:14px 0; padding:10px 22px; }
+.reveal.lecture-05 section:has(#letter-grid) .letter-grid { font-size:38px; }
+.reveal.lecture-05 section:has(#letter-grid) .demo-buttons { margin:14px 0; }
+@media print { .reveal.lecture-05 aside.notes { display:none!important; } }
+.reveal.lecture-05 .discussion-box { font-size:.9em; }
+.reveal.lecture-05 .wide-figure.compact img { height:270px; max-height:270px; }
+.reveal.lecture-05 .visual-split.wide-left { grid-template-columns:1.45fr 1fr; gap:26px; }
+.reveal.lecture-05 .ai-box { border-color:#7A4CB0; background:#F1EAFA; font-size:.8em; padding:.35em .75em; }
+.reveal.lecture-05 .ai-box .box-title { color:#553582; margin-bottom:.15em; }
+.reveal.lecture-05 .ai-box ul { margin:0 0 0 1.1em; }
+.reveal.lecture-05 .ai-box li { margin:0; }
+
+/* Opening: scope, teaching overview, and two modeling approaches. */
+.reveal.lecture-05 .cognition-scope { font-size:.84em; line-height:1.45; color:#2A7291; }
+.reveal.lecture-05 .cognition-caption { font-size:.83em; margin:26px 0 15px; }
+.reveal.lecture-05 .mind-facets { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; font-size:.79em; }
+.reveal.lecture-05 .mind-facets>div { border-top:4px solid #2A7291; background:#f2f7f9; padding:18px; }
+.reveal.lecture-05 .mind-facets strong,
+.reveal.lecture-05 .mind-facets span { display:block; }
+.reveal.lecture-05 .mind-facets strong { color:#2A7291; }
+.reveal.lecture-05 .mind-facets span { font-size:.88em; }
+.reveal.lecture-05 .mind-facets p { margin:15px 0 0; line-height:1.35; }
+.reveal.lecture-05 .source-text { font-size:.68em; font-style:italic; color:#666; text-align:center; margin:20px 0 0; }
+.reveal.lecture-05 .processing-intro { font-size:.9em; }
+.reveal.lecture-05 .cognitive-map { display:block; width:100%; height:auto; margin:16px 0 8px; }
+.reveal.lecture-05 .model-comparison { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin:25px 0; font-size:.79em; }
+.reveal.lecture-05 .model-comparison>div { border-top:4px solid #2A7291; background:#f2f7f9; padding:20px; }
+.reveal.lecture-05 .model-comparison>div:last-child { border-color:#6D4AA8; background:#f5f1fa; }
+.reveal.lecture-05 .model-comparison h3 { margin:0 0 12px; font-size:1.1em; }
+.reveal.lecture-05 .model-comparison p { margin:12px 0; line-height:1.4; }
+.reveal.lecture-05 .model-stages { display:grid; gap:22px; padding:10px 25px; margin:18px 0; }
+.reveal.lecture-05 .model-stages span { display:block; position:relative; border:2px solid #2A7291; border-radius:8px; padding:8px 12px; text-align:center; background:white; }
+.reveal.lecture-05 .model-stages span:not(:last-child)::after { content:'↓'; position:absolute; left:48%; bottom:-27px; color:#2A7291; }
+.reveal.lecture-05 .connectionist-network { display:block; width:100%; height:206px; margin:18px 0; }
+.reveal.lecture-05 .model-comparison .model-example { font-size:.88em; }
+
+/* Lecture 5 components. */
+.reveal.lecture-05 .lead { font-size:.9em; line-height:1.4; }
+.reveal.lecture-05 .small-note { font-size:.72em; color:#555; margin:14px 0 0; }
+.reveal.lecture-05 .flash-demo { border:2px solid #d7d1e3; border-radius:10px; padding:16px 22px; margin:22px 0; text-align:center; }
+.reveal.lecture-05 .flash-screen { font:64px/1.3 monospace; letter-spacing:.12em; color:#221D3D; min-height:1.3em; }
+.reveal.lecture-05 .flash-status { font-size:.78em; color:#666; min-height:1.4em; }
+.reveal.lecture-05 .card-row { display:flex; justify-content:center; gap:30px; margin:26px 0 18px; }
+.reveal.lecture-05 .card-row span { display:grid; place-items:center; width:150px; height:150px; border:3px solid #2A7291; border-radius:12px; background:#fff; font-size:1.7em; font-weight:700; color:#221D3D; box-shadow:0 4px 10px rgba(0,0,0,.12); }
+.reveal.lecture-05 .card-row.text-cards span { width:185px; font-size:.8em; line-height:1.25; padding:0 10px; text-align:center; }
+.reveal.lecture-05 .card-row span.pick { border-color:#6D4AA8; background:#f5f1fa; }
+.reveal.lecture-05 .rule-line { text-align:center; font-size:.92em; margin:8px 0; }
+.reveal.lecture-05 .truth-table { width:auto; margin:10px auto 0; font-size:.72em; }
+.reveal.lecture-05 .truth-table th, .reveal.lecture-05 .truth-table td { padding:.2em .9em; text-align:center; }
+.reveal.lecture-05 .truth-table tr.false-row td { background:#FBEAEA; color:#B71C1C; font-weight:700; }
+.reveal.lecture-05 .timeline { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin:26px 0; font-size:.68em; }
+.reveal.lecture-05 .timeline>div { border-top:4px solid #2A7291; background:#f2f7f9; padding:14px 12px; line-height:1.35; }
+.reveal.lecture-05 .timeline>div.dark { border-color:#E62727; background:#FBEAEA; }
+.reveal.lecture-05 .timeline strong, .reveal.lecture-05 .timeline small { display:block; }
+.reveal.lecture-05 .timeline small { color:#2A7291; font-weight:700; margin-bottom:6px; }
+.reveal.lecture-05 .timeline p { margin:8px 0 0; }
+.reveal.lecture-05 .rt-chart { display:block; width:100%; height:330px; margin:6px 0; }
+.reveal.lecture-05 .chart-split { display:grid; grid-template-columns:1.25fr 1fr; gap:26px; align-items:center; margin:16px 0; }
+.reveal.lecture-05 .chart-split>div { font-size:.8em; line-height:1.4; }
+.reveal.lecture-05 .chart-split p { margin:0 0 18px; }
+.reveal.lecture-05 .jar-table { width:100%; font-size:.86em; }
+.reveal.lecture-05 .jar-table th, .reveal.lecture-05 .jar-table td { text-align:center; padding:.32em .5em; }
+.reveal.lecture-05 .jar-table td:first-child { width:auto; }
+.reveal.lecture-05 .jar-table tr.critical td { background:#FDF3E3; font-weight:700; }
+.reveal.lecture-05 .three-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:24px 0; font-size:.78em; }
+.reveal.lecture-05 .three-cards>div { border-top:4px solid #2A7291; background:#f2f7f9; padding:18px; line-height:1.38; }
+.reveal.lecture-05 .three-cards strong { color:#2A7291; display:block; margin-bottom:10px; }
+.reveal.lecture-05 .three-cards p { margin:8px 0 0; }
+.reveal.lecture-05 .option-pair { display:grid; grid-template-columns:1fr 1fr; gap:26px; margin:22px 0; font-size:.86em; }
+.reveal.lecture-05 .option-pair>div { padding:18px 20px; background:#f5f1fa; border-top:4px solid #6D4AA8; line-height:1.4; }
+.reveal.lecture-05 .option-pair strong { color:#6D4AA8; }
+.reveal.lecture-05 .option-pair p { margin:8px 0 0; }
+.reveal.lecture-05 .formula { text-align:center; font-size:1.05em; color:#553582; margin:16px 0; }
+.reveal.lecture-05 .figure-pair { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:center; margin:20px 0; }
+.reveal.lecture-05 .figure-pair img { width:100%; height:330px; max-height:330px; }
+.reveal.lecture-05 .mid-figure img { width:100%; height:350px; max-height:350px; }
+.reveal.lecture-05 .short-figure img { width:100%; height:290px; max-height:290px; }
+.reveal.lecture-05 .side-figure img { width:100%; height:380px; max-height:380px; }
+.reveal.lecture-05 .map-table td:first-child { width:42%; }
+.reveal.lecture-05 .story-box { background:#f5f1fa; border-left:6px solid #6D4AA8; padding:14px 20px; font-size:.8em; line-height:1.4; margin:16px 0; }
+.reveal.lecture-05 .question-box p { margin:0; }
+
+/* Fit fixes after the first layout audit (08/10/2026). */
+.reveal.lecture-05 h1.lesson-title { font-size:1.55em; }
+.reveal.lecture-05 .discussion-box { font-size:.84em; }
+.reveal.lecture-05 .question-box { font-size:.86em; }
+.reveal.lecture-05 .flash-demo .demo-buttons button { font-size:.72em; padding:10px 18px; }
+.reveal.lecture-05 .card-row { margin:16px 0 12px; }
+.reveal.lecture-05 .card-row span { width:120px; height:110px; font-size:1.4em; }
+.reveal.lecture-05 .card-row.text-cards span { width:175px; font-size:.74em; }
+.reveal.lecture-05 .rule-line { font-size:.84em; }
+.reveal.lecture-05 .truth-table { font-size:.62em; margin-top:8px; }
+.reveal.lecture-05 .figure-pair img { height:240px; max-height:240px; }
+.reveal.lecture-05 .visual-split.wider-left { grid-template-columns:1.75fr 1fr; gap:22px; }
+.reveal.lecture-05 .concept-grid.stack { grid-template-columns:1fr; gap:14px; margin:0; font-size:.84em; }
+.reveal.lecture-05 .concept-grid.stack>div { padding:14px 18px; }
+.reveal.lecture-05 .concept-grid.stack p { margin-top:6px; }
+.reveal.lecture-05 .map-table, .reveal.lecture-05 .tight-table { font-size:.72em; }
+.reveal.lecture-05 .tight-table th, .reveal.lecture-05 .tight-table td { padding:.3em .5em; }
+.reveal.lecture-05 .option-pair.small { font-size:.74em; margin:14px 0; }
+.reveal.lecture-05 .option-pair.small>div { padding:12px 16px; }
+.reveal.lecture-05 .option-pair.small .formula { margin:6px 0; font-size:1em; }
+.reveal.lecture-05 .plain-list { font-size:.78em; margin:0 0 0 1em; }
+.reveal.lecture-05 .plain-list li { margin-bottom:12px; line-height:1.35; }
+.reveal.lecture-05 .heur-table td:first-child { width:36%; white-space:nowrap; }
+.reveal.lecture-05 .card-row span { height:96px; }
+
+/* Vietnamese diagrams and comparisons, reviewed 12/10/2026. */
+.reveal.lecture-05 .decision-tree { display:block; width:100%; height:auto; margin:14px 0 0; }
+.reveal.lecture-05 .tree-labels text { paint-order:stroke fill; stroke:#fff; stroke-width:5px; stroke-linejoin:round; }
+.reveal.lecture-05 .formula-gloss { display:inline-block; font-size:.7em; color:#555; margin-left:12px; }
+.reveal.lecture-05 .wason-comparison th,
+.reveal.lecture-05 .wason-comparison td { width:33.33%; }
+.reveal.lecture-05 .utility-table td:first-child { width:30%; }
+.reveal.lecture-05 .jar-solutions { font-size:.84em; line-height:1.4; }
+.reveal.lecture-05 .jar-solutions p { margin:16px 0; }
+/* 2.4: lưới hình xoay cắt làm hai nửa, đặt hai cột để hình lớn nhất. */
+.reveal.lecture-05 .figure-pair.rotation-pair { gap:12px; margin:10px 0 14px; }
+.reveal.lecture-05 .figure-pair.rotation-pair img { height:auto; max-height:none; }
