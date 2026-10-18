@@ -10,6 +10,7 @@ Học liệu AIT3018 / UET.AI3065, Viện Trí tuệ nhân tạo, Trường Đ�
 - [Buổi 3: Triết học tâm trí](https://courses.iaidev.com/cognition-language-and-thought/2627-1/bai-03-triet-hoc-tam-tri.html)
 - [Buổi 4: Nhận thức và tâm lý học nhận thức](https://courses.iaidev.com/cognition-language-and-thought/2627-1/bai-04-nhan-thuc-cam-giac-tri-giac-chu-y-tri-nho.html)
 - [Buổi 5: Hình ảnh tâm trí, Giải quyết vấn đề, Suy luận, Ra quyết định](https://courses.iaidev.com/cognition-language-and-thought/2627-1/bai-05-hinh-anh-tam-tri-giai-quyet-van-de-suy-luan-ra-quyet-dinh.html)
+- [Buổi 6: Cảm xúc, Trí thông minh và Sáng tạo](https://courses.iaidev.com/cognition-language-and-thought/2627-1/bai-06-cam-xuc-tri-thong-minh-sang-tao.html)
 
 Giảng viên: TS. Nguyễn Tuấn Phong. Học phần gốc do ThS. Ngô Minh Hương xây dựng;
 deck tiếng Việt được biên soạn lại từ học liệu của cô.
