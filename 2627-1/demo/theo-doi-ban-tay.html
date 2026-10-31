@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theo dõi bàn tay</title>
+<link rel="icon" href="../../favicon.svg">
+<style>
+  :root { --accent:#6D4AA8; --struct:#2A7291; --text:#221D3D; --muted:#5f5a75; --bg:#ffffff; --panel:#F8F7FD; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:"Source Sans 3","Source Sans Pro",system-ui,sans-serif; font-size:22px; }
+  main { max-width:1400px; margin:0 auto; padding:20px 24px; display:grid; grid-template-columns:minmax(0,1fr) 380px; gap:24px; align-items:start; }
+  h1 { grid-column:1/-1; margin:0; font-size:1.6em; }
+  h1 small { display:block; font-size:.55em; color:var(--muted); font-weight:400; margin-top:4px; }
+  .stage { position:relative; background:#111; border-radius:10px; overflow:hidden; aspect-ratio:4/3; }
+  video, canvas { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scaleX(-1); }
+  .placeholder { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#ddd; text-align:center; padding:24px; }
+  aside { display:grid; gap:16px; }
+  button { font:inherit; font-weight:700; padding:12px 16px; border-radius:8px; border:2px solid var(--accent); background:var(--accent); color:#fff; cursor:pointer; }
+  button.secondary { background:#fff; color:var(--accent); }
+  button:disabled { opacity:.5; cursor:default; }
+  .card { background:var(--panel); border-left:6px solid var(--struct); border-radius:6px; padding:12px 16px; }
+  .card h2 { margin:0 0 6px; font-size:.9em; color:var(--struct); }
+  .big { font-size:1.5em; font-weight:700; }
+  .off { color:#b03a3a; }
+  .bar { height:22px; background:#e6e2f0; border-radius:11px; overflow:hidden; margin-top:6px; }
+  .bar > span { display:block; height:100%; width:0; background:var(--accent); transition:width .1s; }
+  #status { font-size:.8em; color:var(--muted); }
+  @media (max-width:900px) { main { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Máy “nhìn” ngôn ngữ ký hiệu thấy gì?
+    <small>Theo dõi bàn tay bằng MediaPipe, chạy trong trình duyệt. Hình ảnh camera không rời khỏi máy này.</small></h1>
+  <div class="stage">
+    <video id="video" playsinline muted></video>
+    <canvas id="canvas"></canvas>
+    <div class="placeholder" id="placeholder">Bấm “Bật camera” rồi đưa tay vào khung hình.</div>
+  </div>
+  <aside>
+    <button id="start">Bật camera</button>
+    <div class="card">
+      <h2>Kênh bàn tay</h2>
+      <div class="big" id="hands">chưa chạy</div>
+      <div>21 điểm khớp cho mỗi bàn tay</div>
+    </div>
+    <div class="card">
+      <h2>Kênh nét mặt</h2>
+      <div class="big off" id="faceState">không theo dõi</div>
+      <div>Mức nhướn mày</div>
+      <div class="bar"><span id="brow"></span></div>
+    </div>
+    <button class="secondary" id="face" disabled>Thêm kênh nét mặt</button>
+    <div id="status">Cần mạng để tải mô hình lần đầu.</div>
+  </aside>
+</main>
+<script type="module">
+const LIB = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.2.0';
+const HAND_MODEL = 'https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task';
+const FACE_MODEL = 'https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task';
+const $ = id => document.getElementById(id);
+const video = $('video'), canvas = $('canvas'), ctx = canvas.getContext('2d');
+let vision, lib, hands, face, lastTime = -1;
+
+function status(text) { $('status').textContent = text; }
+
+async function create(Task, model, extra) {
+  for (const delegate of ['GPU', 'CPU']) {
+    try {
+      return await Task.createFromOptions(vision, { baseOptions: { modelAssetPath: model, delegate }, runningMode: 'VIDEO', ...extra });
+    } catch (err) { if (delegate === 'CPU') throw err; }
+  }
+}
+
+$('start').addEventListener('click', async () => {
+  if (!window.isSecureContext || !navigator.mediaDevices) {
+    status('Trình duyệt chỉ cho bật camera trên trang https hoặc localhost. Trang này đang mở qua http, nên camera bị chặn. Mở bản https của trang (trang môn học trên courses.iaidev.com) để chạy demo.');
+    return;
+  }
+  $('start').disabled = true;
+  try {
+    status('Đang tải mô hình bàn tay...');
+    lib = await import(`${LIB}/vision_bundle.mjs`);
+    vision = await lib.FilesetResolver.forVisionTasks(`${LIB}/wasm`);
+    hands = await create(lib.HandLandmarker, HAND_MODEL, { numHands: 2 });
+    status('Đang mở camera...');
+    video.srcObject = await navigator.mediaDevices.getUserMedia({ video: { width: 1280, height: 720 }, audio: false });
+    await video.play();
+    $('placeholder').hidden = true;
+    $('face').disabled = false;
+    status('Đang chạy. Thử nhướn mày: kênh bàn tay không ghi nhận gì.');
+    requestAnimationFrame(loop);
+  } catch (err) {
+    status('Không chạy được: ' + (err && err.message ? err.message : err) + '. Kiểm tra mạng và quyền camera.');
+    $('start').disabled = false;
+  }
+});
+
+$('face').addEventListener('click', async () => {
+  $('face').disabled = true;
+  status('Đang tải mô hình khuôn mặt...');
+  try {
+    face = await create(lib.FaceLandmarker, FACE_MODEL, { numFaces: 1, outputFaceBlendshapes: true });
+    $('faceState').textContent = 'đang theo dõi';
+    $('faceState').classList.remove('off');
+    status('Đã thêm kênh nét mặt. Thử nhướn mày lần nữa.');
+  } catch (err) {
+    status('Không tải được mô hình khuôn mặt: ' + err.message);
+    $('face').disabled = false;
+  }
+});
+
+function drawHand(points) {
+  const w = canvas.width, h = canvas.height;
+  ctx.strokeStyle = '#B9A3E3'; ctx.lineWidth = 4;
+  for (const { start, end } of lib.HandLandmarker.HAND_CONNECTIONS) {
+    ctx.beginPath(); ctx.moveTo(points[start].x * w, points[start].y * h); ctx.lineTo(points[end].x * w, points[end].y * h); ctx.stroke();
+  }
+  ctx.fillStyle = '#6D4AA8';
+  for (const p of points) { ctx.beginPath(); ctx.arc(p.x * w, p.y * h, 6, 0, 2 * Math.PI); ctx.fill(); }
+}
+
+function loop() {
+  if (video.readyState >= 2 && video.currentTime !== lastTime) {
+    lastTime = video.currentTime;
+    canvas.width = video.videoWidth; canvas.height = video.videoHeight;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const now = performance.now();
+    const found = hands.detectForVideo(video, now).landmarks || [];
+    found.forEach(drawHand);
+    $('hands').textContent = found.length ? `thấy ${found.length} bàn tay` : 'không thấy tay';
+    if (face) {
+      const shapes = face.detectForVideo(video, now).faceBlendshapes?.[0]?.categories || [];
+      const score = Math.max(0, ...shapes.filter(c => c.categoryName.startsWith('brow') && c.categoryName.includes('Up')).map(c => c.score));
+      $('brow').style.width = Math.round(score * 100) + '%';
+    }
+  }
+  requestAnimationFrame(loop);
+}
+</script>
+</body>
+</html>
