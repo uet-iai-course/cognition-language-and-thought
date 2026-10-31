@@ -15,6 +15,7 @@
   .stage { position:relative; background:#111; border-radius:10px; overflow:hidden; aspect-ratio:4/3; }
   video, canvas { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scaleX(-1); }
   .placeholder { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#ddd; text-align:center; padding:24px; }
+  .placeholder[hidden] { display:none; }
   aside { display:grid; gap:16px; }
   button { font:inherit; font-weight:700; padding:12px 16px; border-radius:8px; border:2px solid var(--accent); background:var(--accent); color:#fff; cursor:pointer; }
   button.secondary { background:#fff; color:var(--accent); }
@@ -88,6 +89,7 @@ $('start').addEventListener('click', async () => {
     video.srcObject = await navigator.mediaDevices.getUserMedia({ video: { width: 1280, height: 720 }, audio: false });
     await video.play();
     $('placeholder').hidden = true;
+    $('start').textContent = 'Camera đang bật';
     $('face').disabled = false;
     status('Đang chạy. Thử nhướn mày: kênh bàn tay không ghi nhận gì.');
     requestAnimationFrame(loop);
@@ -104,6 +106,7 @@ $('face').addEventListener('click', async () => {
     face = await create(lib.FaceLandmarker, FACE_MODEL, { numFaces: 1, outputFaceBlendshapes: true });
     $('faceState').textContent = 'đang theo dõi';
     $('faceState').classList.remove('off');
+    $('face').textContent = 'Đã thêm kênh nét mặt';
     status('Đã thêm kênh nét mặt. Thử nhướn mày lần nữa.');
   } catch (err) {
     status('Không tải được mô hình khuôn mặt: ' + err.message);
