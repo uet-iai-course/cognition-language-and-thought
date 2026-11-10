@@ -13,6 +13,7 @@ Học liệu AIT3018 / UET.AI3065, Viện Trí tuệ nhân tạo, Trường Đ�
 - [Buổi 6: Cảm xúc, Trí thông minh và Sáng tạo](https://courses.iaidev.com/cognition-language-and-thought/2627-1/bai-06-cam-xuc-tri-thong-minh-sang-tao.html)
 - [Buổi 7: Khái niệm, Bản chất và Nguồn gốc Ngôn ngữ](https://courses.iaidev.com/cognition-language-and-thought/2627-1/bai-07-khai-niem-ban-chat-nguon-goc-ngon-ngu.html)
 - [Buổi 8: Cấu trúc của Ngôn ngữ](https://courses.iaidev.com/cognition-language-and-thought/2627-1/bai-08-cau-truc-cua-ngon-ngu.html)
+- [Buổi 9: Thụ đắc, Sản sinh và Công nghệ Ngôn ngữ](https://courses.iaidev.com/cognition-language-and-thought/2627-1/bai-09-thu-dac-san-sinh-ngon-ngu-va-cong-nghe.html)
 
 Giảng viên: TS. Nguyễn Tuấn Phong. Học phần gốc do ThS. Ngô Minh Hương xây dựng;
 deck tiếng Việt được biên soạn lại từ học liệu của cô.

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Máy nghe và máy nói</title>
+<link rel="icon" href="../../favicon.svg">
+<style>
+  :root { --accent:#6D4AA8; --struct:#2A7291; --text:#221D3D; --muted:#5f5a75; --bg:#ffffff; --line:#dcd7e8; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:"Source Sans 3","Source Sans Pro",system-ui,sans-serif; font-size:22px; }
+  main { max-width:1200px; margin:0 auto; padding:20px 24px 40px; display:grid; grid-template-columns:1fr 1fr; gap:36px; }
+  h1 { grid-column:1/-1; margin:0; font-size:1.6em; }
+  h1 small { display:block; font-size:.55em; color:var(--muted); font-weight:400; margin-top:4px; }
+  section { border-top:3px solid var(--struct); padding-top:12px; }
+  section.tts { border-top-color:var(--accent); }
+  h2 { margin:0 0 4px; font-size:1.05em; }
+  h2 small { font-weight:400; color:var(--muted); font-size:.75em; }
+  p.hint { margin:4px 0 12px; color:var(--muted); font-size:.85em; }
+  button { font:inherit; font-weight:700; padding:10px 16px; border-radius:8px; border:2px solid var(--accent); background:var(--accent); color:#fff; cursor:pointer; }
+  button.secondary { background:#fff; color:var(--accent); }
+  button:disabled { opacity:.45; cursor:default; }
+  .row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:8px 0; }
+  .out { min-height:150px; border-bottom:1px solid var(--line); padding:8px 0; font-size:1.2em; line-height:1.4; }
+  .out .interim { color:#999; }
+  ol.history { margin:12px 0 0; padding-left:1.3em; font-size:.85em; color:var(--muted); }
+  textarea { width:100%; font:inherit; padding:10px; border:1px solid var(--line); border-radius:6px; min-height:110px; }
+  select, input[type=range] { font:inherit; }
+  .status { font-size:.8em; color:var(--muted); }
+  .warn { color:#b03a3a; }
+  ul.tries { margin:4px 0 10px; padding-left:1.2em; font-size:.85em; color:var(--text); }
+  .presets { display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 10px; }
+  .chip { font:inherit; font-size:.75em; padding:6px 12px; border-radius:999px; border:2px solid var(--accent); background:#fff; color:var(--accent); cursor:pointer; font-weight:600; }
+  @media (max-width:900px) { main { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Máy nghe và máy nói
+    <small>Nhận dạng tiếng nói (ASR) và tổng hợp tiếng nói (TTS) có sẵn trong trình duyệt. Chạy tốt nhất trên Chrome hoặc Safari; cần mạng và quyền dùng micro.</small></h1>
+
+  <section>
+    <h2>Máy nghe <small>speech recognition</small></h2>
+    <p class="hint">Bấm “Bắt đầu nghe”, đọc to một câu. Mời hai ba bạn ở các vùng khác nhau đọc cùng một câu rồi so kết quả.</p>
+    <ul class="tries"><li>“Nồi đồng nấu ốc, nồi đất nấu ếch.”</li><li>“Lúa nếp là lúa nếp làng, lúa lên lớp lớp lòng nàng lâng lâng.”</li><li>“Răng rứa mi, tau nói mi nghe rồi mà.”</li><li>“Deadline dí quá, tối nay chắc phải cày xuyên đêm.”</li></ul>
+    <div class="row">
+      <button id="listen">Bắt đầu nghe</button>
+      <select id="lang" aria-label="Ngôn ngữ nhận dạng">
+        <option value="vi-VN">Tiếng Việt</option>
+        <option value="en-US">Tiếng Anh (Mỹ)</option>
+      </select>
+    </div>
+    <div class="out" id="asr" aria-live="polite"></div>
+    <ol class="history" id="history"></ol>
+    <p class="status" id="asrStatus"></p>
+  </section>
+
+  <section class="tts">
+    <h2>Máy nói <small>text-to-speech</small></h2>
+    <p class="hint">Bấm một câu thử, hoặc tự gõ. Máy đọc đúng không?</p>
+    <div class="presets"><button class="chip" data-t="Ông già đi nhanh quá.">nhập nhằng</button><button class="chip" data-t="Hẹn gặp lúc 9h30 ngày 11/11 tại P.305-B, nhà G2, ĐHQGHN.">số, viết tắt</button><button class="chip" data-t="ko bít j lun á, đợi t xíu nha">teencode</button><button class="chip" data-t="Hôm nay team mình họp online, ai chưa submit report thì làm gấp nhé.">chen tiếng Anh</button><button class="chip" data-t="Nồi đồng nấu ốc, nồi đất nấu ếch.">líu lưỡi</button><button class="chip" data-t="Bà ba bán bánh bò, bánh bèo, bánh bột lọc.">bà ba bán bánh</button></div>
+    <textarea id="text">Hẹn gặp lúc 9h30 ngày 11/11 tại P.305-B, nhà G2, ĐHQGHN.</textarea>
+    <div class="row">
+      <button id="speak">Đọc</button>
+      <button class="secondary" id="stopSpeak">Dừng</button>
+      <select id="voice" aria-label="Giọng đọc"></select>
+    </div>
+    <div class="row"><label for="rate">Tốc độ</label><input type="range" id="rate" min="0.6" max="1.6" step="0.1" value="1"></div>
+    <p class="status" id="ttsStatus"></p>
+  </section>
+</main>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  // ---- Máy nghe ----
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const listen = $('listen'), asr = $('asr'), history = $('history'), asrStatus = $('asrStatus');
+  // Kiểm https trước: Safari ẩn hẳn SpeechRecognition trên trang http, nên báo "không hỗ trợ" sẽ sai.
+  if (!window.isSecureContext) {
+    listen.disabled = true;
+    asrStatus.innerHTML = '<span class="warn">Phần nghe chỉ chạy trên trang https (micro bị trình duyệt chặn trên http). Bản xem thử này là http; mở bản trên courses.iaidev.com sau khi đăng. Phần máy nói bên phải vẫn dùng được.</span>';
+  } else if (!SR) {
+    listen.disabled = true;
+    asrStatus.innerHTML = '<span class="warn">Trình duyệt này chưa hỗ trợ nhận dạng tiếng nói. Thử Chrome; trên Safari cần bật Đọc chính tả (Dictation) trong Cài đặt hệ thống.</span>';
+  } else {
+    let rec = null, running = false;
+    const stopRec = () => { running = false; listen.textContent = 'Bắt đầu nghe'; if (rec) rec.stop(); };
+    listen.addEventListener('click', () => {
+      if (running) return stopRec();
+      rec = new SR();
+      rec.lang = $('lang').value; rec.interimResults = true; rec.continuous = false;
+      rec.onresult = e => {
+        let fin = '', mid = '';
+        for (const r of e.results) (r.isFinal ? (fin += r[0].transcript) : (mid += r[0].transcript));
+        asr.innerHTML = '';
+        asr.append(document.createTextNode(fin));
+        if (mid) { const s = document.createElement('span'); s.className = 'interim'; s.textContent = mid; asr.append(s); }
+        if (fin) { const li = document.createElement('li'); li.textContent = fin; history.prepend(li); }
+      };
+      rec.onerror = e => { asrStatus.textContent = 'Lỗi: ' + e.error + (e.error === 'not-allowed' ? ' (chưa cho phép micro)' : ''); };
+      rec.onend = () => { running = false; listen.textContent = 'Bắt đầu nghe'; };
+      rec.start(); running = true; listen.textContent = 'Đang nghe… bấm để dừng'; asrStatus.textContent = '';
+    });
+  }
+  // ---- Máy nói ----
+  const speak = $('speak'), voiceSel = $('voice'), ttsStatus = $('ttsStatus');
+  if (!('speechSynthesis' in window)) {
+    speak.disabled = true; ttsStatus.innerHTML = '<span class="warn">Trình duyệt này chưa hỗ trợ tổng hợp tiếng nói.</span>';
+  } else {
+    const fill = () => {
+      const voices = speechSynthesis.getVoices();
+      const vi = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith('vi'));
+      const list = vi.length ? vi : voices;
+      voiceSel.innerHTML = '';
+      list.forEach(v => { const o = document.createElement('option'); o.value = v.name; o.textContent = v.name + ' (' + v.lang + ')'; voiceSel.append(o); });
+      ttsStatus.textContent = vi.length ? vi.length + ' giọng tiếng Việt trên máy này.' : 'Máy này chưa có giọng tiếng Việt; đang dùng giọng khác.';
+    };
+    fill(); speechSynthesis.onvoiceschanged = fill;
+    const isMacChrome = /Macintosh/.test(navigator.userAgent) && /Chrome\//.test(navigator.userAgent) && !/Edg\//.test(navigator.userAgent);
+    speak.addEventListener('click', () => {
+      speechSynthesis.cancel();
+      // Chrome đôi khi bỏ lời đọc nếu gọi speak() ngay sau cancel(); chờ một nhịp.
+      setTimeout(() => {
+        const voices = speechSynthesis.getVoices();
+        const v = voices.find(x => x.name === voiceSel.value) || voices.find(x => /^vi/i.test(x.lang));
+        const u = new SpeechSynthesisUtterance($('text').value);
+        u.lang = v ? v.lang : 'vi-VN';
+        if (v) u.voice = v;
+        u.rate = Number($('rate').value);
+        u.onstart = () => { ttsStatus.textContent = 'Đang đọc bằng giọng ' + (v ? v.name : 'mặc định') + '.' + (isMacChrome ? ' Nếu vẫn nghe giọng tiếng Anh, Chrome trên macOS đang bỏ qua giọng đã chọn: mở trang này bằng Safari.' : ''); };
+        u.onerror = e => { ttsStatus.textContent = 'Không đọc được: ' + e.error; };
+        speechSynthesis.speak(u);
+      }, 80);
+    });
+    $('stopSpeak').addEventListener('click', () => speechSynthesis.cancel());
+    document.querySelectorAll('.presets .chip').forEach(b => b.addEventListener('click', () => { $('text').value = b.dataset.t; speak.click(); }));
+  }
+})();
+</script>
+</body>
+</html>

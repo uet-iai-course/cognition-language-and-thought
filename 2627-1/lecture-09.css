@@ -1,0 +1,961 @@
+/* Scoped layouts for Lecture 9. Built on the reviewed Lecture 8 components (copied, renamed);
+   earlier decks keep their own stylesheets. */
+.reveal.lecture-09 h1.lesson-title { font-size:1.5em; }
+.reveal.lecture-09 .lead { font-size:.86em; line-height:1.4; }
+.reveal.lecture-09 .small-note { font-size:.68em; color:#555; margin:12px 0 0; line-height:1.35; }
+.reveal.lecture-09 .keep { white-space:nowrap; }
+.reveal.lecture-09 .mandarin { white-space:nowrap; }
+.reveal.lecture-09 .mandarin [lang="zh-Hans"] { font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif; }
+.reveal.lecture-09 .mandarin .pinyin { font-family:inherit; font-size:.9em; font-weight:400; }
+.reveal.lecture-09 .teacher-reference { font-size:.8em; }
+.reveal.lecture-09 .term-en { display:block; font-weight:400; font-size:.82em; color:#6b6b6b; }
+@media print { .reveal.lecture-09 aside.notes { display:none!important; } }
+
+/* Tables */
+.reveal.lecture-09 .compact-table { width:100%; font-size:.74em; line-height:1.3; }
+.reveal.lecture-09 .compact-table th,
+.reveal.lecture-09 .compact-table td { padding:.34em .5em; vertical-align:top; }
+.reveal.lecture-09 .compact-table.small { font-size:.66em; }
+.reveal.lecture-09 .compact-table .en { color:#6b6b6b; font-style:italic; }
+.reveal.lecture-09 .compact-table td.num { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.reveal.lecture-09 .compact-table tr.hl td { background:#f5f1fa; font-weight:600; }
+.reveal.lecture-09 .animal-language-comparison { font-size:22px; line-height:1.32; table-layout:fixed; margin:10px 0 0; }
+.reveal.lecture-09 .animal-language-comparison th:first-child { width:19%; }
+.reveal.lecture-09 .animal-language-comparison th:not(:first-child) { width:40.5%; }
+.reveal.lecture-09 .animal-language-comparison th,
+.reveal.lecture-09 .animal-language-comparison td { padding:8px 12px; }
+.reveal.lecture-09 .animal-language-comparison td:first-child { font-weight:600; color:#245d76; }
+.reveal.lecture-09 .animal-language-comparison td:nth-child(2) { background:#f2f7f9; }
+.reveal.lecture-09 .animal-language-comparison td:nth-child(3) { background:#f5f1fa; }
+
+/* Cards */
+.reveal.lecture-09 .concept-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:18px 0; font-size:.8em; }
+.reveal.lecture-09 .concept-grid>div { background:#f2f7f9; border-top:4px solid #2A7291; padding:14px 18px; line-height:1.36; }
+.reveal.lecture-09 .concept-grid strong { color:#2A7291; }
+.reveal.lecture-09 .concept-grid p { margin:8px 0 0; }
+.reveal.lecture-09 .concept-grid.three { grid-template-columns:repeat(3,1fr); }
+.reveal.lecture-09 .concept-grid.four { grid-template-columns:repeat(4,1fr); gap:12px; font-size:.7em; }
+.reveal.lecture-09 .concept-grid.four>div { padding:12px 12px; }
+.reveal.lecture-09 .concept-grid.five { grid-template-columns:repeat(5,1fr); gap:10px; font-size:.64em; }
+.reveal.lecture-09 .concept-grid.five>div { padding:10px 10px; }
+.reveal.lecture-09 .concept-grid.tight { margin:10px 0; }
+.reveal.lecture-09 .concept-grid .alt { background:#f5f1fa; border-color:#6D4AA8; }
+.reveal.lecture-09 .concept-grid .alt strong { color:#553582; }
+
+/* Media */
+.reveal.lecture-09 figure { margin:0; text-align:center; }
+.reveal.lecture-09 figure img { display:block; margin:0 auto; max-width:100%; border:0; box-shadow:none; object-fit:contain; }
+.reveal.lecture-09 .large-figure img { width:100%; height:420px; max-height:420px; }
+.reveal.lecture-09 .side-figure img { width:100%; height:380px; max-height:380px; }
+.reveal.lecture-09 .mid-figure img { width:100%; height:330px; max-height:330px; }
+.reveal.lecture-09 figcaption { font-size:.6em; color:#555; margin-top:6px; line-height:1.3; }
+.reveal.lecture-09 .visual-split { display:grid; grid-template-columns:1.1fr 1fr; gap:26px; align-items:center; margin:16px 0; }
+.reveal.lecture-09 .visual-split>div { font-size:.8em; line-height:1.4; }
+.reveal.lecture-09 .visual-split>div.split-media { font-size:1em; }
+.reveal.lecture-09 .visual-split p { margin:0 0 14px; }
+.reveal.lecture-09 .visual-split p:last-child { margin-bottom:0; }
+.reveal.lecture-09 .visual-split.wide-left { grid-template-columns:1.45fr 1fr; gap:22px; }
+.reveal.lecture-09 .visual-split.wide-right { grid-template-columns:1fr 1.35fr; gap:22px; }
+
+/* Boxes */
+.reveal.lecture-09 .question-box { font-size:.78em; margin:14px auto 0; padding:12px 20px; line-height:1.35; }
+.reveal.lecture-09 .question-box .question-title { margin-bottom:6px; }
+.reveal.lecture-09 .question-box p { margin:0; }
+.reveal.lecture-09 .discussion-box { font-size:.74em; }
+.reveal.lecture-09 .discussion-box li { margin-bottom:4px; }
+.reveal.lecture-09 .key-box { font-size:.8em; }
+.reveal.lecture-09 .warn-box { font-size:.76em; }
+.reveal.lecture-09 .term-note { font-size:.64em; color:#555; margin:10px 0 0; line-height:1.35; }
+.reveal.lecture-09 blockquote.lead { width:auto; margin:12px 0; padding:10px 18px; border-left:6px solid #6D4AA8; background:#f5f1fa; box-shadow:none; font-style:normal; text-align:left; }
+
+/* Fact strip */
+.reveal.lecture-09 .fact-row { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:16px 0; font-size:.74em; }
+.reveal.lecture-09 .fact-row.four { grid-template-columns:repeat(4,1fr); }
+.reveal.lecture-09 .fact-row>div { border-top:4px solid #6D4AA8; background:#f5f1fa; padding:12px 14px; line-height:1.35; }
+.reveal.lecture-09 .fact-row strong { display:block; color:#553582; font-size:1.25em; margin-bottom:6px; }
+
+/* Cue list with answers revealed one by one (functions, speech acts) */
+.reveal.lecture-09 .cue-list { width:100%; font-size:.8em; border-collapse:collapse; margin:10px 0; }
+.reveal.lecture-09 .cue-list td { padding:.3em .5em; border-bottom:1px solid #ddd; vertical-align:top; }
+.reveal.lecture-09 .cue-list td.answer { color:#6D4AA8; font-weight:700; width:34%; }
+
+/* Twelve computational linguistics tasks */
+.reveal.lecture-09 .task-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:12px 0; font-size:.62em; }
+.reveal.lecture-09 .task-grid>div { background:#f2f7f9; border-left:4px solid #2A7291; padding:8px 10px; line-height:1.3; }
+.reveal.lecture-09 .task-grid strong { display:block; color:#245d76; }
+.reveal.lecture-09 .task-grid span { color:#555; }
+
+/* Numbered steps (Poliva) */
+.reveal.lecture-09 .step-list { counter-reset:step; list-style:none; margin:10px 0; padding:0; font-size:.72em; display:grid; grid-template-columns:1fr 1fr; gap:8px 22px; }
+.reveal.lecture-09 .step-list li { counter-increment:step; position:relative; padding:6px 10px 6px 44px; background:#f2f7f9; border-radius:6px; line-height:1.3; }
+.reveal.lecture-09 .step-list li::before { content:counter(step); position:absolute; left:10px; top:6px; width:24px; height:24px; border-radius:50%; background:#2A7291; color:#fff; font-weight:700; font-size:.9em; text-align:center; line-height:24px; }
+.reveal.lecture-09 .step-list li.wide { grid-column:1 / -1; }
+
+/* SVG diagrams */
+.reveal.lecture-09 .diagram { display:block; width:100%; height:auto; margin:6px auto; }
+.reveal.lecture-09 .diagram.h300 { height:300px; }
+.reveal.lecture-09 .diagram.h340 { height:340px; }
+.reveal.lecture-09 .diagram.h380 { height:380px; }
+.reveal.lecture-09 .diagram.h420 { height:420px; }
+
+/* Native text stays crisp and follows the slide's font metrics. */
+.reveal.lecture-09 .communication-map { margin:18px 0; font-size:.8em; line-height:1.35; }
+.reveal.lecture-09 .map-heading { background:#6D4AA8; color:#fff; padding:12px 18px; font-weight:700; border-radius:10px 10px 0 0; }
+.reveal.lecture-09 .communication-branches { display:grid; grid-template-columns:1.65fr 1fr; gap:18px; border:2px solid #d4c8e4; border-top:0; padding:18px; border-radius:0 0 10px 10px; }
+.reveal.lecture-09 .communication-branches>div { background:#f2f7f9; padding:14px 18px; }
+.reveal.lecture-09 .communication-branches strong { color:#245d76; }
+.reveal.lecture-09 .communication-branches p { margin:8px 0 14px; }
+.reveal.lecture-09 .modality-row { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.reveal.lecture-09 .modality-row span { display:block; background:#fff; border-top:3px solid #2A7291; padding:8px; text-align:center; }
+.reveal.lecture-09 .concept-grid.function-cards { grid-template-columns:repeat(3,1fr); font-size:.75em; gap:14px; }
+.reveal.lecture-09 .social-comparison { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:18px 0; font-size:.82em; }
+.reveal.lecture-09 .social-comparison>div { border-top:4px solid #2A7291; background:#f2f7f9; padding:14px 20px; text-align:center; }
+.reveal.lecture-09 .social-comparison>div:last-child { border-color:#6D4AA8; background:#f5f1fa; }
+.reveal.lecture-09 .social-comparison strong { color:#245d76; }
+.reveal.lecture-09 .social-comparison p { margin:8px 0 0; }
+.reveal.lecture-09 .relationship { display:flex; justify-content:center; align-items:center; gap:22px; margin:20px 0; }
+.reveal.lecture-09 .relationship span { border:2px solid #2A7291; border-radius:12px; padding:10px 20px; background:white; }
+.reveal.lecture-09 .relationship b { font-weight:400; color:#6D4AA8; font-size:1.4em; }
+
+/* Dunbar: observed genus means and a visibly separate human extrapolation. */
+.reveal.lecture-09 .dunbar-layout { display:grid; grid-template-columns:1.8fr 1fr; gap:24px; align-items:center; margin:18px 0 8px; }
+.reveal.lecture-09 .dunbar-figure { text-align:left; }
+.reveal.lecture-09 .plot-y-title { font-size:20px; font-weight:600; line-height:1.4; }
+.reveal.lecture-09 .plot-y-title span { display:block; font-size:18px; font-weight:400; color:#555; }
+.reveal.lecture-09 .dunbar-plot { position:relative; height:214px; margin-top:8px; }
+.reveal.lecture-09 .dunbar-plot svg { display:block; width:100%; height:100%; margin:0; overflow:visible; }
+.reveal.lecture-09 .dunbar-grid { stroke:#dce3e7; stroke-width:1; fill:none; }
+.reveal.lecture-09 .dunbar-axes { stroke:#69727a; stroke-width:1.6; fill:none; }
+.reveal.lecture-09 .dunbar-fit { stroke:#2A7291; stroke-width:2.4; fill:none; opacity:.65; }
+.reveal.lecture-09 .dunbar-fit.extrapolation { stroke:#6D4AA8; stroke-dasharray:7 6; opacity:1; }
+.reveal.lecture-09 .primate-point { fill:#2A7291; stroke:#fff; stroke-width:1.2; fill-opacity:.85; }
+.reveal.lecture-09 .human-estimate { fill:#6D4AA8; stroke:white; stroke-width:1.5; }
+.reveal.lecture-09 .plot-y-tick { position:absolute; left:0; width:8%; text-align:right; transform:translateY(-50%); font-size:20px; color:#4c535a; }
+.reveal.lecture-09 .plot-x-tick { position:absolute; top:87%; transform:translateX(-50%); font-size:20px; color:#4c535a; }
+.reveal.lecture-09 .plot-x-title { font-size:20px; text-align:center; line-height:1.4; margin-top:0; }
+.reveal.lecture-09 .dunbar-figure figcaption { font-size:17px; margin-top:7px; text-align:left; }
+.reveal.lecture-09 .point-key { color:#2A7291; }
+.reveal.lecture-09 .human-label { position:absolute; left:66%; top:0; font-size:20px; font-weight:600; color:#6D4AA8; line-height:1.25; }
+.reveal.lecture-09 .human-label small { font-size:18px; font-weight:400; }
+.reveal.lecture-09 .dunbar-explanation { font-size:23px; line-height:1.4; }
+.reveal.lecture-09 .dunbar-explanation strong { color:#245d76; }
+.reveal.lecture-09 .dunbar-explanation p { font-size:21px; margin:8px 0 0; }
+.reveal.lecture-09 .dunbar-finding { border-left:4px solid #2A7291; padding-left:15px; }
+.reveal.lecture-09 .dunbar-language { background:#f5f1fa; padding:12px 16px; margin-top:16px; border-radius:8px; }
+.reveal.lecture-09 .dunbar-language strong { color:#553582; }
+
+/* Saussure: two inseparable faces of a sign, not a picture of a physical tree. */
+.reveal.lecture-09 .saussure-layout { display:grid; grid-template-columns:1.15fr 1fr; gap:32px; align-items:center; margin:8px 0; }
+.reveal.lecture-09 .saussure-sign { text-align:left; }
+.reveal.lecture-09 .sign-pair { border:2px solid #c6b8dc; border-radius:14px; overflow:hidden; }
+.reveal.lecture-09 .sign-half { padding:8px 18px; }
+.reveal.lecture-09 .sign-concept { background:#edf6f1; }
+.reveal.lecture-09 .sign-sound { background:#f5f1fa; }
+.reveal.lecture-09 .sign-label { font-size:25px; font-weight:700; line-height:1.3; color:#245d76; }
+.reveal.lecture-09 .sign-label span { font-size:22px; font-weight:400; }
+.reveal.lecture-09 .sign-sound .sign-label { color:#553582; }
+.reveal.lecture-09 .sign-example { display:flex; align-items:center; gap:20px; margin-top:6px; min-height:54px; }
+.reveal.lecture-09 .sign-example svg { width:54px; height:54px; flex:0 0 54px; margin:0; }
+.reveal.lecture-09 .sign-example strong { color:#221D3D; font-size:32px; font-weight:600; line-height:1.2; }
+.reveal.lecture-09 .sign-binding { display:flex; justify-content:center; align-items:center; gap:12px; background:white; color:#553582; font-size:23px; line-height:1.2; padding:4px 14px; border-top:1px solid #d9d1e5; border-bottom:1px solid #d9d1e5; }
+.reveal.lecture-09 .sign-binding span { font-size:30px; line-height:1; }
+.reveal.lecture-09 .sign-languages { display:grid; grid-template-columns:repeat(3,1fr); margin-top:12px; font-size:22px; line-height:1.2; text-align:center; color:#555; }
+.reveal.lecture-09 .sign-languages>span+span { border-left:1px solid #d4d9dd; }
+.reveal.lecture-09 .sign-languages strong { display:block; font-size:28px; font-weight:600; color:#553582; margin-top:3px; }
+.reveal.lecture-09 .saussure-sign figcaption { text-align:center; font-size:21px; margin-top:9px; }
+.reveal.lecture-09 .saussure-summary { display:grid; gap:18px; font-size:29px; line-height:1.3; }
+.reveal.lecture-09 .saussure-summary>div { padding-left:18px; border-left:4px solid #d4c8e4; }
+.reveal.lecture-09 .saussure-summary strong { font-size:29px; color:#245d76; }
+.reveal.lecture-09 .saussure-summary p { margin:6px 0 0; }
+
+/* Lecture 8 additions */
+.reveal.lecture-09 .mono { font-family:"Source Code Pro", Menlo, Consolas, monospace; font-size:.92em; }
+.reveal.lecture-09 pre.code-block { width:100%; margin:12px 0; box-shadow:none; font-size:.5em; }
+.reveal.lecture-09 pre.code-block code { max-height:none; padding:12px 16px; line-height:1.4; background:#f4f2f8; color:#221D3D; }
+.reveal.lecture-09 .rule-list { list-style:none; margin:10px 0; padding:0; font-size:.8em; }
+.reveal.lecture-09 .rule-list li { margin:4px 0; }
+.reveal.lecture-09 .rule-list code { font-size:1em; background:#f2f7f9; color:#245d76; padding:2px 8px; border-radius:4px; }
+.reveal.lecture-09 .meaning-list { margin:10px 0 0 1.2em; font-size:.74em; line-height:1.35; }
+.reveal.lecture-09 .meaning-list li { margin:3px 0; }
+.reveal.lecture-09 .side-figure.tall img { height:420px; max-height:420px; }
+.reveal.lecture-09 .big-line { font-size:1.4em; text-align:center; margin:30px 0 10px; font-weight:600; color:#553582; }
+.reveal.lecture-09 .discussion-box { font-size:.7em; }
+.reveal.lecture-09 .short-figure img { width:100%; height:330px; max-height:330px; }
+.reveal.lecture-09 .cue-list.wide-answer td.answer { width:60%; }
+.reveal.lecture-09 pre.code-block { font-size:.56em; }
+.reveal.lecture-09 .layer-stack { display:grid; gap:5px; font-size:.6em; margin:4px 0 0; text-align:left; }
+.reveal.lecture-09 .layer-head, .reveal.lecture-09 .layer { display:grid; grid-template-columns:240px 1fr 220px; gap:16px; align-items:center; }
+.reveal.lecture-09 .layer-head { padding:0 14px 0 20px; color:#2A7291; font-weight:700; font-size:.82em; }
+.reveal.lecture-09 .layer { background:#f2f7f9; border-left:6px solid #2A7291; border-radius:4px; padding:3px 14px; }
+.reveal.lecture-09 .layer:nth-child(2), .reveal.lecture-09 .layer:nth-child(3) { border-left-color:#6D4AA8; background:#f5f2fa; }
+.reveal.lecture-09 .layer:nth-child(4), .reveal.lecture-09 .layer:nth-child(5) { border-left-color:#4C5E9E; background:#f3f5fa; }
+.reveal.lecture-09 .layer-name strong { display:block; line-height:1.2; }
+.reveal.lecture-09 .layer-name span { display:block; color:#666; font-size:.78em; line-height:1.2; }
+.reveal.lecture-09 .layer-ex { line-height:1.2; }
+.reveal.lecture-09 .layer-ex .tile { display:inline-block; background:#fff; border:2px solid #9BBBCB; border-radius:6px; padding:1px 10px; margin-right:6px; }
+.reveal.lecture-09 .layer-ex .word { display:inline-block; border-bottom:3px solid #6D4AA8; padding-bottom:3px; margin-right:6px; }
+.reveal.lecture-09 .layer-ex .word .tile:last-child { margin-right:0; }
+.reveal.lecture-09 .layer-ex .tile small { color:#2A7291; font-size:.72em; }
+.reveal.lecture-09 .layer-ex .bubble { display:inline-block; background:#fff; border:2px solid #6D4AA8; border-radius:14px 14px 14px 2px; padding:2px 12px; margin-right:8px; }
+.reveal.lecture-09 .layer-ex .wave { width:220px; height:34px; vertical-align:middle; }
+.reveal.lecture-09 .layer-ex .wave path { fill:none; stroke:#2A7291; stroke-width:2; }
+.reveal.lecture-09 .layer-ai { color:#7A4CB0; font-weight:600; border-left:2px dashed #CBBDE3; padding-left:12px; line-height:1.2; }
+.reveal.lecture-09 .regex-cases { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin:16px 0 6px; font-size:.72em; }
+.reveal.lecture-09 .regex-cases>div { background:#f2f7f9; border-top:4px solid #2A7291; padding:10px 16px; }
+.reveal.lecture-09 .regex-cases>div:last-child { border-top-color:#E62727; background:#fbf2f2; }
+.reveal.lecture-09 .regex-cases strong { display:block; margin-bottom:6px; }
+.reveal.lecture-09 .regex-cases code { display:inline-block; font-family:"Source Code Pro", Menlo, Consolas, monospace; background:#fff; border:2px solid #cfd8de; border-radius:6px; padding:2px 10px; margin:0 8px 6px 0; }
+.reveal.lecture-09 .demo-link { font-size:.72em; margin:12px 0 0; }
+.reveal.lecture-09 .demo-link a { display:inline-block; border:2px solid #6D4AA8; border-radius:8px; padding:6px 16px; color:#6D4AA8; font-weight:700; text-decoration:none; }
+.reveal.lecture-09 .token-row { display:inline-flex; flex-wrap:wrap; gap:4px; margin-left:10px; vertical-align:middle; }
+.reveal.lecture-09 .tok { font-family:inherit; font-size:.85em; background:#F1EAFA; border:1px solid #7A4CB0; border-radius:4px; padding:0 6px; }
+.reveal.lecture-09 .tok:nth-child(even) { background:#E4F2F5; border-color:#2A7291; }
+.reveal.lecture-09 .cue-list.token-race td.answer { width:62%; font-weight:700; }
+.reveal.lecture-09 .cue-list.chat { font-size:.86em; }
+.reveal.lecture-09 .cue-list.chat td { padding-top:5px; padding-bottom:5px; line-height:1.25; }
+.reveal.lecture-09 .cue-list.chat td.answer { width:34%; }
+/* 1.7: staircase of six layers */
+.reveal.lecture-09 .ladder { display:flex; flex-direction:column; gap:7px; margin:4px 0 0; font-size:.8em; position:relative; }
+.reveal.lecture-09 .ladder-ex { margin:0 0 4px; font-size:1.1em; font-weight:700; color:#553582; }
+.reveal.lecture-09 .ladder .step { display:flex; align-items:center; gap:18px; background:#f2f7f9; border-left:6px solid #2A7291; border-radius:6px; padding:4px 16px; min-height:48px; }
+/* bậc trên cùng (ngữ dụng) lệch phải nhất: thang đi lên */
+.reveal.lecture-09 .ladder .step { width:72%; box-sizing:border-box; }
+.reveal.lecture-09 .ladder .step:nth-child(2) { margin-left:28%; border-left-color:#6D4AA8; background:#f5f1fa; }
+.reveal.lecture-09 .ladder .step:nth-child(3) { margin-left:22.4%; border-left-color:#6D4AA8; background:#f5f1fa; }
+.reveal.lecture-09 .ladder .step:nth-child(4) { margin-left:16.8%; border-left-color:#4C5E9E; background:#f3f5fa; }
+.reveal.lecture-09 .ladder .step:nth-child(5) { margin-left:11.2%; border-left-color:#4C5E9E; background:#f3f5fa; }
+.reveal.lecture-09 .ladder .step:nth-child(6) { margin-left:5.6%; }
+.reveal.lecture-09 .ladder .step:nth-child(7) { margin-left:0; }
+.reveal.lecture-09 .ladder .step-ico { font-size:1.3em; width:1.4em; text-align:center; }
+.reveal.lecture-09 .ladder strong { width:5.2em; flex:none; }
+.reveal.lecture-09 .ladder .step-ex { line-height:1.2; }
+.reveal.lecture-09 .ladder .tile { display:inline-block; background:#fff; border:2px solid #9BBBCB; border-radius:6px; padding:0 9px; margin-right:5px; }
+.reveal.lecture-09 .ladder .tile.s1 { border-color:#2A7291; } .reveal.lecture-09 .ladder .tile.s2 { border-color:#6D4AA8; } .reveal.lecture-09 .ladder .tile.s3 { border-color:#E8890C; }
+.reveal.lecture-09 .ladder .word { display:inline-block; border-bottom:3px solid #6D4AA8; padding-bottom:2px; margin-right:5px; }
+.reveal.lecture-09 .ladder .word .tile:last-child { margin-right:0; }
+.reveal.lecture-09 .ladder .bubble { display:inline-block; background:#fff; border:2px solid #6D4AA8; border-radius:14px 14px 14px 2px; padding:0 10px; }
+.reveal.lecture-09 .ladder .twist { color:#E62727; }
+.reveal.lecture-09 .ladder .wave { width:200px; height:30px; vertical-align:middle; }
+.reveal.lecture-09 .ladder .wave path { fill:none; stroke:#2A7291; stroke-width:2; }
+/* 1.8: five lenses on grammar */
+.reveal.lecture-09 .lenses { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin:22px 0 8px; font-size:.7em; text-align:center; }
+.reveal.lecture-09 .lens { background:#f2f7f9; border-top:5px solid #2A7291; border-radius:8px; padding:22px 8px 20px; display:flex; flex-direction:column; align-items:center; gap:4px; }
+.reveal.lecture-09 .lens.hl { background:#f5f1fa; border-top-color:#6D4AA8; box-shadow:0 0 0 3px #6D4AA8 inset; }
+.reveal.lecture-09 .lens-ico { font-size:2.4em; line-height:1.1; }
+.reveal.lecture-09 .lens .en { font-size:.72em; color:#6b6b6b; font-style:italic; }
+.reveal.lecture-09 .lens strong { font-size:1.15em; }
+.reveal.lecture-09 .lens em { font-style:normal; color:#2A7291; margin-top:10px; line-height:1.25; }
+.reveal.lecture-09 .lens.hl em { color:#553582; font-weight:700; }
+/* Video YouTube nhúng */
+.reveal.lecture-09 .video-embed { position:relative; width:100%; aspect-ratio:16/9; background:#111; border-radius:8px; overflow:hidden; }
+.reveal.lecture-09 .video-embed iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+.reveal.lecture-09 .video-credit { font-size:.55em; color:#666; margin:4px 0 0; text-align:left; }
+.reveal.lecture-09 .step-list.single { grid-template-columns:1fr; margin-top:0; }
+.reveal.lecture-09 .video-main { width:76%; margin:6px auto 0; }
+/* 2.5: so sánh tiếng Anh và tiếng Việt */
+.reveal.lecture-09 .phon-compare { display:grid; grid-template-columns:1fr 1fr; gap:26px; margin:10px 0 4px; font-size:.78em; }
+.reveal.lecture-09 .pc-panel { background:#f2f7f9; border-top:5px solid #2A7291; border-radius:8px; padding:12px 16px 10px; text-align:center; }
+.reveal.lecture-09 .pc-panel.vi { background:#f5f1fa; border-top-color:#6D4AA8; }
+.reveal.lecture-09 .pc-lang { font-weight:700; color:#2A7291; margin-bottom:10px; }
+.reveal.lecture-09 .pc-panel.vi .pc-lang { color:#553582; }
+.reveal.lecture-09 .pc-node { display:inline-flex; flex-direction:column; align-items:center; background:#fff; border:2px solid #2A7291; border-radius:8px; padding:4px 18px; font-family:"Noto Sans","DejaVu Sans","Lucida Grande","Segoe UI",Arial,sans-serif; font-size:1.15em; }
+.reveal.lecture-09 .pc-panel.vi .pc-node { border-color:#6D4AA8; }
+.reveal.lecture-09 .pc-node small, .reveal.lecture-09 .pc-leaf span { font-family:"Source Sans Pro", Arial, sans-serif; font-size:.62em; color:#555; }
+.reveal.lecture-09 .pc-kids { display:grid; grid-template-columns:130px 130px; justify-content:center; gap:40px; margin-top:22px; position:relative; }
+.reveal.lecture-09 .pc-kids::before { content:""; position:absolute; top:-12px; left:calc(50% - 85px); right:calc(50% - 85px); border-top:2px solid #2A7291; }
+.reveal.lecture-09 .pc-kids::after { content:""; position:absolute; top:-22px; left:50%; height:10px; border-left:2px solid #2A7291; }
+.reveal.lecture-09 .pc-leaf { display:flex; flex-direction:column; align-items:center; font-family:"Noto Sans","DejaVu Sans","Lucida Grande","Segoe UI",Arial,sans-serif; font-size:1.05em; position:relative; background:#fff; border:1px dashed #2A7291; border-radius:8px; padding:2px 14px; }
+.reveal.lecture-09 .pc-leaf::before { content:""; position:absolute; top:-12px; left:50%; height:12px; border-left:2px solid #2A7291; }
+.reveal.lecture-09 .pc-pair { display:flex; justify-content:center; gap:30px; padding:22px 0 18px; }
+.reveal.lecture-09 .pc-note { font-size:.74em; margin:12px 0 0; line-height:1.3; }
+/* 2.6: cây quyết định âm vị bằng HTML */
+.reveal.lecture-09 .dtree { margin:8px 0 0; font-size:.7em; }
+.reveal.lecture-09 .dt-row { display:grid; gap:0; align-items:stretch; }
+.reveal.lecture-09 .dt-row.one { grid-template-columns:1fr; justify-items:center; }
+.reveal.lecture-09 .dt-row.two { grid-template-columns:1fr 1fr; }
+.reveal.lecture-09 .dt-row.two .dt-q { margin:0 14px; }
+.reveal.lecture-09 .dt-row.four { grid-template-columns:repeat(4,1fr); }
+.reveal.lecture-09 .dt-row.four .dt-a { margin:0 8px; }
+.reveal.lecture-09 .dt-q { background:#fff; border:2px solid #2A7291; border-radius:10px; padding:8px 16px; text-align:center; line-height:1.25; }
+.reveal.lecture-09 .dt-row.one .dt-q { border-color:#6D4AA8; color:#553582; font-weight:700; padding:8px 28px; }
+.reveal.lecture-09 .dt-a { border-radius:10px; padding:10px 8px; text-align:center; font-weight:700; line-height:1.2; display:flex; align-items:center; justify-content:center; }
+.reveal.lecture-09 .dt-a.one { background:#e4f2f5; color:#245d76; border:2px solid #2A7291; }
+.reveal.lecture-09 .dt-a.two { background:#f1eafa; color:#553582; border:2px solid #6D4AA8; }
+.reveal.lecture-09 .dt-link { position:relative; height:46px; }
+.reveal.lecture-09 .dt-link svg { position:absolute; inset:0; width:100%; height:100%; }
+.reveal.lecture-09 .dt-link line { stroke:#9aa7b4; stroke-width:2; vector-effect:non-scaling-stroke; }
+.reveal.lecture-09 .dt-pill { position:absolute; top:50%; transform:translate(-50%,-50%); background:#2E8B57; color:#fff; font-size:.72em; font-weight:700; border-radius:999px; padding:1px 10px; }
+.reveal.lecture-09 .dt-pill.no { background:#E62727; }
+.reveal.lecture-09 .dt-a { flex-direction:column; gap:4px; }
+.reveal.lecture-09 .dt-ex { font-weight:400; font-size:.8em; color:#333; line-height:1.2; }
+/* 2.8: hai cách nhìn một âm thanh */
+.reveal.lecture-09 .duo { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin:18px 0 6px; }
+.reveal.lecture-09 .duo-card { display:flex; flex-direction:column; align-items:center; gap:4px; background:#f2f7f9; border-top:5px solid #2A7291; border-radius:10px; padding:16px 12px 18px; font-size:.82em; }
+.reveal.lecture-09 .duo-card.vi { background:#f5f1fa; border-top-color:#6D4AA8; }
+.reveal.lecture-09 .duo-mark { font-family:"Source Code Pro", Menlo, Consolas, monospace; font-size:2.2em; font-weight:700; color:#2A7291; line-height:1.1; }
+.reveal.lecture-09 .duo-card.vi .duo-mark { color:#6D4AA8; }
+.reveal.lecture-09 .duo-card strong { font-size:1.15em; margin-bottom:4px; }
+.reveal.lecture-09 .duo-card span:not(.duo-mark) { color:#444; }
+.reveal.lecture-09 b.stress { color:#6D4AA8; }
+/* 2.9: sáu thanh tiếng Việt */
+.reveal.lecture-09 .vn-tones { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.reveal.lecture-09 .vt { display:flex; flex-direction:column; align-items:center; background:#f5f1fa; border:1px solid #d9cdee; border-radius:8px; padding:6px 4px 8px; }
+.reveal.lecture-09 .vt svg { width:100%; height:86px; }
+.reveal.lecture-09 .vt line.lv { stroke:#d9cdee; stroke-width:1; vector-effect:non-scaling-stroke; }
+.reveal.lecture-09 .vt path { fill:none; stroke:#6D4AA8; stroke-width:4; stroke-linecap:round; }
+.reveal.lecture-09 .vt b { font-size:1.1em; line-height:1.1; }
+.reveal.lecture-09 .vt span { font-size:.62em; color:#555; }
+/* 2.10: âm thanh và chữ, cạnh video */
+.reveal.lecture-09 .ai-speech { display:grid; grid-template-columns:5fr 6fr; gap:28px; align-items:center; margin:8px 0 4px; }
+.reveal.lecture-09 .as-loop { display:flex; flex-direction:column; align-items:center; gap:4px; }
+.reveal.lecture-09 .as-box { width:78%; display:flex; flex-direction:column; align-items:center; background:#f5f1fa; border:2px solid #6D4AA8; border-radius:12px; padding:8px 12px 10px; }
+.reveal.lecture-09 .as-box small { font-size:.55em; font-weight:700; color:#553582; text-transform:uppercase; letter-spacing:.06em; }
+.reveal.lecture-09 .as-box .wave { width:180px; height:34px; }
+.reveal.lecture-09 .as-box .wave path { fill:none; stroke:#6D4AA8; stroke-width:2.5; }
+.reveal.lecture-09 .as-text { font-size:.85em; font-weight:600; line-height:1.4; }
+.reveal.lecture-09 .as-mid { display:flex; gap:34px; justify-content:center; }
+.reveal.lecture-09 .as-arrow { display:flex; align-items:center; gap:6px; }
+.reveal.lecture-09 .as-arrow svg { width:16px; height:64px; }
+.reveal.lecture-09 .as-arrow path { fill:none; stroke:#2A7291; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+.reveal.lecture-09 .as-arrow span { font-size:.56em; color:#2A7291; font-weight:700; line-height:1.15; }
+.reveal.lecture-09 .as-arrow span small { font-weight:400; color:#555; }
+/* ===== Thành phần trực quan dùng chung (30/10/2026) ===== */
+.reveal.lecture-09 .mo { display:inline-flex; flex-shrink:0; margin:0 10px 4px 0; vertical-align:top; }
+.reveal.lecture-09 .mp { display:inline-flex; flex-direction:column; align-items:stretch; text-align:center; }
+.reveal.lecture-09 .mp b { display:block; padding:2px 8px; border:2px solid #2A7291; background:#fff; font-weight:600; margin-left:-2px; }
+.reveal.lecture-09 .mp:first-child b { border-radius:6px 0 0 6px; margin-left:0; }
+.reveal.lecture-09 .mp:last-child b { border-radius:0 6px 6px 0; }
+.reveal.lecture-09 .mp:only-child b { border-radius:6px; }
+.reveal.lecture-09 .mp.a b { background:#f1eafa; border-color:#6D4AA8; color:#553582; }
+.reveal.lecture-09 .mp i { font-style:normal; font-size:.62em; color:#666; margin-top:2px; white-space:nowrap; padding:0 4px; }
+.reveal.lecture-09 .flow3 { display:grid; grid-template-columns:1fr auto 1fr; gap:10px 14px; align-items:center; margin:12px 0 6px; font-size:.74em; }
+.reveal.lecture-09 .flow3 .f-in, .reveal.lecture-09 .flow3 .f-out { background:#f2f7f9; border:2px solid #9BBBCB; border-radius:8px; padding:6px 12px; text-align:center; }
+.reveal.lecture-09 .flow3 .f-out { background:#f5f1fa; border-color:#6D4AA8; font-weight:600; }
+.reveal.lecture-09 .flow3 .f-in small { display:block; font-size:.72em; color:#666; }
+.reveal.lecture-09 .flow3 .f-op { text-align:center; color:#2A7291; font-size:.78em; font-weight:600; min-width:120px; }
+.reveal.lecture-09 .flow3 .f-op span { display:block; border-bottom:2px solid #2A7291; padding:0 6px 2px; position:relative; }
+.reveal.lecture-09 .flow3 .f-op span::after { content:""; position:absolute; right:-6px; bottom:-6px; border:5px solid transparent; border-left:8px solid #2A7291; }
+.reveal.lecture-09 .flow3.ipa .f-op { min-width:60px; }
+.reveal.lecture-09 .flow3.ipa .f-out { font-family:"Noto Sans","DejaVu Sans","Lucida Grande","Segoe UI",Arial,sans-serif; font-size:1.1em; }
+.reveal.lecture-09 .flow3.deep .f-in, .reveal.lecture-09 .flow3.deep .f-out { font-size:.92em; }
+.reveal.lecture-09 .tiles { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:12px 0 6px; font-size:.72em; }
+.reveal.lecture-09 .tiles.three { grid-template-columns:repeat(3,1fr); }
+.reveal.lecture-09 .tiles.four { grid-template-columns:repeat(4,1fr); }
+.reveal.lecture-09 .tiles.small { font-size:.62em; gap:10px; }
+.reveal.lecture-09 .tile-card { background:#f2f7f9; border-top:4px solid #2A7291; border-radius:8px; padding:10px 12px; text-align:center; line-height:1.25; }
+.reveal.lecture-09 .tile-card strong { display:block; color:#245d76; }
+.reveal.lecture-09 .tile-card small { display:block; font-size:.72em; color:#777; font-style:italic; }
+.reveal.lecture-09 .tile-card > div { margin-top:6px; }
+.reveal.lecture-09 .tile-card.alt { background:#f5f1fa; border-top-color:#6D4AA8; }
+.reveal.lecture-09 .tile-card.alt strong { color:#553582; }
+.reveal.lecture-09 .tiles.formula .tile-card > div { font-weight:600; color:#553582; }
+.reveal.lecture-09 .tiles.myth .tile-card strong { color:#999; font-weight:400; text-decoration:line-through; font-size:.9em; }
+.reveal.lecture-09 .tiles.myth .tile-card > div { font-weight:600; color:#245d76; }
+.reveal.lecture-09 .tiles .p, .reveal.lecture-09 .tile-card p.sub { font-size:.8em; color:#666; margin:4px 0 0; }
+.reveal.lecture-09 .tiles.amb .two { display:flex; justify-content:center; gap:8px; margin-top:6px; }
+.reveal.lecture-09 .tiles.amb .two span { background:#fff; border:1px solid #6D4AA8; border-radius:999px; padding:0 10px; font-size:.86em; color:#553582; }
+.reveal.lecture-09 .chip { display:inline-block; background:#fff; border:2px solid #2A7291; border-radius:6px; padding:0 8px; }
+.reveal.lecture-09 .rl { display:inline-flex; align-items:center; gap:6px; flex-wrap:wrap; justify-content:center; }
+.reveal.lecture-09 .rl-op { font-size:.78em; color:#6D4AA8; font-weight:700; }
+.reveal.lecture-09 .bub { display:block; width:fit-content; max-width:92%; border-radius:14px 14px 14px 3px; padding:3px 12px; margin:4px 0; text-align:left; background:#fff; border:2px solid #9BBBCB; font-size:.92em; }
+.reveal.lecture-09 .bub.b { margin-left:auto; border-radius:14px 14px 3px 14px; background:#f5f1fa; border-color:#6D4AA8; }
+.reveal.lecture-09 .bub.big { font-size:1.35em; padding:10px 22px; margin:0 auto; }
+.reveal.lecture-09 .bub.ad { border-color:#E8890C; background:#FDF3E3; }
+.reveal.lecture-09 .tiles.grice .tile-card > div { text-align:left; }
+.reveal.lecture-09 .msg { display:flex; justify-content:center; margin:22px 0 10px; font-size:.8em; }
+.reveal.lecture-09 .msg u { text-decoration-color:#6D4AA8; text-decoration-thickness:3px; text-underline-offset:5px; }
+.reveal.lecture-09 .msg-notes { display:flex; justify-content:center; gap:16px; font-size:.68em; margin-bottom:6px; }
+.reveal.lecture-09 .msg-notes span { background:#f5f1fa; border-radius:999px; padding:2px 12px; }
+.reveal.lecture-09 .big-number { text-align:center; font-size:1.05em; margin:10px 0 0; color:#553582; }
+.reveal.lecture-09 .big-number b { font-size:1.4em; }
+.reveal.lecture-09 .chain { display:grid; grid-template-columns:repeat(3,1fr); gap:34px; margin:18px 0 0; font-size:.76em; position:relative; }
+.reveal.lecture-09 .chain .tile-card { position:relative; }
+.reveal.lecture-09 .chain .tile-card:not(:last-child)::after { content:"→"; position:absolute; right:-28px; top:50%; transform:translateY(-50%); color:#2A7291; font-size:1.4em; font-weight:700; }
+.reveal.lecture-09 .chain-extra { display:flex; justify-content:center; margin-top:16px; font-size:.76em; }
+.reveal.lecture-09 .chain-extra .tile-card { width:32%; }
+.reveal.lecture-09 .mtypes { display:grid; gap:6px; font-size:.7em; margin:8px 0 4px; }
+.reveal.lecture-09 .mt-row { display:grid; grid-template-columns:175px 170px 1fr; align-items:center; gap:10px; border-bottom:1px solid #e5e5ee; padding:4px 0; }
+.reveal.lecture-09 .mt-row > small { color:#777; font-style:italic; font-size:.8em; }
+.reveal.lecture-09 .mt-row > div { display:flex; align-items:center; flex-wrap:wrap; }
+.reveal.lecture-09 .mt-note { font-size:.78em; color:#777; margin-left:6px; }
+.reveal.lecture-09 .mp-long { display:inline-block; border:2px solid #2A7291; border-radius:6px; padding:2px 10px; background:#fff; }
+.reveal.lecture-09 .mtree { display:grid; grid-template-columns:1fr 2fr; gap:16px; font-size:.74em; margin:10px 0 4px; }
+.reveal.lecture-09 .mt-col { background:#f2f7f9; border-top:4px solid #2A7291; border-radius:8px; padding:10px 14px; text-align:center; }
+.reveal.lecture-09 .mt-col > strong { display:block; color:#245d76; }
+.reveal.lecture-09 .mt-col > small { display:block; color:#777; font-style:italic; font-size:.75em; margin-bottom:6px; }
+.reveal.lecture-09 .mt-col p { margin:4px 0 0; font-size:.82em; color:#555; }
+.reveal.lecture-09 .mt-sub { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:4px; margin:6px 0; }
+.reveal.lecture-09 .mt-sub > span:not(.mo) { font-size:.82em; color:#553582; font-weight:700; width:90px; text-align:right; margin-right:8px; }
+.reveal.lecture-09 .allo { display:grid; gap:10px; font-size:.74em; margin:12px 0 6px; }
+.reveal.lecture-09 .allo > div { display:flex; align-items:center; flex-wrap:wrap; }
+.reveal.lecture-09 .allo-k { width:90px; white-space:nowrap; font-family:"Source Code Pro", Menlo, Consolas, monospace; color:#2A7291; font-weight:700; }
+.reveal.lecture-09 .count3 { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:16px 0 6px; font-size:.76em; }
+.reveal.lecture-09 .c3 { background:#f2f7f9; border-top:5px solid #2A7291; border-radius:10px; padding:10px 14px; display:grid; grid-template-columns:repeat(3,1fr); gap:6px; text-align:center; }
+.reveal.lecture-09 .c3.vi { background:#f5f1fa; border-top-color:#6D4AA8; }
+.reveal.lecture-09 .c3-w { grid-column:1/-1; font-weight:700; font-size:1.15em; }
+.reveal.lecture-09 .c3 b { display:block; font-size:1.8em; line-height:1.1; color:#553582; }
+.reveal.lecture-09 .c3 small { font-size:.7em; color:#555; }
+.reveal.lecture-09 .order { display:grid; gap:10px; margin:14px 0 8px; font-size:.78em; }
+.reveal.lecture-09 .ord { display:flex; align-items:center; gap:6px; }
+.reveal.lecture-09 .ord .o { width:110px; display:inline-flex; flex-direction:column; align-items:center; border-radius:6px; padding:3px 0 4px; color:#fff; line-height:1.15; }
+.reveal.lecture-09 .ord .o b { font-size:1.05em; }
+.reveal.lecture-09 .ord .o small { font-size:.62em; font-weight:400; opacity:.92; }
+.reveal.lecture-09 .ord .o.s { background:#2A7291; } .reveal.lecture-09 .ord .o.v { background:#6D4AA8; } .reveal.lecture-09 .ord .o.ob { background:#E8890C; }
+.reveal.lecture-09 .ord em { font-style:normal; color:#555; margin-left:14px; }
+.reveal.lecture-09 .who { display:grid; gap:4px; font-size:.7em; margin:8px auto 4px; width:70%; }
+.reveal.lecture-09 .who-h, .reveal.lecture-09 .who-r { display:grid; grid-template-columns:40px 1fr 1fr; gap:10px; align-items:center; text-align:center; }
+.reveal.lecture-09 .who-h { color:#2A7291; font-weight:700; font-size:.9em; }
+.reveal.lecture-09 .who-r > span:first-child { color:#999; }
+.reveal.lecture-09 .who .chip.me { border-color:#6D4AA8; background:#f5f1fa; } .reveal.lecture-09 .who .chip.he { border-color:#2A7291; background:#f2f7f9; } .reveal.lecture-09 .who .chip.hill { border-color:#E8890C; background:#FDF3E3; }
+.reveal.lecture-09 .act { display:flex; flex-direction:column; align-items:center; gap:14px; margin:18px 0 6px; font-size:.8em; }
+.reveal.lecture-09 .act-branches { display:grid; grid-template-columns:1fr 1fr; gap:60px; }
+.reveal.lecture-09 .act-branches > div { text-align:center; border-top:3px solid #2A7291; padding-top:8px; min-width:220px; }
+.reveal.lecture-09 .act-branches b { display:block; color:#553582; }
+.reveal.lecture-09 .act-branches span { font-size:.82em; color:#555; }
+.reveal.lecture-09 .diff3 { display:grid; gap:10px; font-size:.76em; }
+.reveal.lecture-09 .diff3 > div { background:#f2f7f9; border-left:5px solid #2A7291; border-radius:6px; padding:6px 12px; }
+.reveal.lecture-09 .diff3 b { display:block; color:#245d76; }
+.reveal.lecture-09 .diff3 span { font-size:.82em; color:#555; }
+.reveal.lecture-09 .ladder.sign .step, .reveal.lecture-09 .ladder.recap .step { width:72%; }
+.reveal.lecture-09 .ladder.sign .step:nth-child(1), .reveal.lecture-09 .ladder.recap .step:nth-child(1) { margin-left:28%; border-left-color:#6D4AA8; background:#f5f1fa; }
+.reveal.lecture-09 .ladder.sign .step:nth-child(2), .reveal.lecture-09 .ladder.recap .step:nth-child(2) { margin-left:22.4%; border-left-color:#6D4AA8; background:#f5f1fa; }
+.reveal.lecture-09 .ladder.sign .step:nth-child(3), .reveal.lecture-09 .ladder.recap .step:nth-child(3) { margin-left:16.8%; border-left-color:#4C5E9E; background:#f3f5fa; }
+.reveal.lecture-09 .ladder.sign .step:nth-child(4), .reveal.lecture-09 .ladder.recap .step:nth-child(4) { margin-left:11.2%; border-left-color:#4C5E9E; background:#f3f5fa; }
+.reveal.lecture-09 .ladder.sign .step:nth-child(5), .reveal.lecture-09 .ladder.recap .step:nth-child(5) { margin-left:5.6%; }
+.reveal.lecture-09 .ladder.sign .step:nth-child(6), .reveal.lecture-09 .ladder.recap .step:nth-child(6) { margin-left:0; }
+.reveal.lecture-09 .ladder.sign, .reveal.lecture-09 .ladder.recap { font-size:.72em; }
+.reveal.lecture-09 .lv-ok { color:#2E8B57; font-weight:600; } .reveal.lecture-09 .lv-mid { color:#b8650a; font-weight:600; } .reveal.lecture-09 .lv-hard { color:#E62727; font-weight:700; }
+.reveal.lecture-09 .tiles.grice { grid-template-columns:repeat(2,1fr); gap:10px 16px; font-size:.68em; }
+.reveal.lecture-09 .tiles.grice .tile-card { display:grid; grid-template-columns:130px 1fr; align-items:center; text-align:left; gap:0 10px; }
+.reveal.lecture-09 .tiles.grice .tile-card > div { grid-column:2; grid-row:1 / span 2; margin:0; }
+.reveal.lecture-09 .mtypes { font-size:.82em; gap:12px; }
+.reveal.lecture-09 .mp b .cons { color:#245d76; } .reveal.lecture-09 .mp b .vow { color:#6D4AA8; font-weight:400; }
+
+/* Rà soát đồng bộ 30/10/2026 */
+.reveal.lecture-09 .ladder .tile.mono { font-family:"Noto Sans","DejaVu Sans","Lucida Grande","Segoe UI",Arial,sans-serif; }
+.reveal.lecture-09 .tiles.guess { font-size:.8em; gap:12px 14px; }
+.reveal.lecture-09 .tiles.guess .tile-card strong { font-size:1.15em; color:#221D3D; }
+.reveal.lecture-09 .tiles.guess .tile-card > div { min-height:2.6em; color:#553582; font-size:.85em; }
+.reveal.lecture-09 .tiles.guess .tile-card > div b { display:block; color:#6D4AA8; }
+.reveal.lecture-09 .qrows { display:flex; flex-direction:column; margin:8px 0 0; font-size:.66em; }
+.reveal.lecture-09 .qrows.chat { font-size:.74em; }
+.reveal.lecture-09 .qr { display:grid; grid-template-columns:1fr 310px; gap:16px; align-items:center; padding:5px 0; border-bottom:1px solid #e3e3ea; }
+.reveal.lecture-09 .qr-cue .bub { margin:2px 0; }
+.reveal.lecture-09 .qr-cue .bub.b { margin-left:48px; }
+.reveal.lecture-09 .qr-cue .scene { display:block; font-size:.85em; color:#666; margin:2px 0 0 4px; }
+.reveal.lecture-09 .qr-ans { border-left:4px solid #6D4AA8; padding:2px 0 2px 12px; line-height:1.2; }
+.reveal.lecture-09 .qr-ans b { display:block; color:#553582; }
+.reveal.lecture-09 .qr-ans span { font-size:.88em; color:#444; }
+.reveal.lecture-09 .small-note.legend { line-height:1.35; }
+.reveal.lecture-09 .ladder.sign strong { width:4.8em; white-space:nowrap; }
+.reveal.lecture-09 .ladder.sign .step { gap:12px; }
+.reveal.lecture-09 .mt2 { display:grid; gap:4px; font-size:.6em; margin:6px 0 0; }
+.reveal.lecture-09 .mt2-row { display:grid; grid-template-columns:150px 1fr; align-items:center; gap:10px; padding:5px 0; border-bottom:1px solid #e5e5ee; }
+.reveal.lecture-09 .mt2-flow { display:flex; flex-wrap:wrap; align-items:center; gap:6px 12px; }
+.reveal.lecture-09 .mt2-res { display:inline-flex; align-items:center; gap:12px; }
+.reveal.lecture-09 .mt2-out { display:inline-flex; flex-direction:column; }
+.reveal.lecture-09 .mt2-lab b { display:block; font-size:1.2em; color:#221D3D; }
+.reveal.lecture-09 .mt2-lab i { display:block; color:#777; font-size:.85em; }
+.reveal.lecture-09 .mt2-lab span { display:block; color:#2A7291; font-size:.85em; font-weight:600; }
+.reveal.lecture-09 .mt2-in { display:flex; flex-wrap:wrap; gap:3px; }
+.reveal.lecture-09 .mt2-in.sep { gap:14px; }
+.reveal.lecture-09 .mt2 .pc { display:inline-flex; flex-direction:column; align-items:center; min-width:38px; border:2px solid #2A7291; border-radius:6px; background:#f2f7f9; padding:1px 7px; line-height:1.15; }
+.reveal.lecture-09 .mt2 .pc.a { border-color:#6D4AA8; background:#f5f1fa; }
+.reveal.lecture-09 .mt2 .pc.m { border-style:dashed; border-color:#999; background:#fff; }
+.reveal.lecture-09 .mt2 .pc b { font-size:1.1em; }
+.reveal.lecture-09 .mt2 .pc i { font-style:normal; font-size:.72em; color:#555; white-space:nowrap; }
+.reveal.lecture-09 .mt2-row.long .pc { padding:1px 5px; min-width:30px; }
+.reveal.lecture-09 .mt2-arrow { color:#2A7291; font-size:1.6em; font-weight:700; text-align:center; }
+.reveal.lecture-09 .mt2-out b { display:inline-block; width:fit-content; font-size:1.15em; border:2px solid #553582; border-radius:6px; background:#fff; padding:1px 10px; }
+.reveal.lecture-09 .mt2-out i { display:block; font-style:normal; font-size:.82em; color:#444; margin-top:2px; }
+/* Ô cùng chiều cao, căn giữa theo hàng (30/10: giảng viên chê ô nhấp nhô) */
+.reveal.lecture-09 .mt2 .pc { height:2.75em; box-sizing:border-box; justify-content:center; vertical-align:middle; }
+.reveal.lecture-09 .mt2-in, .reveal.lecture-09 .mt2-res { align-items:center; }
+.reveal.lecture-09 .mt2 .pc.out { border-color:#553582; background:#fff; padding:1px 12px; }
+.reveal.lecture-09 .mt2 .pc.out b { font-size:1.15em; }
+.reveal.lecture-09 .mt2 .pc.out i { color:#333; }
+.reveal.lecture-09 .tiles.guess .tile-card small { font-style:normal; color:#555; font-size:.7em; margin-top:2px; }
+.reveal.lecture-09 .order.latin { margin:4px 0 6px; }
+.reveal.lecture-09 .order.latin .o { width:150px; }
+.reveal.lecture-09 .order.latin .o u { text-decoration-thickness:3px; text-underline-offset:4px; }
+.reveal.lecture-09 .case-def { font-size:.78em; margin:10px 0 0; }
+.reveal.lecture-09 .order.compact { font-size:.68em; gap:6px; margin:8px 0 4px; }
+.reveal.lecture-09 .order.latin { font-size:.68em; gap:6px; }
+.reveal.lecture-09 .tiles.one { grid-template-columns:1fr; font-size:.74em; gap:8px; margin:0; }
+.reveal.lecture-09 .tiles.one .tile-card { padding:6px 10px; }
+/* Pipeline xử lý ngôn ngữ (3.18): bước nối bước bằng mũi tên xuống, kết quả trên cùng một câu */
+.reveal.lecture-09 .pipeline { display:flex; flex-direction:column; gap:14px; font-size:.62em; margin:6px 0 10px; }
+.reveal.lecture-09 .pl-step { display:grid; grid-template-columns:30px 225px 1fr; align-items:center; gap:10px; position:relative; }
+.reveal.lecture-09 .pl-step strong { background:#f2f7f9; border:2px solid #2A7291; border-radius:6px; padding:3px 8px; text-align:center; color:#245d76; }
+.reveal.lecture-09 .pl-step:not(:last-child) strong::after { content:"↓"; position:absolute; left:calc(30px + 10px + 112px); bottom:-17px; transform:translateX(-50%); color:#2A7291; font-weight:700; line-height:1; }
+.reveal.lecture-09 .pl-n { width:26px; height:26px; border-radius:50%; background:#2A7291; color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:.85em; }
+.reveal.lecture-09 .pl-out { display:flex; flex-wrap:wrap; gap:5px; align-items:center; }
+.reveal.lecture-09 .pl-box { border:1px solid #9BBBCB; background:#fff; border-radius:5px; padding:1px 8px; }
+.reveal.lecture-09 .pl-tok { display:inline-flex; flex-direction:column; align-items:center; border:1px solid #9BBBCB; background:#fff; border-radius:5px; padding:0 7px; line-height:1.15; }
+.reveal.lecture-09 .pl-tok i, .reveal.lecture-09 .pl-ent i { font-style:normal; font-size:.72em; color:#6D4AA8; }
+.reveal.lecture-09 .pl-ent { border:2px solid #6D4AA8; background:#f5f1fa; border-radius:5px; padding:1px 8px; font-weight:700; }
+.reveal.lecture-09 .pl-ent.loc { border-color:#E8890C; background:#FDF3E3; }
+.reveal.lecture-09 .pl-rel { border:2px solid #553582; border-radius:5px; padding:1px 10px; font-weight:700; color:#553582; background:#fff; }
+.reveal.lecture-09 .pipeline.news { font-size:.56em; gap:12px; }
+.reveal.lecture-09 .pl-more { color:#777; }
+.reveal.lecture-09 .pl-ent.ev { border-color:#2E8B57; background:#eef7f1; }
+/* Tam giác nghĩa (4.2) */
+.reveal.lecture-09 .sem-tri { position:relative; width:540px; height:345px; display:grid; grid-template-columns:190px 160px 190px; grid-template-rows:90px 110px 145px; font-size:.62em; margin:0 auto; }
+.reveal.lecture-09 .st-lines { position:absolute; inset:0; width:540px; height:345px; z-index:0; }
+.reveal.lecture-09 .st-lines path { stroke:#6D4AA8; stroke-width:3; fill:none; }
+.reveal.lecture-09 .st-lines path.dash { stroke:#999; stroke-dasharray:8 7; }
+.reveal.lecture-09 .sem-tri > div, .reveal.lecture-09 .sem-tri > span { position:relative; z-index:1; }
+.reveal.lecture-09 .st-concept { grid-column:1/4; grid-row:1; justify-self:center; align-self:start; width:230px; text-align:center; background:#f5f1fa; border:2px solid #6D4AA8; border-radius:46px; padding:8px 10px; line-height:1.2; }
+.reveal.lecture-09 .st-concept strong { display:block; color:#553582; font-size:1.1em; }
+.reveal.lecture-09 .st-concept span { color:#444; }
+.reveal.lecture-09 .st-lab { color:#553582; font-weight:600; background:#fff; padding:0 6px; line-height:1.2; }
+.reveal.lecture-09 .st-lab.l { grid-column:1; grid-row:2; justify-self:end; align-self:center; margin-right:-24px; }
+.reveal.lecture-09 .st-lab.r { grid-column:3; grid-row:2; justify-self:start; align-self:center; margin-left:-24px; }
+.reveal.lecture-09 .st-lab.b { grid-column:2; grid-row:3; justify-self:center; align-self:center; color:#777; font-weight:400; font-size:.9em; text-align:center; }
+.reveal.lecture-09 .st-ref, .reveal.lecture-09 .st-sym { grid-row:3; align-self:center; text-align:center; background:#fff; border:2px solid #2A7291; border-radius:10px; padding:6px; line-height:1.2; }
+.reveal.lecture-09 .st-ref { grid-column:1; }
+.reveal.lecture-09 .st-sym { grid-column:3; border-color:#E8890C; }
+.reveal.lecture-09 .st-ref img { display:block; width:100%; height:92px; object-fit:cover; border-radius:6px; margin:0 0 4px; }
+.reveal.lecture-09 .st-ref strong { color:#245d76; }
+.reveal.lecture-09 .st-sym strong { display:block; color:#b4600a; margin-bottom:6px; }
+.reveal.lecture-09 .st-chips { display:flex; flex-wrap:wrap; justify-content:center; gap:5px; }
+.reveal.lecture-09 .st-chips b { border:1px solid #E8890C; background:#FDF3E3; border-radius:5px; padding:1px 8px; }
+.reveal.lecture-09 svg.diagram.h260 { height:260px; }
+.reveal.lecture-09 .visual-split.net-list p { margin:0 0 .35em; font-size:.92em; }
+/* 5.2 ngôn ngữ ký hiệu: ảnh trái, bốn kênh phải; câu hỏi trải ngang */
+.reveal.lecture-09 .sign-intro .sl-lead { font-size:.8em; margin:4px 0 8px; }
+.reveal.lecture-09 .tiles.channels { font-size:.78em; gap:10px; margin:0 0 10px; }
+.reveal.lecture-09 .tiles.channels .tile-card { padding:12px 8px; border-top-color:#6D4AA8; background:#f5f1fa; }
+.reveal.lecture-09 .tiles.channels .tile-card strong { color:#553582; }
+.reveal.lecture-09 .tiles.channels .tile-card > div { display:none; }
+.reveal.lecture-09 .sign-intro .short-figure img { max-height:270px; }
+.reveal.lecture-09 .sign-intro figcaption { white-space:nowrap; }
+/* 5.5: hộp chốt tách khỏi ba dòng so sánh */
+.reveal.lecture-09 .diff3 + .key-box { margin-top:14px; }
+/* 5.6: chữ thường có nhãn đậm, không thẻ */
+.reveal.lecture-09 .plain-facts { font-size:.8em; }
+.reveal.lecture-09 .plain-facts p { margin:0 0 .7em; line-height:1.3; }
+.reveal.lecture-09 .plain-facts b { color:#245d76; }
+/* 5.7: huyền thoại → sự thật, dạng danh sách không khung */
+.reveal.lecture-09 .myths { font-size:.72em; margin:6px 0 14px; }
+.reveal.lecture-09 .my-h, .reveal.lecture-09 .my-row { display:grid; grid-template-columns:1fr 40px 1.15fr; align-items:center; gap:10px; }
+.reveal.lecture-09 .my-h { font-size:.82em; font-weight:700; text-transform:uppercase; letter-spacing:.04em; padding-bottom:4px; border-bottom:2px solid #6D4AA8; }
+.reveal.lecture-09 .my-h span:first-child { color:#999; } .reveal.lecture-09 .my-h span:last-child { color:#553582; }
+.reveal.lecture-09 .my-row { padding:7px 0; border-bottom:1px solid #e5e5ee; }
+.reveal.lecture-09 .my-row s { color:#999; }
+.reveal.lecture-09 .my-row b { color:#245d76; }
+.reveal.lecture-09 .my-arrow { color:#6D4AA8; font-weight:700; text-align:center; }
+.reveal.lecture-09 .brain-split img { max-height:225px; }
+
+/* ===== Buổi 9 (02/11/2026): thành phần mới ===== */
+/* Ẩn dụ ý niệm: miền đích → các cách nói */
+.reveal.lecture-09 .mmap { display:grid; gap:12px; margin:10px 0 6px; font-size:.68em; }
+.reveal.lecture-09 .mm-row { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.reveal.lecture-09 .mm-c { font-weight:700; color:#553582; background:#f5f1fa; border-radius:6px; padding:3px 12px; letter-spacing:.02em; }
+.reveal.lecture-09 .mm-arrow { color:#6D4AA8; font-weight:700; }
+/* Lộ trình buổi học */
+.reveal.lecture-09 .route { display:flex; align-items:stretch; gap:0; margin:26px 0 10px; font-size:.7em; }
+.reveal.lecture-09 .rt { flex:1; position:relative; background:#f2f7f9; border-top:5px solid #2A7291; padding:12px 10px 12px 22px; display:flex; flex-direction:column; gap:6px; }
+.reveal.lecture-09 .rt:nth-child(even) { background:#f5f1fa; border-top-color:#6D4AA8; }
+.reveal.lecture-09 .rt + .rt { margin-left:26px; }
+.reveal.lecture-09 .rt + .rt::before { content:"→"; position:absolute; left:-24px; width:22px; text-align:center; top:50%; transform:translateY(-50%); font-size:1.15em; line-height:1; color:#6D4AA8; font-weight:700; z-index:1; }
+.reveal.lecture-09 .rt b { font-size:1.18em; color:#221D3D; }
+.reveal.lecture-09 .rt span { color:#555; line-height:1.25; }
+/* Hai cột đối chiếu */
+.reveal.lecture-09 .vs2 { display:grid; grid-template-columns:1fr 54px 1fr; align-items:stretch; margin:14px 0 6px; font-size:.78em; }
+.reveal.lecture-09 .vs-col { display:flex; flex-direction:column; gap:6px; padding:12px 18px; border-radius:8px; }
+.reveal.lecture-09 .vs-col.a { background:#f2f7f9; border-left:6px solid #2A7291; }
+.reveal.lecture-09 .vs-col.b { background:#f5f1fa; border-left:6px solid #6D4AA8; }
+.reveal.lecture-09 .vs-col b { font-size:1.2em; } .reveal.lecture-09 .vs-col small { color:#6b6b6b; font-style:italic; margin-top:-6px; font-size:.85em; }
+.reveal.lecture-09 .vs-mid { align-self:center; text-align:center; font-weight:700; color:#999; }
+/* Ba hướng */
+.reveal.lecture-09 .axes3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:12px 0 6px; font-size:.74em; }
+.reveal.lecture-09 .ax-col { display:flex; flex-direction:column; gap:4px; border-top:6px solid #2A7291; background:#f2f7f9; padding:10px 14px; border-radius:0 0 8px 8px; }
+.reveal.lecture-09 .ax-col:nth-child(2) { border-top-color:#6D4AA8; background:#f5f1fa; }
+.reveal.lecture-09 .ax-col:nth-child(3) { border-top-color:#E8890C; background:#FDF3E3; }
+.reveal.lecture-09 .ax-col b { font-size:1.12em; } .reveal.lecture-09 .ax-who { color:#245d76; font-weight:600; }
+/* LAD */
+.reveal.lecture-09 .lad { display:flex; align-items:center; gap:6px; margin:16px 0 4px; font-size:.68em; }
+.reveal.lecture-09 .lad-b { flex:1; text-align:center; background:#f2f7f9; border:2px solid #2A7291; border-radius:8px; padding:8px 6px; font-weight:600; }
+.reveal.lecture-09 .lad-b small { display:block; font-weight:400; color:#555; font-size:.82em; margin-top:2px; }
+.reveal.lecture-09 .lad-b.ug { background:#f5f1fa; border-color:#6D4AA8; color:#553582; }
+.reveal.lecture-09 .lad-b.in, .reveal.lecture-09 .lad-b.out { background:#fff; }
+.reveal.lecture-09 .lad-a { color:#6D4AA8; font-weight:700; }
+.reveal.lecture-09 .lad-loop, .reveal.lecture-09 .lt-loop { text-align:center; font-size:.66em; color:#553582; margin:6px 0 10px; }
+/* Vygotsky: vòng ZPD + chuỗi lời nói */
+.reveal.lecture-09 .zpd { text-align:center; }
+.reveal.lecture-09 .zpd { font-size:.7em; }
+.reveal.lecture-09 .zpd .z3 { border:2px dashed #999; border-radius:22px; padding:10px 18px 18px; color:#666; }
+.reveal.lecture-09 .zpd .z2 { margin-top:10px; border:3px solid #6D4AA8; background:#f5f1fa; border-radius:18px; padding:10px 16px 16px; color:#553582; }
+.reveal.lecture-09 .zpd .z1 { margin:10px auto 0; width:70%; border:2px solid #2A7291; background:#fff; border-radius:14px; padding:14px 8px; color:#245d76; font-weight:600; }
+.reveal.lecture-09 .zpd span { display:block; }
+.reveal.lecture-09 .speech-chain { display:flex; flex-direction:column; align-items:center; gap:4px; font-size:.95em; }
+.reveal.lecture-09 .speech-chain span { background:#f2f7f9; border-left:5px solid #2A7291; border-radius:6px; padding:6px 14px; width:100%; box-sizing:border-box; text-align:center; }
+.reveal.lecture-09 .speech-chain span:last-child { background:#f5f1fa; border-left-color:#6D4AA8; }
+.reveal.lecture-09 .speech-chain i { font-style:normal; color:#6D4AA8; font-weight:700; }
+/* Quy tắc hóa quá mức */
+.reveal.lecture-09 .overreg { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px; margin:20px 0 6px; font-size:.86em; }
+.reveal.lecture-09 .ov-arrow { color:#6D4AA8; font-weight:700; margin:0 8px 4px 0; }
+.reveal.lecture-09 .overreg .mo:nth-of-type(3) .mp b { border-color:#E62727; }
+.reveal.lecture-09 .ov-adult { font-size:.7em; color:#555; margin-left:10px; }
+/* Dòng thời gian giai đoạn */
+.reveal.lecture-09 .stages { display:grid; gap:8px; margin:16px 0 6px; font-size:.66em; }
+.reveal.lecture-09 .stages.four { grid-template-columns:repeat(4,1fr); font-size:.72em; margin-top:30px; }
+.reveal.lecture-09 .stages.five { grid-template-columns:repeat(5,1fr); margin-top:30px; }
+.reveal.lecture-09 .stages.six { grid-template-columns:repeat(6,1fr); }
+.reveal.lecture-09 .st { display:flex; flex-direction:column; gap:4px; border-top:6px solid #2A7291; background:#f2f7f9; padding:8px 10px 10px; border-radius:0 0 8px 8px; position:relative; }
+.reveal.lecture-09 .st:nth-child(even) { border-top-color:#6D4AA8; background:#f5f1fa; }
+.reveal.lecture-09 .st-age { font-size:.86em; color:#245d76; font-weight:600; }
+.reveal.lecture-09 .st b { font-size:1.06em; line-height:1.2; }
+.reveal.lecture-09 .st-ex { color:#444; line-height:1.25; }
+/* Đường cong giai đoạn tới hạn */
+.reveal.lecture-09 .curve { font-size:.6em; }
+.reveal.lecture-09 .curve-svg { width:100%; height:auto; display:block; }
+.reveal.lecture-09 .curve-svg path { fill:none; stroke-width:4; stroke-linecap:round; }
+.reveal.lecture-09 .curve-svg .ax { stroke:#999; stroke-width:2; }
+.reveal.lecture-09 .curve-svg .c1 { stroke:#2A7291; } .reveal.lecture-09 .curve-svg .c2 { stroke:#6D4AA8; } .reveal.lecture-09 .curve-svg .c3 { stroke:#E8890C; }
+.reveal.lecture-09 .curve-x { display:flex; justify-content:space-between; padding:2px 0 0 30px; color:#555; }
+.reveal.lecture-09 .curve-key { display:flex; justify-content:center; gap:16px; margin-top:8px; }
+.reveal.lecture-09 .curve-key span::before { content:""; display:inline-block; width:22px; height:5px; border-radius:3px; margin-right:6px; vertical-align:middle; }
+.reveal.lecture-09 .curve-key .k1::before { background:#2A7291; } .reveal.lecture-09 .curve-key .k2::before { background:#6D4AA8; } .reveal.lecture-09 .curve-key .k3::before { background:#E8890C; }
+/* Tháp lề hóa */
+.reveal.lecture-09 .tiers { display:flex; flex-direction:column; align-items:center; gap:5px; margin:14px 0 6px; font-size:.72em; }
+.reveal.lecture-09 .tr { text-align:center; padding:8px 10px; border-radius:6px; color:#fff; font-weight:600; box-sizing:border-box; }
+.reveal.lecture-09 .tr.t1 { width:40%; background:#553582; } .reveal.lecture-09 .tr.t2 { width:58%; background:#6D4AA8; }
+.reveal.lecture-09 .tr.t3 { width:76%; background:#8f74c0; } .reveal.lecture-09 .tr.t4 { width:94%; background:#ece6f5; color:#553582; border:2px dashed #6D4AA8; }
+/* Levelt */
+.reveal.lecture-09 .levelt { display:flex; align-items:stretch; gap:8px; margin:18px 0 4px; font-size:.74em; }
+.reveal.lecture-09 .lt-b { flex:1; display:flex; flex-direction:column; gap:3px; text-align:center; background:#f2f7f9; border:2px solid #2A7291; border-radius:8px; padding:10px 8px; }
+.reveal.lecture-09 .lt-b:nth-of-type(2) { background:#f5f1fa; border-color:#6D4AA8; }
+.reveal.lecture-09 .lt-b b { font-size:1.15em; } .reveal.lecture-09 .lt-b small { color:#6b6b6b; font-style:italic; font-size:.85em; } .reveal.lecture-09 .lt-b span { color:#444; }
+.reveal.lecture-09 .lt-a { align-self:center; color:#6D4AA8; font-weight:700; }
+/* Thang các tầng của một từ */
+.reveal.lecture-09 .lv-ladder { display:flex; flex-direction:column; gap:0; font-size:.74em; }
+.reveal.lecture-09 .lv { display:grid; grid-template-columns:150px 24px 1fr; align-items:center; padding:7px 10px; border-left:6px solid #2A7291; background:#f2f7f9; margin-bottom:6px; border-radius:6px; }
+.reveal.lecture-09 .lv:nth-child(2), .reveal.lecture-09 .lv:nth-child(3) { border-left-color:#6D4AA8; background:#f5f1fa; }
+.reveal.lecture-09 .lv b { color:#221D3D; } .reveal.lecture-09 .lv-arrow { color:#999; }
+.reveal.lecture-09 .lv-out { line-height:1.25; }
+/* Hoạt động truy vết */
+.reveal.lecture-09 .trace { display:flex; justify-content:center; gap:18px; margin:14px 0 8px; font-size:1em; }
+.reveal.lecture-09 .trace .chip { padding:4px 16px; border-color:#6D4AA8; background:#f5f1fa; }
+.reveal.lecture-09 .step-list { font-size:.78em; }
+/* Lỗi cho thấy các tầng */
+.reveal.lecture-09 .err-layers { display:grid; gap:14px; margin:16px 0 6px; font-size:.78em; }
+.reveal.lecture-09 .el { display:grid; grid-template-columns:330px 1fr; align-items:center; gap:18px; }
+.reveal.lecture-09 .el .chip { font-size:1.12em; text-align:center; padding:6px 10px; }
+.reveal.lecture-09 .el-s { color:#E62727; }
+/* Bộ nhớ làm việc */
+.reveal.lecture-09 .wm { display:flex; flex-direction:column; align-items:center; gap:10px; margin:14px 0 6px; font-size:.72em; }
+.reveal.lecture-09 .wm-ce { background:#6D4AA8; color:#fff; font-weight:700; border-radius:8px; padding:8px 26px; }
+.reveal.lecture-09 .wm-row { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; width:100%; }
+.reveal.lecture-09 .wm-row span { background:#f2f7f9; border-top:5px solid #2A7291; border-radius:0 0 8px 8px; padding:8px 10px; text-align:center; font-weight:600; }
+.reveal.lecture-09 .wm-row small { display:block; font-weight:400; color:#555; font-size:.82em; }
+/* Danh sách hai cột: loại và ví dụ */
+.reveal.lecture-09 .fig-list { display:grid; grid-template-columns:1fr 1fr; gap:10px 34px; margin:16px 0 10px; font-size:.76em; }
+.reveal.lecture-09 .fig-list p { margin:0; display:grid; grid-template-columns:130px 1fr; gap:10px; border-bottom:1px solid #e5e5ee; padding-bottom:6px; }
+.reveal.lecture-09 .fig-list b { color:#245d76; white-space:nowrap; }
+.reveal.lecture-09 .fig-list.trends { grid-template-columns:1fr; gap:8px; }
+.reveal.lecture-09 .fig-list.trends p { grid-template-columns:220px 1fr; }
+/* Không gian ký hiệu */
+.reveal.lecture-09 .signspace { position:relative; height:250px; font-size:.68em; border-bottom:3px solid #ddd; }
+.reveal.lecture-09 .ss-who { position:absolute; left:50%; bottom:0; transform:translateX(-50%); background:#6D4AA8; color:#fff; border-radius:999px 999px 0 0; padding:12px 20px 6px; font-weight:600; }
+.reveal.lecture-09 .ss-pt { position:absolute; top:20px; background:#f2f7f9; border:2px solid #2A7291; border-radius:50%; width:140px; height:140px; display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:700; font-size:1.25em; }
+.reveal.lecture-09 .ss-pt small { font-weight:400; font-size:.65em; color:#555; }
+.reveal.lecture-09 .ss-pt.left { left:4%; } .reveal.lecture-09 .ss-pt.right { right:4%; border-color:#E8890C; background:#FDF3E3; }
+.reveal.lecture-09 .ss-arc { position:absolute; left:2%; top:170px; color:#245d76; font-weight:600; }
+/* Một giọng nói, sáu loại thông tin */
+.reveal.lecture-09 .voice6 { display:grid; grid-template-columns:240px 1fr; align-items:center; gap:22px; margin:12px 0 6px; font-size:.7em; }
+.reveal.lecture-09 .v6-src { text-align:center; color:#555; }
+.reveal.lecture-09 .v6-src .wave { width:220px; height:44px; display:block; margin:0 auto 6px; }
+.reveal.lecture-09 .v6-src .wave path { fill:none; stroke:#2A7291; stroke-width:2.5; }
+.reveal.lecture-09 .v6-out { display:grid; grid-template-columns:1fr 1fr; gap:8px 14px; border-left:4px solid #6D4AA8; padding-left:18px; }
+.reveal.lecture-09 .v6-out span { color:#555; } .reveal.lecture-09 .v6-out b { display:block; color:#221D3D; font-size:1.1em; }
+/* Robot giao tiếp */
+.reveal.lecture-09 .hri { display:flex; align-items:center; gap:8px; margin:18px 0 6px; font-size:.7em; }
+.reveal.lecture-09 .hri-in { display:flex; flex-direction:column; gap:6px; }
+.reveal.lecture-09 .hri-in span { background:#f2f7f9; border:2px solid #2A7291; border-radius:6px; padding:5px 10px; text-align:center; }
+.reveal.lecture-09 .hri-in:last-child span { border-color:#E8890C; background:#FDF3E3; }
+.reveal.lecture-09 .hri-b { flex:1; text-align:center; background:#f5f1fa; border:2px solid #6D4AA8; border-radius:8px; padding:12px 8px; font-weight:600; color:#553582; }
+.reveal.lecture-09 .hri-a { color:#6D4AA8; font-weight:700; }
+/* Ánh mắt */
+.reveal.lecture-09 .gaze { position:relative; display:flex; justify-content:center; gap:14px; margin:14px 0 44px; font-size:1.1em; }
+.reveal.lecture-09 .gw { position:relative; padding:2px 6px; }
+.reveal.lecture-09 .g-mark { position:absolute; left:0; right:0; bottom:-4px; height:5px; background:#E8890C; border-radius:3px; }
+.reveal.lecture-09 .g-back { position:absolute; left:50%; transform:translateX(-50%); top:100%; margin-top:8px; font-size:.56em; color:#6D4AA8; white-space:nowrap; }
+/* AI trong học ngôn ngữ */
+.reveal.lecture-09 .apps { display:grid; gap:8px; margin:12px 0 4px; font-size:.74em; }
+.reveal.lecture-09 .apps p { margin:0; display:grid; grid-template-columns:210px 1fr; gap:12px; border-bottom:1px solid #e5e5ee; padding-bottom:6px; }
+.reveal.lecture-09 .apps b { color:#245d76; }
+/* ===== Sửa sau rà soát độc lập 02/11/2026 ===== */
+/* Trục thời gian sáu giai đoạn */
+.reveal.lecture-09 .tline { position:relative; display:grid; grid-template-columns:repeat(6,1fr); gap:8px; margin:18px 0 6px; font-size:.64em; text-align:center; }
+.reveal.lecture-09 .tline::before { content:""; position:absolute; left:4%; right:4%; top:38px; height:4px; background:#cfc3e6; border-radius:2px; }
+.reveal.lecture-09 .tl { position:relative; display:flex; flex-direction:column; align-items:center; gap:4px; }
+.reveal.lecture-09 .tl-age { color:#245d76; font-weight:600; height:24px; }
+.reveal.lecture-09 .tl-dot { width:18px; height:18px; border-radius:50%; background:#6D4AA8; border:3px solid #fff; box-shadow:0 0 0 2px #6D4AA8; position:relative; z-index:1; margin:2px 0 4px; }
+.reveal.lecture-09 .tl b { line-height:1.15; }
+.reveal.lecture-09 .tl-say { background:#fff; border:2px solid #9BBBCB; border-radius:12px 12px 12px 3px; padding:2px 8px; line-height:1.25; }
+/* Bậc thang học ngoại ngữ */
+.reveal.lecture-09 .stair { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; align-items:end; margin:18px 0 6px; font-size:.62em; height:330px; }
+.reveal.lecture-09 .sr { display:flex; flex-direction:column; gap:4px; background:#f5f1fa; border-top:6px solid #6D4AA8; border-radius:8px 8px 0 0; padding:8px 10px; box-sizing:border-box; }
+.reveal.lecture-09 .sr.s1 { height:44%; } .reveal.lecture-09 .sr.s2 { height:58%; } .reveal.lecture-09 .sr.s3 { height:72%; } .reveal.lecture-09 .sr.s4 { height:86%; } .reveal.lecture-09 .sr.s5 { height:100%; }
+.reveal.lecture-09 .sr-n { font-size:1.5em; font-weight:700; color:#553582; line-height:1.1; }
+.reveal.lecture-09 .sr b { line-height:1.15; } .reveal.lecture-09 .sr-d { color:#444; line-height:1.25; }
+.reveal.lecture-09 .sr-t { margin-top:auto; color:#245d76; font-weight:600; }
+/* Năm bước hiểu: hàng thẳng mép */
+.reveal.lecture-09 .comp { display:grid; grid-template-columns:40px 1fr; gap:10px; margin:14px 0 4px; font-size:.74em; }
+.reveal.lecture-09 .comp-up { writing-mode:vertical-rl; transform:rotate(180deg); text-align:center; color:#6D4AA8; font-weight:600; border-right:4px solid #cfc3e6; padding-right:8px; }
+.reveal.lecture-09 .comp-up::after { content:" ↑"; }
+.reveal.lecture-09 .comp-rows { display:flex; flex-direction:column; gap:7px; }
+.reveal.lecture-09 .cr { display:grid; grid-template-columns:170px 1fr; align-items:center; gap:12px; background:#f2f7f9; border-left:6px solid #2A7291; border-radius:6px; padding:7px 14px; }
+.reveal.lecture-09 .cr:nth-child(-n+2) { background:#f5f1fa; border-left-color:#6D4AA8; }
+/* Đường cong: nhãn trục tung */
+.reveal.lecture-09 .curve { position:relative; padding-left:28px; }
+.reveal.lecture-09 .curve-y { position:absolute; left:0; top:20px; writing-mode:vertical-rl; transform:rotate(180deg); color:#555; white-space:nowrap; }
+/* Hiểu và nói */
+.reveal.lecture-09 .shared { display:grid; grid-template-columns:1fr 34px 1.3fr 34px 1fr; align-items:center; gap:6px; margin:30px 0 14px; font-size:.8em; text-align:center; }
+.reveal.lecture-09 .sh-side { background:#f2f7f9; border-radius:8px; padding:14px 8px; }
+.reveal.lecture-09 .sh-core { background:#6D4AA8; color:#fff; border-radius:14px; padding:22px 10px; font-weight:600; }
+.reveal.lecture-09 .sh-a { color:#6D4AA8; font-weight:700; font-size:1.3em; }
+/* Bán cầu */
+.reveal.lecture-09 .hemis { display:grid; gap:10px; margin:18px auto 6px; width:90%; font-size:.74em; }
+.reveal.lecture-09 .hm-row { display:grid; grid-template-columns:1.4fr 1fr 1fr; align-items:center; gap:12px; }
+.reveal.lecture-09 .hm-head span { text-align:center; color:#245d76; font-weight:600; font-size:.88em; line-height:1.2; }
+.reveal.lecture-09 .hm { text-align:center; border-radius:999px; padding:10px 8px; font-weight:600; }
+.reveal.lecture-09 .hm.on { background:#6D4AA8; color:#fff; }
+.reveal.lecture-09 .hm.off { background:#fff; color:#888; border:2px dashed #bbb; }
+/* Câu lồng: thụt dòng, tô phần mới thêm */
+.reveal.lecture-09 .nest { display:grid; gap:10px; margin:12px 0 4px; font-size:.8em; }
+.reveal.lecture-09 .ns { margin:0; } .reveal.lecture-09 .ns2 { padding-left:1.2em; } .reveal.lecture-09 .ns3 { padding-left:2.4em; }
+.reveal.lecture-09 .nn { background:#f5f1fa; border-bottom:3px solid #6D4AA8; padding:0 4px; font-weight:600; }
+.reveal.lecture-09 .ns-old { color:#666; }
+/* 7-38-55 */
+.reveal.lecture-09 .pct { display:flex; justify-content:center; align-items:flex-end; gap:34px; margin:8px 0 0; }
+.reveal.lecture-09 .pct > div { display:flex; flex-direction:column; align-items:center; gap:4px; }
+.reveal.lecture-09 .pct span { display:flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; font-weight:700; }
+.reveal.lecture-09 .pct small { font-size:.62em; color:#444; }
+.reveal.lecture-09 .pct .p7 { width:80px; height:80px; background:#2A7291; font-size:.8em; }
+.reveal.lecture-09 .pct .p38 { width:115px; height:115px; background:#6D4AA8; font-size:1em; }
+.reveal.lecture-09 .pct .p55 { width:145px; height:145px; background:#6b6b6b; font-size:1.15em; }
+/* Bảng phủ khâu: lưới nền luôn hiện, lớp màu hiện khi bấm */
+.reveal.lecture-09 .cover { font-size:.6em; margin:10px 0 4px; }
+.reveal.lecture-09 .cv-head, .reveal.lecture-09 .cv-labels, .reveal.lecture-09 .cv-row { display:grid; grid-template-columns:230px 1fr; gap:8px; align-items:center; }
+.reveal.lecture-09 .cv-head { grid-template-columns:230px 3fr 14px 5fr; gap:5px; margin-bottom:3px; }
+.reveal.lecture-09 .cv-grp { text-align:center; font-weight:700; border-bottom:3px solid; padding-bottom:2px; }
+.reveal.lecture-09 .cv-grp.p { color:#553582; border-color:#6D4AA8; } .reveal.lecture-09 .cv-grp.c { color:#245d76; border-color:#2A7291; }
+.reveal.lecture-09 .cv-cells { display:grid; grid-template-columns:repeat(3,1fr) 14px repeat(5,1fr); gap:5px; grid-column:2; grid-row:1; }
+.reveal.lecture-09 .cv-labels .cv-cells span { text-align:center; color:#444; line-height:1.15; }
+.reveal.lecture-09 .cv-row { margin-top:6px; }
+.reveal.lecture-09 .cv-row b { text-align:right; padding-right:4px; grid-column:1; grid-row:1; }
+.reveal.lecture-09 .cv { display:block; height:30px; border-radius:5px; box-sizing:border-box; }
+.reveal.lecture-09 .cv.on { background:#2A7291; } .reveal.lecture-09 .cv.part { background:repeating-linear-gradient(45deg,#2A7291 0 5px,#d6e6ee 5px 10px); }
+.reveal.lecture-09 .cv.off { background:#fff; border:2px dashed #ccc; } .reveal.lecture-09 .cv.none { background:transparent; }
+.reveal.lecture-09 .cv-legend { font-size:.6em; text-align:center; margin:8px 0; color:#555; }
+.reveal.lecture-09 .cv-legend .cv { display:inline-block; width:26px; height:16px; vertical-align:middle; margin:0 4px 0 14px; }
+/* ===== Ảnh Commons và cây “con hổ” (02/11/2026) ===== */
+.reveal.lecture-09 figcaption { font-size:.5em; color:#666; margin-top:4px; text-align:center; }
+.reveal.lecture-09 .portrait-figure img { height:330px; width:auto; max-height:330px; display:block; margin:0 auto; border-radius:6px; }
+.reveal.lecture-09 .stages.grid2 { grid-template-columns:1fr 1fr; margin-top:0; font-size:.86em; }
+.reveal.lecture-09 .robot-split { grid-template-columns:1fr 210px; align-items:center; margin-top:10px; }
+.reveal.lecture-09 .robot-split .question-box { margin-top:0; }
+.reveal.lecture-09 .robot-figure img { height:280px; width:auto; max-height:280px; display:block; margin:0 auto; border-radius:6px; }
+.reveal.lecture-09 .fix-split { grid-template-columns:1.25fr 1fr; margin:10px 0 4px; }
+.reveal.lecture-09 .fix-figure img { width:100%; height:auto; max-height:150px; object-fit:cover; display:block; border:1px solid #ddd; border-radius:4px; }
+/* Cây sản sinh */
+.reveal.lecture-09 .htree { display:grid; grid-template-columns:34px 1fr; gap:8px; font-size:.66em; }
+.reveal.lecture-09 .ht-mon { writing-mode:vertical-rl; transform:rotate(180deg); text-align:center; background:#7a6a62; color:#fff; border-radius:6px; font-weight:600; letter-spacing:.04em; padding:6px 0; }
+.reveal.lecture-09 .ht-mon::before { content:"↺ "; }
+.reveal.lecture-09 .ht-body { display:flex; flex-direction:column; gap:16px; }
+.reveal.lecture-09 .ht-row { display:grid; grid-template-columns:118px 1fr; align-items:center; }
+.reveal.lecture-09 .ht-lab { font-weight:700; color:#245d76; line-height:1.15; }
+.reveal.lecture-09 .ht-nodes { position:relative; display:flex; align-items:center; justify-content:center; gap:8px; }
+.reveal.lecture-09 .ht-row + .ht-row .ht-nodes::before { content:""; position:absolute; left:50%; top:-16px; height:14px; border-left:2px solid #999; }
+.reveal.lecture-09 .ht-n { display:inline-flex; align-items:center; justify-content:center; min-width:46px; height:46px; border-radius:999px; padding:0 10px; box-sizing:border-box; font-weight:700; border:2px dashed rgba(0,0,0,.25); }
+.reveal.lecture-09 .ht-n.c1 { background:#d9634a; color:#fff; } .reveal.lecture-09 .ht-n.c2 { background:#d99a4a; color:#fff; }
+.reveal.lecture-09 .ht-n.c3 { background:#c9b02a; color:#3a3000; } .reveal.lecture-09 .ht-n.c4 { background:#8fae8f; color:#123; min-width:40px; height:40px; padding:0; }
+.reveal.lecture-09 .ht-note { color:#555; font-size:.9em; }
+.reveal.lecture-09 .ht-tag { background:#fbeee0; border:1px solid #d99a4a; border-radius:999px; padding:1px 10px; font-size:.9em; }
+.reveal.lecture-09 .ht-grp { display:inline-flex; align-items:center; gap:5px; background:#eef3ee; border-radius:999px; padding:4px 8px; }
+.reveal.lecture-09 .ht-tone { font-size:.85em; color:#553582; font-weight:600; margin-left:2px; }
+.reveal.lecture-09 .ht-pill { background:#e6dcf5; border:2px solid #6D4AA8; border-radius:999px; padding:4px 22px; font-weight:700; color:#553582; }
+.reveal.lecture-09 .ax-col small { color:#6b6b6b; font-style:italic; margin-top:-4px; font-size:.85em; }
+.reveal.lecture-09 .speech-chain small { display:block; font-size:.78em; color:#553582; }
+.reveal.lecture-09 .cr .en { font-style:italic; color:#6b6b6b; font-size:.82em; }
+.reveal.lecture-09 .sign-split { margin:8px 0; }
+.reveal.lecture-09 .sign-split .plain-facts { font-size:.74em; }
+.reveal.lecture-09 .sign-split .plain-facts p { margin-bottom:.4em; }
+.reveal.lecture-09 .sign-split .signspace { height:225px; }
+/* ===== Bản nhẹ (02/11/2026, giảng viên: quá nhiều hình khối, khó đọc lướt) =====
+   Bỏ nền và khung của các khối LIỆT KÊ; sơ đồ (chuỗi khâu, mô hình) vẫn giữ khung để đọc được (giảng viên: bỏ box quá tay làm sơ đồ khó đọc). */
+.reveal.lecture-09 .key-box { background:none; border:none; border-left:4px solid #E8890C; padding:4px 0 4px 16px; border-radius:0; box-shadow:none; color:#221D3D; font-weight:600; }
+.reveal.lecture-09 .lines { display:grid; margin:14px 0 8px; font-size:.74em; border-top:2px solid #6D4AA8; }
+.reveal.lecture-09 .ln { display:grid; gap:18px; padding:9px 4px; border-bottom:1px solid #dcd7e8; align-items:baseline; }
+.reveal.lecture-09 .ln span:first-child { font-weight:700; color:#245d76; }
+.reveal.lecture-09 .ln i { font-weight:400; color:#6b6b6b; font-size:.85em; }
+.reveal.lecture-09 .lines.three .ln { grid-template-columns:300px 250px 1fr; }
+.reveal.lecture-09 .lines.three .ln span:nth-child(2) { color:#553582; font-weight:600; }
+.reveal.lecture-09 .lines.cmp .ln { grid-template-columns:170px 1fr 1fr; }
+.reveal.lecture-09 .lines.cmp .ln:first-child span { font-size:1.15em; color:#221D3D; }
+.reveal.lecture-09 .lines.piaget { font-size:.8em; margin-top:0; }
+.reveal.lecture-09 .lines.piaget .ln { grid-template-columns:110px 1fr; line-height:1.3; }
+.reveal.lecture-09 .lines.errs .ln { grid-template-columns:330px 1fr; }
+.reveal.lecture-09 .lines.errs .ln span:first-child { color:#221D3D; font-size:1.08em; }
+/* Lộ trình: trục mảnh có chấm thay cho năm thẻ */
+.reveal.lecture-09 .route { position:relative; gap:0; }
+.reveal.lecture-09 .route::before { content:""; position:absolute; left:0; right:0; top:9px; height:3px; background:#cfc3e6; }
+.reveal.lecture-09 .rt, .reveal.lecture-09 .rt:nth-child(even) { background:none; border-top:none; padding:30px 8px 4px 0; }
+.reveal.lecture-09 .rt::after { content:""; position:absolute; left:0; top:0; width:18px; height:18px; border-radius:50%; background:#6D4AA8; border:3px solid #fff; box-shadow:0 0 0 2px #6D4AA8; }
+.reveal.lecture-09 .rt + .rt { margin-left:14px; }
+.reveal.lecture-09 .rt + .rt::before { content:none; }
+.reveal.lecture-09 .step-list li { background:none; border-bottom:1px solid #dcd7e8; border-radius:0; }
+/* Hoạt động: dòng âm tiết */
+.reveal.lecture-09 .stream-demo { margin:10px 0 4px; }
+.reveal.lecture-09 .stream { font-size:.98em; letter-spacing:.02em; line-height:1.5; margin:0 0 8px; color:#221D3D; word-spacing:.15em; }
+.reveal.lecture-09 .stream.seg { font-size:.9em; }
+.reveal.lecture-09 .sw { white-space:nowrap; display:inline-block; margin-bottom:4px; padding:1px 4px; border-radius:4px; margin-right:6px; }
+.reveal.lecture-09 .sw.w1 { background:#dbeaf1; } .reveal.lecture-09 .sw.w2 { background:#ece4f7; } .reveal.lecture-09 .sw.w3 { background:#fbe9d2; } .reveal.lecture-09 .sw.w4 { background:#e0efe2; }
+.reveal.lecture-09 .stream-play, .reveal.lecture-09 .slip-ctrl button { font:inherit; font-size:.6em; font-weight:700; padding:6px 14px; border-radius:6px; border:2px solid #6D4AA8; background:#fff; color:#553582; cursor:pointer; }
+.reveal.lecture-09 .stream-play[hidden] { display:none; }
+/* Hoạt động: gây lỗi nói nhầm */
+.reveal.lecture-09 .slip-demo { margin:10px 0 6px; }
+.reveal.lecture-09 .slip-screen { height:120px; display:flex; align-items:center; justify-content:center; font-size:1.7em; font-weight:700; color:#221D3D; border-top:2px solid #cfc3e6; border-bottom:2px solid #cfc3e6; }
+.reveal.lecture-09 .slip-screen.cue { color:#E62727; }
+.reveal.lecture-09 .slip-screen.target { color:#553582; }
+.reveal.lecture-09 .slip-ctrl { display:flex; align-items:center; gap:12px; margin-top:10px; }
+.reveal.lecture-09 .slip-ctrl button:disabled { opacity:.45; cursor:default; }
+.reveal.lecture-09 .slip-status { font-size:.6em; color:#555; }
+/* Không gian ký hiệu, vẽ lại 02/11: một hàng, không chồng nhãn */
+.reveal.lecture-09 .signspace, .reveal.lecture-09 .sign-split .signspace { position:static; height:auto; border-bottom:none; font-size:.66em; }
+.reveal.lecture-09 .ss-row { display:flex; align-items:center; justify-content:space-between; gap:6px; }
+.reveal.lecture-09 .signspace .ss-pt { position:static; width:118px; height:118px; flex:none; font-size:1.2em; }
+.reveal.lecture-09 .signspace .ss-who { position:static; transform:none; flex:none; width:118px; height:118px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 10px; line-height:1.15; background:#6D4AA8; color:#fff; font-weight:700; }
+.reveal.lecture-09 .ss-arrow { display:flex; flex-direction:column; align-items:center; color:#245d76; font-size:1.6em; font-weight:700; line-height:1; }
+.reveal.lecture-09 .ss-arrow small { font-size:.45em; font-weight:600; margin-top:2px; }
+.reveal.lecture-09 .ss-arrow.muted { color:#bbb; }
+.reveal.lecture-09 .ss-cap { margin:12px 0 0; text-align:center; color:#245d76; font-weight:600; }
+.reveal.lecture-09 .signspace .ss-pt small { font-size:.58em; }
+.reveal.lecture-09 .signspace .ss-who { width:112px; height:112px; min-width:112px; box-sizing:border-box; font-size:.92em; }
+/* ===== Bảng dòng (07/11/2026, lần 2): kiểu bảng học thuật gọn — không tô nền ô, tiêu đề cột có màu và gạch dưới, hàng kẻ mảnh, căn giữa dọc ===== */
+.reveal.lecture-09 .lines { border-top:none; margin:16px 0 10px; font-size:.72em; }
+.reveal.lecture-09 .ln { gap:22px; padding:10px 2px; border-bottom:1px solid #e3deee; align-items:center; }
+.reveal.lecture-09 .ln > span { display:block; padding:0; background:none; }
+.reveal.lecture-09 .ln > span:first-child { color:#6b6b6b; font-weight:600; }
+.reveal.lecture-09 .ln i { font-style:normal; color:#8a8597; font-size:.85em; }
+/* So sánh hai cột */
+.reveal.lecture-09 .lines.cmp .ln { grid-template-columns:150px 1fr 1fr; }
+.reveal.lecture-09 .lines.cmp .ln:first-child { border-bottom:none; padding-bottom:0; align-items:end; }
+.reveal.lecture-09 .lines.cmp .ln:first-child > span:nth-child(n+2) { padding-bottom:8px; border-bottom:4px solid #2A7291; font-size:1.25em; }
+.reveal.lecture-09 .lines.cmp .ln:first-child > span:nth-child(3) { border-bottom-color:#6D4AA8; }
+.reveal.lecture-09 .lines.cmp .ln:first-child b { color:#245d76; }
+.reveal.lecture-09 .lines.cmp .ln:first-child > span:nth-child(3) b { color:#553582; }
+.reveal.lecture-09 .lines.cmp .ln:first-child i { font-size:.7em; }
+/* Ba hướng: tên hướng đậm màu, vạch màu mảnh bên trái */
+.reveal.lecture-09 .lines.three .ln > span:first-child { color:#245d76; font-weight:700; border-left:5px solid #2A7291; padding-left:12px; }
+.reveal.lecture-09 .lines.three .ln:nth-child(2) > span:first-child { color:#553582; border-left-color:#6D4AA8; }
+.reveal.lecture-09 .lines.three .ln:nth-child(3) > span:first-child { color:#9a5b06; border-left-color:#E8890C; }
+.reveal.lecture-09 .lines.three .ln > span:first-child i { display:block; }
+.reveal.lecture-09 .lines.three .ln > span:nth-child(2) { color:#221D3D; font-weight:600; }
+.reveal.lecture-09 .lines.three .ln { grid-template-columns:270px 230px 1fr; }
+/* Piaget: cột tuổi màu, giai đoạn đậm */
+.reveal.lecture-09 .lines.piaget { font-size:.78em; }
+.reveal.lecture-09 .lines.piaget .ln { grid-template-columns:110px 1fr; line-height:1.3; }
+.reveal.lecture-09 .lines.piaget .ln > span:first-child { color:#245d76; font-weight:700; white-space:nowrap; }
+.reveal.lecture-09 .lines.piaget .ln > span:nth-child(2) { color:#444; }
+.reveal.lecture-09 .lines.piaget .ln b { color:#221D3D; }
+/* Lỗi lời nói */
+.reveal.lecture-09 .lines.errs .ln { grid-template-columns:330px 1fr; }
+.reveal.lecture-09 .lines.errs .ln > span:first-child { color:#221D3D; font-weight:700; font-size:1.06em; }
+/* LAD: các ô cao bằng nhau, chữ căn giữa dọc */
+.reveal.lecture-09 .lad { align-items:stretch; }
+.reveal.lecture-09 .lad-a { align-self:center; }
+.reveal.lecture-09 .lad-b { display:flex; flex-direction:column; justify-content:center; }
+/* Hoạt động nghe câu tiếng nước ngoài và ví dụ “pretty baby” (10/11/2026) */
+.reveal.lecture-09 .listen-demo { display:flex; align-items:center; gap:16px; margin:26px 0 8px; }
+.reveal.lecture-09 .listen-play { font:inherit; font-size:.72em; font-weight:700; padding:10px 20px; border-radius:8px; border:2px solid #6D4AA8; background:#6D4AA8; color:#fff; cursor:pointer; }
+.reveal.lecture-09 .listen-play[hidden] { display:none; }
+.reveal.lecture-09 .listen-status { font-size:.56em; color:#666; }
+.reveal.lecture-09 .listen-answer { margin-top:18px; text-align:center; }
+.reveal.lecture-09 .listen-words { margin:0; font-size:1.1em; font-weight:700; }
+.reveal.lecture-09 .lw { display:inline-block; margin:0 6px 6px; padding:2px 10px; border-bottom:4px solid #6D4AA8; }
+.reveal.lecture-09 .listen-gloss { margin:6px 0 0; font-size:.7em; color:#555; }
+.reveal.lecture-09 .tp-demo { display:flex; align-items:flex-end; justify-content:center; gap:6px; margin:30px 0 10px; }
+.reveal.lecture-09 .tp-syl { font-size:1.35em; font-weight:700; border:2px solid #2A7291; background:#f2f7f9; border-radius:8px; padding:4px 16px; }
+.reveal.lecture-09 .tp-link { display:flex; flex-direction:column; align-items:center; font-size:.5em; font-weight:600; padding:0 4px 10px; min-width:120px; text-align:center; }
+.reveal.lecture-09 .tp-link::after { content:""; display:block; width:100%; height:5px; border-radius:3px; margin-top:4px; }
+.reveal.lecture-09 .tp-link.hi { color:#2E8B57; } .reveal.lecture-09 .tp-link.hi::after { background:#2E8B57; }
+.reveal.lecture-09 .tp-link.lo { color:#E62727; } .reveal.lecture-09 .tp-link.lo::after { background:repeating-linear-gradient(90deg,#E62727 0 6px,transparent 6px 12px); }
+.reveal.lecture-09 .tp-link b { display:block; font-size:1.2em; }
+/* Hai cột bán cầu: nhãn chính một dòng, chú thích nhỏ bên dưới, thẳng hàng đáy (10/11) */
+.reveal.lecture-09 .hm-head { align-items:end; }
+.reveal.lecture-09 .hm-head span { font-size:1em; font-weight:700; color:#245d76; line-height:1.15; }
+.reveal.lecture-09 .hm-head span small { display:block; font-size:.78em; font-weight:500; color:#6b6b6b; }
+/* Lỗi lời nói: 7 hàng, gọn hơn (10/11) */
+.reveal.lecture-09 .qrows.compact { font-size:.62em; }
+.reveal.lecture-09 .qrows.compact .qr { padding:3px 0; }
+.reveal.lecture-09 .qrows.compact .bub { margin:0; padding:2px 10px; }
+/* Meme bình luận viên (10/11) */
+.reveal.lecture-09 .meme-split { grid-template-columns:330px 1fr; align-items:center; }
+.reveal.lecture-09 .meme { position:relative; }
+.reveal.lecture-09 .meme img { display:block; width:100%; height:auto; max-height:420px; object-fit:cover; border-radius:6px; }
+.reveal.lecture-09 .meme-bub { position:absolute; left:10px; right:10px; top:10px; background:#fff; color:#111; border:2px solid #111; border-radius:16px; padding:8px 12px; font-size:.68em; font-weight:700; line-height:1.25; box-shadow:0 2px 0 rgba(0,0,0,.2); }
+.reveal.lecture-09 .meme-q { font-size:.95em; font-weight:700; margin:0 0 12px; color:#221D3D; }
+.reveal.lecture-09 .meme-split .question-box { margin-top:6px; }
+.reveal.lecture-09 .meme { display:flex; flex-direction:column; align-items:center; }
+.reveal.lecture-09 .meme img { width:210px; max-height:none; object-fit:fill; }
+.reveal.lecture-09 .meme-bub { position:relative; left:auto; right:auto; top:auto; margin-bottom:16px; font-size:.66em; }
+.reveal.lecture-09 .meme-bub::after { content:""; position:absolute; left:58%; bottom:-14px; border:12px solid transparent; border-top-color:#111; border-bottom:0; }
+.reveal.lecture-09 .meme + figcaption { font-size:.46em; }
+.reveal.lecture-09 .meme.solo { margin-top:6px; }
+.reveal.lecture-09 .meme.solo .meme-bub { font-size:.9em; max-width:620px; text-align:center; }
+.reveal.lecture-09 .meme.solo img { width:auto; height:360px; }
+.reveal.lecture-09 .meme.solo + figcaption { text-align:center; }
+.reveal.lecture-09 .meme.solo img { height:340px; width:auto; }
+.reveal.lecture-09 .meme.solo .meme-bub::after { left:52%; }
+/* Meme: ảnh bên trái, câu trích kiểu quote bên phải (10/11) */
+.reveal.lecture-09 .meme-row { display:grid; grid-template-columns:auto 1fr; gap:34px; align-items:center; margin-top:20px; }
+.reveal.lecture-09 .meme-img { margin:0; }
+.reveal.lecture-09 .meme-img img { display:block; height:330px; width:auto; border-radius:8px; }
+.reveal.lecture-09 .meme-img figcaption { font-size:.42em; color:#777; margin-top:6px; text-align:left; }
+.reveal.lecture-09 .meme-quote { position:relative; margin:0; padding:10px 0 0 10px; border:none; background:none; box-shadow:none; width:auto; }
+.reveal.lecture-09 .meme-quote::before { content:"“"; position:absolute; left:-18px; top:-62px; font-family:Georgia,"Times New Roman",serif; font-size:4.2em; line-height:1; color:#6D4AA8; opacity:.35; }
+.reveal.lecture-09 .meme-quote p { margin:0; font-family:Georgia,"Noto Serif","Times New Roman",serif; font-style:italic; font-size:1.02em; line-height:1.35; color:#221D3D; }
+.reveal.lecture-09 .meme-quote cite { display:block; margin-top:14px; font-style:normal; font-size:.6em; font-weight:700; color:#553582; letter-spacing:.02em; }
+.reveal.lecture-09 .meme-quote cite::before { content:"— "; }
+.reveal.lecture-09 .signspace.wide { font-size:.8em; width:78%; margin:24px auto 6px; }
+.reveal.lecture-09 .signspace.wide .ss-pt, .reveal.lecture-09 .signspace.wide .ss-who { width:130px; height:130px; min-width:130px; }
+/* 5.4: ba khung hình thay chữ; 5.5: con số hay trích và thí nghiệm thật (10/11) */
+.reveal.lecture-09 .pics3 { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin:22px 0 6px; text-align:center; }
+.reveal.lecture-09 .pic { display:flex; flex-direction:column; align-items:center; gap:6px; }
+.reveal.lecture-09 .pic-art { font-size:1.9em; line-height:1.1; background:#f5f1fa; border-radius:16px; padding:18px 10px; width:100%; box-sizing:border-box; white-space:nowrap; font-family:"Apple Color Emoji","Noto Color Emoji","Segoe UI Emoji",sans-serif; }
+.reveal.lecture-09 .pic-mid { margin:0 .15em; color:#6D4AA8; }
+.reveal.lecture-09 .pic b { font-size:.8em; color:#245d76; }
+.reveal.lecture-09 .pic > span { font-size:.6em; color:#555; line-height:1.25; }
+.reveal.lecture-09 .pic-key { text-align:center; font-size:.72em; font-weight:700; color:#553582; margin:14px 0 4px; }
+.reveal.lecture-09 .pic-key i { font-weight:400; color:#777; }
+.reveal.lecture-09 .mehr { display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:end; margin:14px 0 6px; }
+.reveal.lecture-09 .mehr-tag { display:block; font-size:.56em; font-weight:700; color:#999; text-transform:uppercase; letter-spacing:.04em; margin-bottom:8px; text-align:center; }
+.reveal.lecture-09 .mehr-tag.real { color:#2E8B57; }
+.reveal.lecture-09 .mehr-claim .pct { opacity:.75; position:relative; }
+.reveal.lecture-09 .mehr-claim .pct::after { content:""; position:absolute; left:6%; right:6%; top:45%; height:5px; background:#E62727; transform:rotate(-8deg); border-radius:3px; }
+.reveal.lecture-09 .mehr-flow { display:flex; align-items:center; justify-content:center; gap:14px; }
+.reveal.lecture-09 .mf { display:flex; flex-direction:column; align-items:center; font-size:2em; line-height:1; font-family:"Apple Color Emoji","Noto Color Emoji","Segoe UI Emoji",sans-serif; }
+.reveal.lecture-09 .mf small { font-family:"Source Sans Pro",sans-serif; font-size:.28em; color:#444; margin-top:6px; max-width:110px; text-align:center; line-height:1.2; }
+.reveal.lecture-09 .mf-arrow { font-size:1.2em; color:#2E8B57; font-weight:700; }
+.reveal.lecture-09 .mehr-claim .pct::after { content:none; }
+.reveal.lecture-09 .mehr-claim { position:relative; }
+.reveal.lecture-09 .mehr-claim .mehr-tag::after { content:" ✗"; color:#E62727; }
+.reveal.lecture-09 .mehr-note { margin:8px 0 0; text-align:center; font-size:.56em; color:#2E8B57; font-weight:600; }
+.reveal.lecture-09 .pic-art { font-size:1.55em; }
+.reveal.lecture-09 .pics3 { gap:18px; }
+.reveal.lecture-09 .mehr-note { max-width:440px; margin:8px auto 0; line-height:1.3; }
+.reveal.lecture-09 .pic > span { white-space:nowrap; font-size:.62em; }
+/* Đáp án luôn cách hộp câu hỏi (10/11) */
+.reveal.lecture-09 .question-box + .key-box { margin-top:18px !important; }
+/* 6.6: đầu vào → đầu ra của bốn hệ (10/11) */
+.reveal.lecture-09 .io4 { display:grid; gap:10px; margin:18px auto 8px; width:86%; font-size:.8em; }
+.reveal.lecture-09 .io { display:grid; grid-template-columns:260px 1fr 40px 1fr; align-items:center; gap:10px; border-bottom:1px solid #e3deee; padding:6px 0; }
+.reveal.lecture-09 .io b { color:#245d76; }
+.reveal.lecture-09 .io-in, .reveal.lecture-09 .io-out { text-align:center; background:#f2f7f9; border:2px solid #2A7291; border-radius:8px; padding:4px 10px; }
+.reveal.lecture-09 .io-out { background:#f5f1fa; border-color:#6D4AA8; }
+.reveal.lecture-09 .io-a { text-align:center; color:#6D4AA8; font-weight:700; }
+.reveal.lecture-09 .fix-split .plain-facts i { color:#777; font-weight:400; }
