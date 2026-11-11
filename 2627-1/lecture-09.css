@@ -959,3 +959,7 @@
 .reveal.lecture-09 .io-out { background:#f5f1fa; border-color:#6D4AA8; }
 .reveal.lecture-09 .io-a { text-align:center; color:#6D4AA8; font-weight:700; }
 .reveal.lecture-09 .fix-split .plain-facts i { color:#777; font-weight:400; }
+/* Safari làm mờ chữ khi khung .slides vừa có perspective vừa bị scale (Safari dựng lớp 3D ở độ phân giải gốc rồi phóng to).
+   Deck dùng chuyển cảnh 2D nên bỏ perspective; fragment cũng không cần will-change (11/11/2026). */
+.reveal.lecture-09:not(.overview) .slides { perspective:none; }
+.reveal.lecture-09 .fragment { will-change:auto; }
